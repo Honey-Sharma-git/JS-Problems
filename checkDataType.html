@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Data Type</title>
+  </head>
+  <body>
+    <script>
+      console.log(checkDataType("hello"));
+      console.log(checkDataType(123));
+      console.log(checkDataType(true));
+      console.log(checkDataType(null));
+      console.log(checkDataType());
+
+      function checkDataType(value) {
+        if (typeof value === "object") {
+          return `${value} has object data type`;
+        } else if (typeof value === "undefined") {
+          return `${value} has undefined data type`;
+        } else if (typeof value === "string") {
+          return `${value} has string data type`;
+        } else if (typeof value === "number") {
+          return `${value} has number data type`;
+        } else if (typeof value === "boolean") {
+          return `${value} has boolean data type`;
+        } else {
+          return `${value} has some other data type`;
+        }
+      }
+    </script>
+  </body>
+</html>
