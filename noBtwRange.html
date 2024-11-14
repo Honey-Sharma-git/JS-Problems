@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check if no is btw range</title>
+  </head>
+  <body>
+    <script>
+      let inputNum = 2;
+      const lowerLimit = 1;
+      const upperLimit = 10;
+      console.log(isNumBetweenRange(inputNum, lowerLimit, upperLimit));
+
+      function isNumBetweenRange(number, rangeStart, rangeEnd) {
+        if (number <= rangeEnd && number >= rangeStart) {
+          return `${number} is between ${rangeStart}-${rangeEnd}`;
+        } else {
+          return `${number} is out of range.`;
+        }
+      }
+    </script>
+  </body>
+</html>

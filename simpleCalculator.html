@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <script>
+      console.log(calculator(5, 3, "-"));
+      console.log(calculator(5, 3, "+"));
+      console.log(calculator(5, 3, "*"));
+      console.log(calculator(5, 3, "/"));
+
+      //other cases:
+      console.log(calculator(0, 3, "/"));
+      console.log(calculator(3, 5, "-"));
+      console.log(calculator(0, 5, "*"));
+      console.log(calculator(3, 0, "/"));
+      console.log(calculator(4, "5", "+"));
+      /*
+            function calculator(num1, num2, operator) {
+              if (operator === "+") {
+                return num1 + num2;
+              } else if (operator === "-") {
+                return num1 - num2;
+              } else if (operator === "*") {
+                return num1 * num2;
+              } else if (operator === "/") {
+                return num1 / num2;
+              } else {
+                return "Please check your input.";
+              }
+            } */
+
+      //improved version for type checking and div by zero:
+      function calculator(num1, num2, operator) {
+        if (typeof num1 !== "number" || typeof num2 !== "number") {
+          return "Please enter a valid number";
+        }
+        if (operator === "/" && num2 === 0) {
+          return "Error: Div by zero.";
+        }
+        if (operator === "+") {
+          return num1 + num2;
+        } else if (operator === "-") {
+          return num1 - num2;
+        } else if (operator === "*") {
+          return num1 * num2;
+        } else if (operator === "/") {
+          return num1 / num2;
+        } else {
+          return "Please check your input.";
+        }
+      }
+    </script>
+  </body>
+</html>

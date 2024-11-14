@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Is div by 3 and 5</title>
+  </head>
+  <body>
+    <script>
+      console.log(isDivBy3and5(20));
+      function isDivBy3and5(number) {
+        //METHOD-1:
+        /*   
+        if (number % 3 === 0) {
+          if (number % 5 === 0) {
+            return `${number} is divisible by both 3 and 5.`;
+          } else {
+            return `${number} is divisible by 3`;
+          }
+        } else if (number % 5 === 0) {
+          return `${number} is divisible by 5.`;
+        } else {
+          return `${number} is not divisible by 3 or 5`;
+        }
+      }
+ */
+        //METHOD-2: (preferred)
+        if (number % 3 === 0 && number % 5 === 0) {
+          return `${number} is divisible by both 3 and 5.`;
+        } else if (number % 3 === 0) {
+          return `${number} is divisible by 3.`;
+        } else if (number % 5 === 0) {
+          return `${number} is divisible by 5.`;
+        } else {
+          return `${number} is not divisible by 3 or 5.`;
+        }
+      }
+    </script>
+  </body>
+</html>

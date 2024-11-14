@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leap Year Checker</title>
+  </head>
+  <body>
+    <script>
+      leapYearChecker(2024);
+      leapYearChecker(300);
+      leapYearChecker(2026);
+      leapYearChecker(2028);
+
+      function leapYearChecker(year) {
+        if (year % 4 === 0 && year % 100 !== 0) {
+          return console.log("Leap Year");
+        } else {
+          return console.log("Not Leap Year");
+        }
+      }
+    </script>
+  </body>
+</html>
