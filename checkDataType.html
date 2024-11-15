@@ -6,13 +6,18 @@
     <title>Check Data Type</title>
   </head>
   <body>
+    <h1>CHECK DATA TYPE</h1>
+    <p>Please enter the data to check its data type:</p>
+    <input type="text" class="js-input" />
+    <br /><br />
+    <button class="js-button" onclick=" checkButton();">Check</button>
+    <p class="js-output"></p>
     <script>
-      console.log(checkDataType("hello"));
-      console.log(checkDataType(123));
-      console.log(checkDataType(true));
-      console.log(checkDataType(null));
-      console.log(checkDataType());
-
+      function checkButton() {
+        const inputValue = document.querySelector(".js-input").value;
+        document.querySelector(".js-output").innerHTML =
+          checkDataType(inputValue);
+      }
       function checkDataType(value) {
         if (typeof value === "object") {
           return `${value} has object data type`;
