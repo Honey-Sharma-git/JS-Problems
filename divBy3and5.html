@@ -6,11 +6,20 @@
     <title>Is div by 3 and 5</title>
   </head>
   <body>
+    <p>Enter a number to check if it is divisible by 3 or 5:</p>
+    <input type="number" name="number1" id="number1" class="js-input" />
+    <button
+      class="js-button"
+      onclick="
+    check();
+    "
+    >
+      Check
+    </button>
+    <p class="js-output"></p>
     <script>
-      console.log(isDivBy3and5(20));
-      function isDivBy3and5(number) {
-        //METHOD-1:
-        /*   
+      //METHOD-1:
+      /*   
         if (number % 3 === 0) {
           if (number % 5 === 0) {
             return `${number} is divisible by both 3 and 5.`;
@@ -24,7 +33,15 @@
         }
       }
  */
-        //METHOD-2: (preferred)
+      //METHOD-2: (preferred)
+      console.log(isDivBy3and5(20));
+      function check() {
+        const number = Number(document.querySelector(".js-input").value);
+        document.querySelector(
+          ".js-output"
+        ).innerHTML = `Result: ${isDivBy3and5(number)}`;
+      }
+      function isDivBy3and5(number) {
         if (number % 3 === 0 && number % 5 === 0) {
           return `${number} is divisible by both 3 and 5.`;
         } else if (number % 3 === 0) {
