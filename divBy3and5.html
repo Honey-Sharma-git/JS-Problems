@@ -7,7 +7,15 @@
   </head>
   <body>
     <p>Enter a number to check if it is divisible by 3 or 5:</p>
-    <input type="number" name="number1" id="number1" class="js-input" />
+    <input
+      type="number"
+      name="number1"
+      id="number1"
+      class="js-input"
+      onkeydown="
+      handleKeyDown();
+    "
+    />
     <button
       class="js-button"
       onclick="
@@ -34,7 +42,11 @@
       }
  */
       //METHOD-2: (preferred)
-      console.log(isDivBy3and5(20));
+      function handleKeyDown() {
+        if (event.key === "Enter") {
+          check();
+        }
+      }
       function check() {
         const number = Number(document.querySelector(".js-input").value);
         document.querySelector(
