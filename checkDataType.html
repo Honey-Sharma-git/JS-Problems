@@ -4,14 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Check Data Type</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        /* outline: 2px solid lime; */
+      }
+      body {
+        min-height: 100vh;
+        background-color: black;
+        display: grid;
+        place-content: center;
+        row-gap: 20px;
+        color: white;
+      }
+      .title {
+        font-size: 3rem;
+        text-align: center;
+        color: pink;
+      }
+      .description-para,
+      .output-para {
+        font-size: 2rem;
+        text-align: center;
+      }
+      .check-button {
+        color: black;
+        background-color: white;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 50px;
+      }
+      .input-field,
+      .check-button,
+      .output-para {
+        padding: 1rem;
+        font-size: 1rem;
+        width: 50%;
+        place-self: center;
+        text-align: center;
+      }
+      .output-para {
+        border-bottom: 2px solid white;
+      }
+    </style>
   </head>
   <body>
-    <h1>CHECK DATA TYPE</h1>
-    <p>Please enter the data to check its data type:</p>
-    <input type="text" class="js-input" />
-    <br /><br />
-    <button class="js-button" onclick=" checkButton();">Check</button>
-    <p class="js-output"></p>
+    <h1 class="title">CHECK DATA TYPE</h1>
+    <p class="description-para">
+      Please enter the data to check its data type:
+    </p>
+    <input
+      type="text"
+      class="js-input input-field"
+      placeholder="Enter your data"
+    />
+    <button class="js-button check-button" onclick=" checkButton();">
+      Check
+    </button>
+    <p class="js-output output-para"></p>
     <script>
       function checkButton() {
         const inputValue = document.querySelector(".js-input").value;
