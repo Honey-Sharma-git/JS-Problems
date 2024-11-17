@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplication Tables</title>
+  </head>
+  <body>
+    <h1>Multiplication Tables Generator</h1>
+    <label for="number-input"
+      >Enter the number to get its multiplication table </label
+    ><br />
+    <input type="number" name="number-input" class="js-input" />
+    <button class="js-generate-button" onclick="generateTable()">
+      Generate
+    </button>
+    <div class="js-output"></div>
+    <script>
+      function generateTable() {
+        getNumber();
+        multiplication();
+        readTable();
+      }
+      let number = 0;
+      function getNumber() {
+        number = Number(document.querySelector(".js-input").value);
+      }
+      let product = 0;
+      let i;
+      let multiplicationTable = [];
+      function multiplication() {
+        for (i = 1; i <= 10; i++) {
+          product = number * i;
+          let productLine = `${number} x ${i} = ${product}`;
+          multiplicationTable.push(productLine);
+        }
+      }
+      let table = "";
+      function readTable() {
+        for (let i = 0; i < multiplicationTable.length; i++) {
+          let para = multiplicationTable[i];
+          let html = `<p>${para}</p>`;
+          table = table + html;
+          document.querySelector(".js-output").innerHTML = table;
+        }
+      }
+    </script>
+  </body>
+</html>
