@@ -29,4 +29,6 @@ function generateTable() {
   function resetInput(){
     document.querySelector(".js-output").innerHTML = '';
     document.querySelector(".js-input").value = '';
+    multiplicationTable = [];
+    tableSet ='';
   }

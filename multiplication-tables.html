@@ -11,14 +11,16 @@
     <label for="number-input"
       >Enter the number to get its multiplication table </label
     ><br />
-    <input type="number" name="number-input" class="js-input" />
+    <input
+      type="number"
+      name="number-input"
+      class="js-input"
+      onclick="resetInput()"
+    />
     <button class="js-generate-button" onclick="generateTable()">
       Generate
     </button>
-    <button class="js-reset-button" 
-    
-      onclick="resetInput();"
-    >Reset</button>
+    <button class="js-reset-button" onclick="resetInput();">Reset</button>
     <div class="js-output"></div>
     <script src="js/multiplication-tables.js"></script>
   </body>

@@ -3,7 +3,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 * {
   margin: 0;
@@ -45,4 +45,8 @@ input {
 p {
   margin: 1rem;
   text-align: center;
+  
+}
+div{
+  background-color: white;
 }
