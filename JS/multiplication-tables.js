@@ -26,3 +26,7 @@ function generateTable() {
       document.querySelector(".js-output").innerHTML = tableSet;
     }
   }
+  function resetInput(){
+    document.querySelector(".js-output").innerHTML = '';
+    document.querySelector(".js-input").value = '';
+  }
