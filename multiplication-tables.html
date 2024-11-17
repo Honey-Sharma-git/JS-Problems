@@ -8,9 +8,9 @@
   </head>
   <body>
     <h1>Multiplication Tables Generator</h1>
-    <label for="number-input"
+    <!-- <label for="number-input"
       >Enter the number to get its multiplication table </label
-    ><br />
+    > -->
     <input
       type="number"
       name="number-input"
@@ -18,11 +18,12 @@
       onclick="resetInput()"
       onkeydown="handleKeydown(event)
       console.log(event.key);"
+      placeholder="Enter a number"
     />
-    <button class="js-generate-button" onclick="generateTable()">
+    <div class="button-container"><button class="js-generate-button" onclick="generateTable()">
       Generate
     </button>
-    <button class="js-reset-button" onclick="resetInput();">Reset</button>
+    <button class="js-reset-button" onclick="resetInput();">Reset</button></div>
     <div class="js-output"></div>
     <script src="js/multiplication-tables.js"></script>
   </body>

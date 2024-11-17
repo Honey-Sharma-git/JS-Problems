@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 /* CSS RESET */
 *,
 *::after,
@@ -10,43 +11,79 @@
   padding: 0;
 }
 body {
-  background-color: palevioletred;
-  font-family: "Courier New", Courier, monospace;
+  background-color: aliceblue;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.3rem;
   display: flex;
-  flex-flow: column;
-  place-items: center;
-  row-gap: 10px;
+  flex-direction: column;
+  gap: 10px; /* Shorter syntax for row-gap */
+  padding: 1rem;
 }
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap; /* Shorter syntax for flex-flow: row wrap */
+  justify-content: center;
+}
+
 input,
 button,
 p {
-  font: inherit;
+  font: inherit; /* Ensures consistent font styling */
 }
-button {
-  padding: 1rem;
-  background-color: brown;
-  color: white;
-  font: bold;
-  font-size: 2rem;
-  border: none;
-  outline: transparent;
-  border-radius: 50px;
-}
-label{
-    text-align: center;
-}
+
 input {
-  padding: 0.5rem;
+  font-size: 2rem;
+  border: 2px solid grey;
+  background-color: transparent;
+  border-radius: 15px;
+  padding: 1rem;
+  width: 100%;
   text-align: center;
-  width: 50%;
-  align-self: center;
+  outline: none; /* Cleaner focus handling */
 }
+
+input:focus {
+  border: none;
+  outline: 2px solid dodgerblue;
+}
+
+button {
+  padding: 0.5rem 2rem; /* Slightly simplified padding */
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bold; /* Corrected shorthand font declaration */
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Main shadow */ 0 2px 4px rgba(0, 0, 0, 0.15); /* Subtle inner shadow for depth */
+  outline: none;
+}
+
+label,
+h1 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
 p {
-  margin: 1rem;
+  margin: 0.3rem;
+  font-size: 2rem;
   text-align: center;
-  
+  min-width: 50%;
 }
-div{
-  background-color: white;
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+  input {
+    color: inherit;
+  }
 }
