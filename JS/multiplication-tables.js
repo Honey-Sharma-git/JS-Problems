@@ -32,3 +32,10 @@ function generateTable() {
     multiplicationTable = [];
     tableSet ='';
   }
+  function handleKeydown(event) {
+    if(event.key === 'Enter'){
+      generateTable();
+    }else if(event.key === 'Backspace'){
+      resetInput();
+    }
+  }
