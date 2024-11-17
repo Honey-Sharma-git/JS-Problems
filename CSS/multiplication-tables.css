@@ -62,7 +62,9 @@ button {
     /* Main shadow */ 0 2px 4px rgba(0, 0, 0, 0.15); /* Subtle inner shadow for depth */
   outline: none;
 }
-
+.button-clicked {
+  background-color: blueviolet;
+}
 label,
 h1 {
   text-align: center;

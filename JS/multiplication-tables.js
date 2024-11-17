@@ -31,11 +31,21 @@ function generateTable() {
     document.querySelector(".js-input").value = '';
     multiplicationTable = [];
     tableSet ='';
+    buttonElement.innerHTML = 'Generate';
+    buttonElement.classList.remove('button-clicked');
   }
   function handleKeydown(event) {
     if(event.key === 'Enter'){
       generateTable();
     }else if(event.key === 'Backspace'){
       resetInput();
+    }
+  }
+
+  const buttonElement = document.querySelector('.js-generate-button');
+  function buttonClicked(){
+    if(buttonElement.innerText === 'Generate'){
+      buttonElement.innerHTML = 'Generated';
+      buttonElement.classList.add('button-clicked');
     }
   }

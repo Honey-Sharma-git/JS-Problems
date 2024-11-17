@@ -20,10 +20,15 @@
       console.log(event.key);"
       placeholder="Enter a number"
     />
-    <div class="button-container"><button class="js-generate-button" onclick="generateTable()">
-      Generate
-    </button>
-    <button class="js-reset-button" onclick="resetInput();">Reset</button></div>
+    <div class="button-container">
+      <button
+        class="js-generate-button"
+        onclick="generateTable(); buttonClicked();"
+      >
+        Generate
+      </button>
+      <button class="js-reset-button" onclick="resetInput();">Reset</button>
+    </div>
     <div class="js-output"></div>
     <script src="js/multiplication-tables.js"></script>
   </body>
