@@ -7,6 +7,41 @@
     <link rel="stylesheet" href="CSS/number-counting.css" />
   </head>
   <body>
+    <header class="header">
+      <h1 class="header__title">Number counting</h1>
+    </header>
+    <main class="main">
+      <form action="https://httpbin.org/get" method="get" class="main__form">
+        <label for="startNum" class="form__label">Starting Number:</label>
+        <input
+          type="number"
+          class="form__input js-input-startNum"
+          placeholder="Enter starting number"
+          name="startNum"
+          id="startNum"
+        />
+        <label for="countingStep" class="form__label">Counting step:</label>
+        <input
+          type="number"
+          class="form__input js-input-countingStep"
+          placeholder="Enter counting step"
+          name="countingStep"
+          id="countingStep"
+        />
+        <label for="endNum" class="form__label">Ending Number:</label>
+        <input
+          type="number"
+          class="form__input js-input-endNum"
+          placeholder="Enter ending number"
+          name="endNum"
+          id="endNum"
+        />
+        <button class="generate">Generate</button>
+      </form>
+      <article class="article">
+        <h3 class="article__title js-article__title"></h3>
+      </article>
+    </main>
     <script src="JS/number-counting.js"></script>
   </body>
 </html>
