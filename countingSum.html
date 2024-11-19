@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counting Sum</title>
+  </head>
+  <body>
+    <h1>Calculate the sum of the counting</h1>
+    <label for="startNum">Enter starting number:</label>
+    <input
+      type="number"
+      class="js-startNum"
+      placeholder="Enter a starting number"
+      name="startNum"
+      id="startNum"
+      autofocus
+    />
+    <label for="step">Enter a counting step:</label>
+    <input
+      type="number"
+      class="js-step"
+      placeholder="Enter a counting step"
+      name="step"
+      id="step"
+    />
+    <label for="endNum">Enter a ending number:</label>
+    <input
+      type="number"
+      class="js-endNum"
+      placeholder="Enter a ending number"
+      name="endNum"
+      id="endNum"
+      autofocus
+    />
+    <button class="js-findSum" onclick="findSum()">Find Sum</button>
+    <output class="js-output"></output>
+  </body>
+</html>
