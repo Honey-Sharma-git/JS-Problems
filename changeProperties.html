@@ -4,9 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Change Properties</title>
-    <style></style>
+    <style>
+      :root {
+        --BG-COLOR: transparent;
+      }
+      .js-div {
+        margin-top: 1rem;
+        height: 150px;
+        width: 150px;
+        border: 3px solid grey;
+        background-color: var(--BG-COLOR);
+      }
+    </style>
   </head>
   <body>
+    <h1>Change background color of the square</h1>
     <label for="colorName"
       >Enter a valid color name to change background color:</label
     ><br />
@@ -15,7 +27,14 @@
       class="js-input"
       placeholder="Enter color name"
       autofocus
+      oninput="getColor();"
     />
-    <script></script>
+    <div class="js-div"></div>
+    <script>
+      function getColor() {
+        let color = document.querySelector(".js-input").value;
+        document.querySelector(".js-div").innerHTML = color;
+      }
+    </script>
   </body>
 </html>
