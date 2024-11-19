@@ -6,30 +6,51 @@
     <title>MinMax()</title>
   </head>
   <body>
+    <input type="number" class="js-input" /><button
+      class="js-button"
+      onclick="insertNumbers();"
+    >
+      Insert
+    </button>
+    <output class="js-output"></output>
     <script>
       const myArray = [];
-      console.log(minMax(myArray));
-
-      function minMax(array) {
-        //Check for empty array
-        if (array.length === 0) {
-          return { max: null, min: null };
+      function insertNumbers() {
+        if (document.querySelector(".js-input").value === "") {
+          document.querySelector(
+            ".js-output"
+          ).innerHTML = `<p>Enter a number</p>`;
+        } else {
+          myArray.push(document.querySelector(".js-input").value);
+          document.querySelector(
+            ".js-output"
+          ).innerHTML = `<p>You entered: ${myArray}</p><p>${minMax(
+            myArray
+          )}</p>`;
+          return minMax(myArray);
         }
-        // Initialize max and min with the first element of the array
-        let max = array[0];
-        let min = array[0];
 
-        for (let i = 0; i < array.length; i++) {
-          let value = array[i];
-          // Compare value with current max and min
-          if (value > max) {
-            max = value;
+        function minMax(array) {
+          //Check for empty array
+          if (array.length === 0) {
+            return { max: null, min: null };
           }
-          if (value < min) {
-            min = value;
+          // Initialize max and min with the first element of the array
+          let max = array[0];
+          let min = array[0];
+
+          for (let i = 0; i < array.length; i++) {
+            let value = array[i];
+            // Compare value with current max and min
+            if (value > max) {
+              max = value;
+            }
+            if (value < min) {
+              min = value;
+            }
           }
+          return `max: ${max} min: ${min}`;
         }
-        return `max: ${max} min: ${min}`;
       }
     </script>
   </body>
