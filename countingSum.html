@@ -35,5 +35,25 @@
     />
     <button class="js-findSum" onclick="findSum()">Find Sum</button>
     <output class="js-output"></output>
+    <script>
+      let startNum, step, endNum;
+      function getValue() {
+        startNum = Number(document.querySelector(".js-startNum").value);
+        step = Number(document.querySelector(".js-step").value);
+        endNum = Number(document.querySelector(".js-endNum").value);
+      }
+      function findSum() {
+        getValue();
+        let sum = 0;
+        const countingArray = [];
+        for (let i = startNum; i <= endNum; i += step) {
+          sum = sum + i;
+          countingArray.push(i);
+        }
+        return (document.querySelector(
+          ".js-output"
+        ).innerHTML = `<p>Counting: ${countingArray}</p> <p>Sum of counting: ${sum}</p>`);
+      }
+    </script>
   </body>
 </html>
