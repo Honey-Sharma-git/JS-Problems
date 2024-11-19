@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font button</title>
+    <style>
+      :root {
+        --FONT-COLOR: #000;
+      }
+      .samplePara {
+        color: var(--FONT-COLOR);
+      }
+      .rem-2 {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="js-para samplePara">This is sample text.</p>
+    <button class="js-large-font-size-button" onclick="large();">
+      A<sup>+</sup>
+    </button>
+    <button class="js-small-font-size-button" onclick="small();">
+      A<sup>-</sup>
+    </button>
+    <input
+      type="color"
+      name="textColor"
+      id="textColor"
+      class="js-color-picker"
+    />
+    <button class="js-colorCode" onclick="color();">Color it</button>
+    <script>
+      function large() {
+        document.querySelector(".js-para").classList.add("rem-2");
+      }
+      function small() {
+        document.querySelector(".js-para").classList.remove("rem-2");
+      }
+      function color() {
+        let colorCode = document.querySelector(".js-color-picker").value;
+        document.documentElement.style.setProperty("--FONT-COLOR", colorCode);
+      }
+    </script>
+  </body>
+</html>
