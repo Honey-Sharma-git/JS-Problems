@@ -15,10 +15,14 @@
       autofocus
       class="js-input"
     /><br />
-    <button class="js-button">Check</button><br />
+    <button class="js-button" onclick="displayResult()">Check</button><br />
     <output class="js-output"></output>
     <script>
-      function isPrime(num) {
+      function displayResult() {
+        document.querySelector(".js-output").innerHTML = isPrime();
+      }
+      function isPrime() {
+        let num = Number(document.querySelector(".js-input").value);
         if (num < 2 || !Number.isInteger(num)) {
           return "Not a prime number";
         }
