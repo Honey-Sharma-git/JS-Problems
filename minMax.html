@@ -6,15 +6,23 @@
     <title>MinMax()</title>
   </head>
   <body>
-    <input type="number" class="js-input" /><button
+    <input type="number" class="js-input" autofocus /><button
       class="js-button"
       onclick="insertNumbers();"
     >
       Insert
     </button>
+    <button class="js-reset" onclick="reset();">Reset</button>
     <output class="js-output"></output>
     <script>
-      const myArray = [];
+      function reset() {
+        myArray = [];
+        document.querySelector(".js-input").value = "";
+        document.querySelector(
+          ".js-output"
+        ).innerHTML = `<p>Enter numbers to find min and max number</p><p>You entered: ${myArray}</p><p>max: min: </p>`;
+      }
+      let myArray = [];
       function insertNumbers() {
         if (document.querySelector(".js-input").value === "") {
           document.querySelector(
@@ -27,6 +35,7 @@
           ).innerHTML = `<p>You entered: ${myArray}</p><p>${minMax(
             myArray
           )}</p>`;
+          document.querySelector(".js-input").value = "";
           return minMax(myArray);
         }
 
