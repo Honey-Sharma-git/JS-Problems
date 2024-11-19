@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check empty string</title>
+  </head>
+  <body>
+    <!-- Implement a program to check if a string is empty or not. -->
+    <label for="username">Please enter your username:</label><br />
+    <input
+      type="text"
+      class="js-input"
+      id="username"
+      name="username"
+      autofocus
+      placeholder="username"
+    /><br />
+    <button class="js-button" onclick="checkString()">Submit</button>
+    <output class="js-output"></output>
+    <script>
+      function checkString() {
+        const inputElement = document.querySelector(".js-input").value;
+        let outputElement;
+        if (inputElement === "") {
+          outputElement = "You have not typed your name";
+        } else {
+          outputElement = `Your name is ${inputElement}`;
+        }
+        document.querySelector(".js-output").innerHTML = outputElement;
+      }
+    </script>
+  </body>
+</html>
