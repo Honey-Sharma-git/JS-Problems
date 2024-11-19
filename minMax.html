@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MinMax()</title>
+  </head>
+  <body>
+    <script>
+      const myArray = [];
+      console.log(minMax(myArray));
+
+      function minMax(array) {
+        //Check for empty array
+        if (array.length === 0) {
+          return { max: null, min: null };
+        }
+        // Initialize max and min with the first element of the array
+        let max = array[0];
+        let min = array[0];
+
+        for (let i = 0; i < array.length; i++) {
+          let value = array[i];
+          // Compare value with current max and min
+          if (value > max) {
+            max = value;
+          }
+          if (value < min) {
+            min = value;
+          }
+        }
+        return `max: ${max} min: ${min}`;
+      }
+    </script>
+  </body>
+</html>
