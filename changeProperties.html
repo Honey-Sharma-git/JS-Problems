@@ -7,11 +7,13 @@
     <style>
       :root {
         --BG-COLOR: transparent;
+        --WIDTH: 150px;
+        --HEIGHT: 150px;
       }
       .js-div {
         margin-top: 1rem;
-        height: 150px;
-        width: 150px;
+        height: var(--HEIGHT);
+        width: var(--WIDTH);
         border: 3px solid grey;
         background-color: var(--BG-COLOR);
       }
@@ -24,16 +26,36 @@
     ><br />
     <input
       type="text"
-      class="js-input"
+      class="js-color-input"
       placeholder="Enter color name"
       autofocus
       oninput="getColor();"
     />
+    <input
+      type="text"
+      class="js-height-input"
+      placeholder="Enter height in px"
+      oninput="getHeight();"
+    />
+    <input
+      type="text"
+      class="js-width-input"
+      placeholder="Enter width in px"
+      oninput="getWidth();"
+    />
     <div class="js-div"></div>
     <script>
       function getColor() {
-        let color = document.querySelector(".js-input").value;
-        document.querySelector(".js-div").innerHTML = color;
+        let color = document.querySelector(".js-color-input").value;
+        document.documentElement.style.setProperty("--BG-COLOR", color);
+      }
+      function getHeight() {
+        let height = document.querySelector(".js-height-input").value;
+        document.documentElement.style.setProperty("--HEIGHT", height);
+      }
+      function getWidth() {
+        let width = document.querySelector(".js-width-input").value;
+        document.documentElement.style.setProperty("--WIDTH", width);
       }
     </script>
   </body>
