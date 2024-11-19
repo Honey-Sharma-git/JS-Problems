@@ -25,5 +25,23 @@
 
   <body>
     <h1>HELLO</h1>
+    <input
+      type="range"
+      name="redColor"
+      id="redColor"
+      class="js-red-input"
+      min="0"
+      max="255"
+      onchange="getValue();"
+    />
+    <script>
+      function getValue() {
+        let redColor = Number(document.querySelector(".js-red-input").value);
+        console.log(redColor);
+        document.documentElement.style.setProperty("--RED", redColor);
+        document.documentElement.style.setProperty("--GREEN", "0");
+        document.documentElement.style.setProperty("--BLUE", "00");
+      }
+    </script>
   </body>
 </html>
