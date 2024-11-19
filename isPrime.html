@@ -7,21 +7,16 @@
   </head>
   <body>
     <script>
-      let num = 18.5;
-      isPrime(num);
       function isPrime(num) {
         if (num < 2 || !Number.isInteger(num)) {
-          console.log("Not a prime number");
-          return;
+          return "Not a prime number";
         }
         for (let i = 2; i < num; i++) {
           if (num % i === 0) {
-            console.log("Not a prime number");
-            return;
+            return "Not a prime number";
           }
         }
-
-        console.log("A prime number");
+        return "A prime number";
       }
     </script>
   </body>
