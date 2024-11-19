@@ -24,7 +24,8 @@
   </head>
 
   <body>
-    <h1>HELLO</h1>
+    <h1>Color of this text get inverted</h1>
+    <label for="redColor">RED</label>
     <input
       type="range"
       name="redColor"
@@ -34,13 +35,36 @@
       max="255"
       onchange="getValue();"
     />
+    <label for="greenColor">GREEN</label>
+    <input
+      type="range"
+      name="greenColor"
+      id="greenColor"
+      class="js-green-input"
+      min="0"
+      max="255"
+      onchange="getValue();"
+    />
+    <label for="blueColor">BLUE</label>
+    <input
+      type="range"
+      name="blueColor"
+      id="blueColor"
+      class="js-blue-input"
+      min="0"
+      max="255"
+      onchange="getValue();"
+    />
     <script>
       function getValue() {
         let redColor = Number(document.querySelector(".js-red-input").value);
-        console.log(redColor);
+        let greenColor = Number(
+          document.querySelector(".js-green-input").value
+        );
+        let blueColor = Number(document.querySelector(".js-blue-input").value);
         document.documentElement.style.setProperty("--RED", redColor);
-        document.documentElement.style.setProperty("--GREEN", "0");
-        document.documentElement.style.setProperty("--BLUE", "00");
+        document.documentElement.style.setProperty("--GREEN", greenColor);
+        document.documentElement.style.setProperty("--BLUE", blueColor);
       }
     </script>
   </body>
