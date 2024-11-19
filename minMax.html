@@ -6,15 +6,21 @@
     <title>MinMax()</title>
   </head>
   <body>
-    <input type="number" class="js-input" autofocus /><button
-      class="js-button"
-      onclick="insertNumbers();"
-    >
-      Insert
-    </button>
+    <input
+      type="number"
+      class="js-input"
+      autofocus
+      onkeydown="handleKeydown(event);"
+    /><button class="js-button" onclick="insertNumbers();">Insert</button>
     <button class="js-reset" onclick="reset();">Reset</button>
     <output class="js-output"></output>
     <script>
+      function handleKeydown(event) {
+        if (event.key === "Enter") {
+          insertNumbers();
+        }
+      }
+
       function reset() {
         myArray = [];
         document.querySelector(".js-input").value = "";
