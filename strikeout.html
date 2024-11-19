@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strikeout</title>
+    <style>
+      .strikeout {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="checkbox"
+      name="checkbox-1"
+      id="checkbox-1"
+      class="js-checkbox"
+      onclick="saveValue(this)"
+    />
+    <label for="checkbox-1" class="js-label">Go for a walk.</label>
+    <input
+      type="checkbox"
+      name="checkbox-2"
+      id="checkbox-2"
+      class="js-checkbox"
+      onclick="saveValue(this)"
+    />
+    <label for="checkbox-2" class="js-label">Study computer science.</label>
+    <script>
+      function saveValue(checkbox) {
+        // Get the associated label
+        const label = document.querySelector(`label[for="${checkbox.id}"]`);
+
+        // Add or remove the strikeout class based on the checkbox state
+        if (checkbox.checked) {
+          label.classList.add("strikeout");
+        } else {
+          label.classList.remove("strikeout");
+        }
+      }
+    </script>
+  </body>
+</html>
