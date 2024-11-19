@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Is prime number?</title>
+  </head>
+  <body>
+    <script>
+      let num = 18.5;
+      isPrime(num);
+      function isPrime(num) {
+        if (num < 2 || !Number.isInteger(num)) {
+          console.log("Not a prime number");
+          return;
+        }
+        for (let i = 2; i < num; i++) {
+          if (num % i === 0) {
+            console.log("Not a prime number");
+            return;
+          }
+        }
+
+        console.log("A prime number");
+      }
+    </script>
+  </body>
+</html>
