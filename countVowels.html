@@ -13,6 +13,7 @@
       name="sentence"
       id="sentence"
       placeholder="Your sentence here."
+      autofocus
       onkeydown="countVowels(event);"
     />
     <output class="js-output"></output>
@@ -77,7 +78,15 @@
         vowelLog.o = oCount;
         vowelLog.u = uCount;
         console.log(vowelLog);
+        displayResult(vowelLog);
       }
+      function displayResult(object) {
+        document.querySelector(
+          ".js-output"
+        ).innerHTML = `<p> A: ${object.a}</p> <p>E: ${object.e} </p><p> I: ${object.i} </p><p>O: ${object.o} </p><p>U: ${object.u}`;
+      }
+      //   Todo: Must try for shorter approach
+      //   Todo: Must try for.Each approach
     </script>
   </body>
 </html>
