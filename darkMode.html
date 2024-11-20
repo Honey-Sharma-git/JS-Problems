@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode Button</title>
+    <style>
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+      button {
+        cursor: pointer;
+        padding: 1rem;
+        border: none;
+        background-color: gray;
+        border-radius: 50px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="js-body">
+    <p>Dark Mode Button</p>
+    <button class="js-darkMode-button darkMode-button" onclick="darkMode()">
+      Turn Dark Mode ON
+    </button>
+    <script>
+      //Method-1
+      /* let buttonElement = document.querySelector(".js-darkMode-button");
+      function darkMode() {
+        if (buttonElement.innerText === "Turn Dark Mode ON") {
+          buttonElement.innerHTML = "Turn Dark Mode OFF";
+          document.querySelector(".js-body").classList.add("dark-mode");
+        } else {
+          buttonElement.innerHTML = "Turn Dark Mode ON";
+          document.querySelector(".js-body").classList.remove("dark-mode");
+        }
+      } */
+      //Method-2
+      let buttonState = false;
+      function darkMode() {
+        if (!buttonState) {
+          document.querySelector(".js-darkMode-button").innerHTML =
+            "Turn Dark Mode ON";
+          document.querySelector(".js-body").classList.add("dark-mode");
+          buttonState = true;
+        } else {
+          document.querySelector(".js-darkMode-button").innerHTML =
+            "Turn Dark Mode OFF";
+          document.querySelector(".js-body").classList.remove("dark-mode");
+          buttonState = false;
+        }
+      }
+    </script>
+  </body>
+</html>
