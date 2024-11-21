@@ -10,11 +10,17 @@
       *::after,
       *::before {
         box-sizing: border-box;
-        outline: 1px solid red;
+        /* outline: 1px solid red; */
       }
       * {
         margin: 0.5rem;
         padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        height: 200vh;
       }
       .mainContainer {
         display: flex;
@@ -70,15 +76,45 @@
         <div class="section__div">
           <article class="section__article">
             <h3 class="article__title">Squares</h3>
-            <button class="article__button">1 - 10</button>
-            <button class="article__button">11 - 20</button>
-            <button class="article__button">21 - 30</button>
+            <button
+              class="article__button"
+              onclick="window.location.href='#output'"
+            >
+              1 - 10
+            </button>
+            <button
+              class="article__button"
+              onclick="window.location.href='#output'"
+            >
+              11 - 20
+            </button>
+            <button
+              class="article__button"
+              onclick="window.location.href='#output'"
+            >
+              21 - 30
+            </button>
           </article>
           <article class="section__article">
             <h3 class="article__title">Cubes</h3>
-            <button class="article__button">1 - 10</button>
-            <button class="article__button">11 - 20</button>
-            <button class="article__button">21 - 30</button>
+            <button
+              class="article__button"
+              onclick="window.location.href='#output'"
+            >
+              1 - 10
+            </button>
+            <button
+              class="article__button"
+              onclick="window.location.href='#output'"
+            >
+              11 - 20
+            </button>
+            <button
+              class="article__button"
+              onclick="window.location.href='#output'"
+            >
+              21 - 30
+            </button>
           </article>
         </div>
         <article class="section__article">
@@ -107,7 +143,7 @@
           <button class="article__button">Generate</button>
           <aside class="section__aside"></aside>
         </article>
-        <output class="main__output"></output>
+        <output class="main__output" id="output">dfadfasdfasfd</output>
       </section>
     </main>
     <!-- <button onclick="squares(1,10)">1-10</button>
