@@ -1,0 +1,59 @@
+/* CSS RESET */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+* {
+  margin: 0.5rem;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+.mainContainer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.main__title {
+  text-align: center;
+}
+.main__section {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.section__div {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+.section__article {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  align-items: center;
+}
+.article__form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.article__button {
+  border: none;
+  padding: 0.5rem 1rem;
+  width: 100px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0.1px 0px 0.1px black, 0px 1px 0px 1px gray;
+  background-color: dodgerblue;
+}
+.form__input,
+.form__select {
+  width: 100px;
+  padding: 0.5rem;
+}

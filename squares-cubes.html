@@ -4,67 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Squares and Cubes</title>
-    <style>
-      /* CSS RESET */
-      *,
-      *::after,
-      *::before {
-        box-sizing: border-box;
-      }
-      * {
-        margin: 0.5rem;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      .mainContainer {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-      }
-      .main__title {
-        text-align: center;
-      }
-      .main__section {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-      }
-      .section__div {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 10px;
-      }
-      .section__article {
-        display: flex;
-        flex-flow: column;
-        gap: 10px;
-        align-items: center;
-      }
-      .article__form {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-      }
-
-      .article__button {
-        border: none;
-        padding: 0.5rem 1rem;
-        width: 100px;
-        border-radius: 5px;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0px 0.1px 0px 0.1px black, 0px 1px 0px 1px gray;
-        background-color: dodgerblue;
-      }
-      .form__input,
-      .form__select {
-        width: 100px;
-        padding: 0.5rem;
-      }
-    </style>
+    <link rel="stylesheet" href="CSS/squares-cubes.css" />
   </head>
   <body>
     <main class="mainContainer">
@@ -128,22 +68,22 @@
             <input
               title="Enter starting number for the table"
               type="number"
-              name=""
-              id=""
+              name="start"
+              id="start"
               placeholder="start"
               class="form__input js-input-start"
             />
             <input
               title="Enter ending number for the table"
               type="number"
-              name=""
-              id=""
+              name="end"
+              id="end"
               placeholder="end"
               class="form__input js-input-end"
             />
             <select
-              name=""
-              id=""
+              name="select"
+              id="select"
               class="form__select js-select"
               title="Select option"
             >
@@ -164,61 +104,6 @@
         >
       </section>
     </main>
-    <script>
-      //Square function
-      function squares(start, end) {
-        document.querySelector(".js-output").innerHTML = "";
-        const squareArray = [];
-        for (let i = start; i <= end; i++) {
-          let result = `<p class="output__para"> ${i} <sup>2</sup> = ${
-            i * i
-          }</p> `;
-          //saving para in array.
-          squareArray.push(result);
-        }
-        //clearing output before using
-        //reading each value of array
-        squareArray.forEach(function (value) {
-          //appending each para with another
-          document.querySelector(".js-output").innerHTML += value;
-        });
-      }
-      //Cube function
-      function cubes(start, end) {
-        //clearing output before generating
-        document.querySelector(".js-output").innerHTML = "";
-        //array for storing paragraphs
-        const cubeArray = [];
-        for (let i = start; i <= end; i++) {
-          //Cube calculation
-          let result = `<p class="output__para"> ${i} <sup>3</sup> = ${
-            i * i * i
-          }</p>`;
-          //saving paragraph into array
-          cubeArray.push(result);
-        }
-        //Reading each paragraph
-        cubeArray.forEach(function (value) {
-          document.querySelector(".js-output").innerHTML += value;
-        });
-      }
-
-      //Generate custom table
-
-      function custom() {
-        let selectValue = document.querySelector(".js-select").value;
-        let startNum = Number(document.querySelector(".js-input-start").value);
-        let endNum = Number(document.querySelector(".js-input-end").value);
-        document.querySelector(".js-output").innerHTML = `<p>Loading...</p>`;
-        setTimeout(() => {
-          if (selectValue === "square") {
-            squares(startNum, endNum);
-          } else {
-            cubes(startNum, endNum);
-          }
-          window.location.href = "#output";
-        }, 3000);
-      }
-    </script>
+    <script src="JS/squares-cubes.js"></script>
   </body>
 </html>
