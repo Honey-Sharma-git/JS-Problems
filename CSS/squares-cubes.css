@@ -3,6 +3,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  /* outline: 2px solid red; */
 }
 * {
   margin: 0.5rem;
@@ -56,4 +57,11 @@ html {
 .form__select {
   width: 100px;
   padding: 0.5rem;
+}
+.main__output{
+    width: 100%;
+    text-align: center;
+}
+.output__para:hover{
+    background-color: rgb(227, 227, 227);
 }
