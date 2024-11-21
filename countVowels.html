@@ -6,8 +6,12 @@
     <title>Count Vowels</title>
   </head>
   <body>
-    <label for="sentence">Enter your sentence:</label>
-    <input
+    <!-- A JS PROGRAM TO COUNT VOWELS IN A STRING -->
+    <label for="sentence">Enter your text below:</label>
+    <br />
+    <textarea
+      cols="100"
+      rows="10"
       type="text"
       class="js-input"
       name="sentence"
@@ -15,40 +19,19 @@
       placeholder="Your sentence here."
       autofocus
       onkeydown="countVowels(event);"
-    />
+    ></textarea>
     <output class="js-output"></output>
     <script>
-      /* //An empty array to store characters of a string
-       let alphabet = [];
-       //It builds an array of characters and count vowels
-       function countVowels(event) {
-         buildArray(event);
-       }
-       //a counter to count number of a
-       let a = 0;
-       //It builds array of characters
-       function buildArray(event) {
-         //To select input and output element.
-         //const inputElement = document.querySelector(".js-input");
-         // const outputElement = document.querySelector(".js-output");
-         //To convert the input string to lowercase for comparison
-         // alphabet.push(event.key.toLowerCase());
-         // console.log(alphabet);
-         if (event.key === "a") {
-           a++;
-         }
-         console.log(a);
-       } */
-      let a = 0;
-      let e = 0;
-      let i = 0;
-      let o = 0;
-      let u = 0;
-      let aCount = 0;
-      let eCount = 0;
-      let iCount = 0;
-      let oCount = 0;
-      let uCount = 0;
+      let a = 0,
+        e = 0,
+        i = 0,
+        o = 0,
+        u = 0;
+      let aCount = 0,
+        eCount = 0,
+        iCount = 0,
+        oCount = 0,
+        uCount = 0;
       let vowelLog = {};
       function countVowels(event) {
         let alphabet = event.key.toLowerCase();
@@ -77,7 +60,6 @@
         vowelLog.i = iCount;
         vowelLog.o = oCount;
         vowelLog.u = uCount;
-        console.log(vowelLog);
         displayResult(vowelLog);
       }
       function displayResult(object) {
@@ -87,6 +69,12 @@
       }
       //   Todo: Must try for shorter approach
       //   Todo: Must try for.Each approach
+
+      // BUGS
+      // Backspace doesn't reset or decrease the vowel being erased. The counter keeps on increasing.
+      //On pasting or autocompleting text, it doesn't work because of onkeydown attribute. 
+      //There is no method to reset.
+      //Fonts are small and hard to read.
     </script>
   </body>
 </html>
