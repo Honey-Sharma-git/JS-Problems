@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Maker</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      class="js-input"
+      autofocus
+      onkeydown="handleKeydown(event);"
+    />
+    <ol class="js-output"></ol>
+    <script>
+      function handleKeydown(event) {
+        //compares the user's pressed key
+        if (event.key === "Enter") {
+          //If it is enter the it run the list making function
+          makeList();
+        }
+      }
+      //empty string to store list items.
+      let myArray = [];
+      function makeList() {
+        const inputElement = document.querySelector(".js-input");
+        const outputElement = document.querySelector(".js-output");
+        //accumulator
+        let html = "";
+        myArray.push(`<li>${inputElement.value}</li>`);
+        //looping through the array to append values.
+        myArray.forEach(function (value) {
+          html += value;
+        });
+        //displaying output
+        outputElement.innerHTML = html;
+        //resetting input field after pressing enter.
+        inputElement.value = "";
+      }
+    </script>
+  </body>
+</html>
