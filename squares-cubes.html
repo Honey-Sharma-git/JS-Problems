@@ -78,19 +78,19 @@
             <h3 class="article__title">Squares</h3>
             <button
               class="article__button"
-              onclick="window.location.href='#output'"
+              onclick="window.location.href='#output'; squares(1,10);"
             >
               1 - 10
             </button>
             <button
               class="article__button"
-              onclick="window.location.href='#output'"
+              onclick="window.location.href='#output'; squares(11,20); "
             >
               11 - 20
             </button>
             <button
               class="article__button"
-              onclick="window.location.href='#output'"
+              onclick="window.location.href='#output'; squares(21,30);"
             >
               21 - 30
             </button>
@@ -126,39 +126,76 @@
               name=""
               id=""
               placeholder="start"
-              class="form__input"
+              class="form__input js-input-start"
             />
             <input
               type="number"
               name=""
               id=""
               placeholder="end"
-              class="form__input"
+              class="form__input js-input-end"
             />
-            <select name="" id="" class="form__select">
-              <option value="">Squares</option>
-              <option value="">Cubes</option>
+            <select name="" id="" class="form__select js-select">
+              <option value="square">Squares</option>
+              <option value="cube">Cubes</option>
             </select>
           </form>
-          <button class="article__button">Generate</button>
-          <aside class="section__aside"></aside>
+          <button
+            class="article__button"
+            onclick="window.location.href='#output'; custom();"
+          >
+            Generate
+          </button>
+          <!-- <aside class="section__aside"></aside> -->
         </article>
-        <output class="main__output" id="output">dfadfasdfasfd</output>
+        <output class="main__output js-output" id="output"
+          ><p>Your table will be displayed here.</p></output
+        >
       </section>
     </main>
-    <!-- <button onclick="squares(1,10)">1-10</button>
-    <button onclick="cubes(11,20)">11-20</button> -->
     <script>
       //Square function
       function squares(start, end) {
+        document.querySelector(".js-output").innerHTML = "";
+        const squareArray = [];
         for (let i = start; i <= end; i++) {
-          console.log(`${i} sq = ${i * i}`);
+          let result = `<p class="output__para"> ${i} <sup>2</sup> = ${
+            i * i
+          }</p> `;
+          //saving para in array.
+          squareArray.push(result);
         }
+        //clearing output before using
+        //reading each value of array
+        squareArray.forEach(function (value) {
+          //appending each para with another
+          document.querySelector(".js-output").innerHTML += value;
+        });
       }
       //Cube function
       function cubes(start, end) {
+        const cubeArray = [];
         for (let i = start; i <= end; i++) {
-          console.log(`${i} cb = ${i * i * i}`);
+          let result = `<p class="output__para"> ${i} <sup>3</sup> = ${
+            i * i * i
+          }</p> `;
+          cubeArray.push(result);
+        }
+        console.log(cubeArray);
+      }
+
+      //Generate custom table
+      function custom() {
+        let selectValue = document.querySelector(".js-select").value;
+        console.log(selectValue);
+        let startNum = Number(document.querySelector(".js-input-start").value);
+        let endNum = Number(document.querySelector(".js-input-end").value);
+        console.log(startNum);
+        console.log(endNum);
+        if (selectValue === "square") {
+          squares(startNum, endNum);
+        } else {
+          cubes(startNum, endNum);
         }
       }
     </script>
