@@ -10,7 +10,6 @@
       *::after,
       *::before {
         box-sizing: border-box;
-        /* outline: 1px solid red; */
       }
       * {
         margin: 0.5rem;
@@ -19,13 +18,13 @@
       html {
         scroll-behavior: smooth;
       }
-      body {
-        height: 200vh;
-      }
       .mainContainer {
         display: flex;
         flex-flow: column;
         align-items: center;
+      }
+      .main__title {
+        text-align: center;
       }
       .main__section {
         display: flex;
@@ -77,18 +76,21 @@
           <article class="section__article">
             <h3 class="article__title">Squares</h3>
             <button
+              title="Click for table"
               class="article__button"
               onclick="window.location.href='#output'; squares(1,10);"
             >
               1 - 10
             </button>
             <button
+              title="Click for table"
               class="article__button"
               onclick="window.location.href='#output'; squares(11,20); "
             >
               11 - 20
             </button>
             <button
+              title="Click for table"
               class="article__button"
               onclick="window.location.href='#output'; squares(21,30);"
             >
@@ -98,18 +100,21 @@
           <article class="section__article">
             <h3 class="article__title">Cubes</h3>
             <button
+              title="Click for table"
               class="article__button"
               onclick="window.location.href='#output'; cubes(1,10);"
             >
               1 - 10
             </button>
             <button
+              title="Click for table"
               class="article__button"
               onclick="window.location.href='#output'; cubes(11,20);"
             >
               11 - 20
             </button>
             <button
+              title="Click for table"
               class="article__button"
               onclick="window.location.href='#output'; cubes(21,30);"
             >
@@ -119,9 +124,9 @@
         </div>
         <article class="section__article">
           <h3 class="article__title">Custom</h3>
-          <!-- Todo: Add placeholder -->
           <form class="article__form">
             <input
+              title="Enter starting number for the table"
               type="number"
               name=""
               id=""
@@ -129,26 +134,32 @@
               class="form__input js-input-start"
             />
             <input
+              title="Enter ending number for the table"
               type="number"
               name=""
               id=""
               placeholder="end"
               class="form__input js-input-end"
             />
-            <select name="" id="" class="form__select js-select">
+            <select
+              name=""
+              id=""
+              class="form__select js-select"
+              title="Select option"
+            >
               <option value="square">Squares</option>
               <option value="cube">Cubes</option>
             </select>
           </form>
           <button
+            title="Click to generate custom table"
             class="article__button"
             onclick="window.location.href='#output'; custom();"
           >
             Generate
           </button>
-          <!-- <aside class="section__aside"></aside> -->
         </article>
-        <output class="main__output js-output" id="output"
+        <output role="alert" class="main__output js-output" id="output"
           ><p>Your table will be displayed here.</p></output
         >
       </section>
@@ -193,15 +204,20 @@
       }
 
       //Generate custom table
+
       function custom() {
         let selectValue = document.querySelector(".js-select").value;
         let startNum = Number(document.querySelector(".js-input-start").value);
         let endNum = Number(document.querySelector(".js-input-end").value);
-        if (selectValue === "square") {
-          squares(startNum, endNum);
-        } else {
-          cubes(startNum, endNum);
-        }
+        document.querySelector(".js-output").innerHTML = `<p>Loading...</p>`;
+        setTimeout(() => {
+          if (selectValue === "square") {
+            squares(startNum, endNum);
+          } else {
+            cubes(startNum, endNum);
+          }
+          window.location.href = "#output";
+        }, 3000);
       }
     </script>
   </body>
