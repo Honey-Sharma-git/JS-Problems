@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count Vowels</title>
+  </head>
+  <body>
+    <!-- A JS PROGRAM TO COUNT VOWELS IN A STRING -->
+    <label for="sentence">Enter your text below:</label>
+    <br />
+    <textarea
+      cols="100"
+      rows="10"
+      type="text"
+      class="js-input"
+      name="sentence"
+      id="sentence"
+      placeholder="Your sentence here."
+      autofocus
+      onkeydown="buildArray(event);"
+    ></textarea>
+    <button class="js-button" onclick="countVowels();">Count</button>
+    <output class="js-output"></output>
+    <script>
+      let alphabetArray = [];
+      function buildArray(event) {
+        //capturing keys and turning them to lowercase for comparison
+        let alphabet = event.key.toLowerCase();
+        //Saving captured keys into an array
+        alphabetArray.push(alphabet);
+        //Remove the last two elements when pressed backspace.
+        //2 elements because on pressing backspace, a backspace is also pushed as an element.
+        //therefore, 'element' + 'backspace'
+        if (event.key === "Backspace") {
+          alphabetArray.splice(alphabetArray.length - 2, 2);
+        }
+      }
+      function countVowels() {
+        //resetting counters every time user clicks button
+        let a = 0,
+          e = 0,
+          i = 0,
+          o = 0,
+          u = 0;
+        let aCount = 0,
+          eCount = 0,
+          iCount = 0,
+          oCount = 0,
+          uCount = 0;
+        //Resetting vowelLog on click.
+        let vowelLog = {};
+        console.log(vowelLog);
+        // console.log(alphabetArray);
+        alphabetArray.forEach(function (value) {
+          if (value === "a") {
+            a++;
+            aCount = a;
+          }
+          if (value === "e") {
+            e++;
+            eCount = e;
+          }
+          if (value === "i") {
+            i++;
+            iCount = i;
+          }
+          if (value === "o") {
+            o++;
+            oCount = o;
+          }
+          if (value === "u") {
+            u++;
+            uCount = u;
+          }
+        });
+        vowelLog.a = aCount;
+        vowelLog.e = eCount;
+        vowelLog.i = iCount;
+        vowelLog.o = oCount;
+        vowelLog.u = uCount;
+        console.log(vowelLog);
+        displayResult(vowelLog);
+      }
+      function displayResult(object) {
+        document.querySelector(
+          ".js-output"
+        ).innerHTML = `<p> A: ${object.a}</p> <p>E: ${object.e} </p><p> I: ${object.i} </p><p>O: ${object.o} </p><p>U: ${object.u}`;
+      }
+      //   Todo: Must try for shorter approach
+      //   Todo: Must try for.Each approach
+
+      // BUGS
+      //Backspace removes the last element but selecting the text and then pressing backspace doesn't capture the elements being erased.
+      //On pasting or autocompleting text, it doesn't work because of onkeydown attribute.
+      //There is no method to reset.
+      //Fonts are small and hard to read.
+    </script>
+  </body>
+</html>
