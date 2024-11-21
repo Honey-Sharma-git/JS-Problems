@@ -4,33 +4,107 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Squares and Cubes</title>
-    <style></style>
+    <style>
+      /* CSS RESET */
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        outline: 1px solid red;
+      }
+      * {
+        margin: 0.5rem;
+        padding: 0;
+      }
+      .mainContainer {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+      }
+      .main__section {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+      }
+      .section__div {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+      }
+      .section__article {
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+        align-items: center;
+      }
+      .article__form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+      }
+
+      .article__button {
+        border: none;
+        padding: 0.5rem 1rem;
+        width: 100px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 0.1px 0px 0.1px black, 0px 1px 0px 1px gray;
+        background-color: dodgerblue;
+      }
+      .form__input,
+      .form__select {
+        width: 100px;
+        padding: 0.5rem;
+      }
+    </style>
   </head>
   <body>
     <main class="mainContainer">
       <h1 class="main__title">Square and Table Generator</h1>
       <section class="main__section">
         <h2 class="section__title">Square and cubes tables</h2>
-        <article class="section__article">
-          <h3 class="article__title">Squares</h3>
-          <button class="article__button">1-10</button>
-          <button class="article__button">11-20</button>
-          <button class="article__button">21-30</button>
-        </article>
-        <article class="section__article">
-          <h3 class="article__title">Cubes</h3>
-          <button class="article__button">1-10</button>
-          <button class="article__button">11-20</button>
-          <button class="article__button">21-30</button>
-        </article>
+
+        <div class="section__div">
+          <article class="section__article">
+            <h3 class="article__title">Squares</h3>
+            <button class="article__button">1 - 10</button>
+            <button class="article__button">11 - 20</button>
+            <button class="article__button">21 - 30</button>
+          </article>
+          <article class="section__article">
+            <h3 class="article__title">Cubes</h3>
+            <button class="article__button">1 - 10</button>
+            <button class="article__button">11 - 20</button>
+            <button class="article__button">21 - 30</button>
+          </article>
+        </div>
         <article class="section__article">
           <h3 class="article__title">Custom</h3>
-          <input type="number" name="" id="" class="article__input" />
-          <input type="number" name="" id="" class="article__input" />
-          <select name="" id="" class="article__select">
-            <option value="">Squares</option>
-            <option value="">Cubes</option>
-          </select>
+          <!-- Todo: Add placeholder -->
+          <form class="article__form">
+            <input
+              type="number"
+              name=""
+              id=""
+              placeholder="start"
+              class="form__input"
+            />
+            <input
+              type="number"
+              name=""
+              id=""
+              placeholder="end"
+              class="form__input"
+            />
+            <select name="" id="" class="form__select">
+              <option value="">Squares</option>
+              <option value="">Cubes</option>
+            </select>
+          </form>
+          <button class="article__button">Generate</button>
           <aside class="section__aside"></aside>
         </article>
         <output class="main__output"></output>
