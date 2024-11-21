@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squares and Cubes</title>
+    <style></style>
+  </head>
+  <body>
+    <button onclick="squares(1,10)">1-10</button>
+    <button onclick="cubes(11,20)">11-20</button>
+    <script>
+      //Square function
+      function squares(start, end) {
+        for (let i = start; i <= end; i++) {
+          console.log(`${i} sq = ${i * i}`);
+        }
+      }
+      //Cube function
+      function cubes(start, end) {
+        for (let i = start; i <= end; i++) {
+          console.log(`${i} cb = ${i * i * i}`);
+        }
+      }
+    </script>
+  </body>
+</html>
