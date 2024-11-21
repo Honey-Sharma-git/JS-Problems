@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count character occurrences</title>
+  </head>
+  <body>
+    <script>
+      const sentence =
+        "My name is                                                                   Honey Sharma. I am ";
+      countWords(sentence);
+      function countWords() {
+        //To remove extra spaces and tabs in the string.
+        let properSentence = sentence.replace(/\s+/g, " ");
+        //splitting the sentence into array elements using single space.
+        const myArray = properSentence.split(" ");
+        //Calculating the length of an array to get the count of elements in it.
+        let words = myArray.length;
+        console.log(words);
+      }
+      countCharacters(sentence);
+      function countCharacters() {
+        console.log(sentence.length);
+      }
+      const mySentence = "She sells seashells by the seashore.";
+
+      countLetter("s");
+      function countLetter(letter) {
+        let counter = 0;
+        const myArray = mySentence.split("");
+        console.log(myArray);
+        myArray.forEach(function (value) {
+          if (value === letter) {
+            counter++;
+          }
+        });
+        console.log(`No of '${letter}' in the sentence is ${counter}`);
+      }
+    </script>
+  </body>
+</html>
