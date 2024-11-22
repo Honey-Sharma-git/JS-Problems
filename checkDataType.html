@@ -60,18 +60,26 @@
       class="js-input input-field"
       placeholder="Enter your data"
     />
-    <button class="js-button check-button" onclick=" checkButton();">
-      Check
-    </button>
+    <button class="js-button check-button">Check</button>
     <p class="js-output output-para"></p>
     <script>
+      const buttonElement = document.querySelector(".js-button");
+      buttonElement.addEventListener("click", () => {
+        checkButton();
+      });
       function checkButton() {
         const inputValue = document.querySelector(".js-input").value;
-        document.querySelector(".js-output").innerHTML =
-          checkDataType(inputValue);
+        document.querySelector(".js-output").innerHTML = "Loading...";
+        setTimeout(() => {
+          document.querySelector(".js-output").innerHTML =
+            checkDataType(inputValue);
+        }, 2000);
       }
+
+      // Todo: input field always returns string value. Change approach.
       function checkDataType(value) {
-        if (typeof value === "object") {
+        return `${value} has ${typeof value} data`;
+        /*  if (typeof value === "object") {
           return `${value} has object data type`;
         } else if (typeof value === "undefined") {
           return `${value} has undefined data type`;
@@ -83,7 +91,7 @@
           return `${value} has boolean data type`;
         } else {
           return `${value} has some other data type`;
-        }
+        } */
       }
     </script>
   </body>
