@@ -29,32 +29,43 @@
       class="js-color-input"
       placeholder="Enter color name"
       autofocus
-      oninput="getColor();"
     />
     <input
       type="text"
       class="js-height-input"
       placeholder="Enter height in px"
-      oninput="getHeight();"
     />
-    <input
-      type="text"
-      class="js-width-input"
-      placeholder="Enter width in px"
-      oninput="getWidth();"
-    />
+    <input type="text" class="js-width-input" placeholder="Enter width in px" />
     <div class="js-div"></div>
     <script>
+      //Adding event listener to color input
+      const colorInputElement = document.querySelector(".js-color-input");
+      colorInputElement.addEventListener("input", () => {
+        getColor();
+      });
+      //This modifies color to the box
       function getColor() {
-        let color = document.querySelector(".js-color-input").value;
+        const color = colorInputElement.value;
         document.documentElement.style.setProperty("--BG-COLOR", color);
       }
+      //Adding event listener to the height input
+      const heightInputElement = document.querySelector(".js-height-input");
+      heightInputElement.addEventListener("input", () => {
+        getHeight();
+      });
+      //This modifies the height of the box
       function getHeight() {
-        let height = document.querySelector(".js-height-input").value;
+        const height = heightInputElement.value;
         document.documentElement.style.setProperty("--HEIGHT", height);
       }
+      //Adding event listener to the width input
+      const widthInputElement = document.querySelector(".js-width-input");
+      widthInputElement.addEventListener("input", () => {
+        getWidth();
+      });
+      //This modifies the width of the box
       function getWidth() {
-        let width = document.querySelector(".js-width-input").value;
+        const width = widthInputElement.value;
         document.documentElement.style.setProperty("--WIDTH", width);
       }
     </script>
