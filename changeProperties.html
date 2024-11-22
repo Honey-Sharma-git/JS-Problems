@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Change Properties</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Change Properties</title>
     <style>
       :root {
         --BG-COLOR: transparent;
         --WIDTH: 150px;
         --HEIGHT: 150px;
       }
-      .js-div {
+      .box {
         margin-top: 1rem;
         height: var(--HEIGHT);
         width: var(--WIDTH);
@@ -20,33 +20,37 @@
     </style>
   </head>
   <body>
-    <h1>Change background color of the square</h1>
-    <label for="box-color">Enter box color:</label>
-    <input
-      type="text"
-      name="box-color"
-      id="box-color"
-      class="js-color-input"
-      placeholder="Enter color name"
-      autofocus
-    />
-    <label for="box-height">Enter box height:</label>
-    <input
-      type="text"
-      name="box-height"
-      id="box-height"
-      class="js-height-input"
-      placeholder="Enter height in px"
-    />
-    <label for="box-width">Enter box width:</label>
-    <input
-      type="text"
-      id="box-width"
-      name="box-width"
-      class="js-width-input"
-      placeholder="Enter width in px"
-    />
-    <div class="js-div"></div>
+    <main class="main__container">
+      <h1>Change background color of the square</h1>
+      <form>
+        <label class="form__label" for="box-color">Enter box color:</label>
+        <input
+          type="text"
+          name="box-color"
+          id="box-color"
+          class="js-color-input form__input"
+          placeholder="Enter color name"
+          autofocus
+        />
+        <label class="form__label" for="box-height">Enter box height:</label>
+        <input
+          type="text"
+          name="box-height"
+          id="box-height"
+          class="js-height-input form__input"
+          placeholder="Enter height in px"
+        />
+        <label class="form__label" for="box-width">Enter box width:</label>
+        <input
+          type="text"
+          id="box-width"
+          name="box-width"
+          class="js-width-input form__input"
+          placeholder="Enter width in px"
+        />
+      </form>
+      <div class="box"></div>
+    </main>
     <script>
       //Adding event listener to color input
       const colorInputElement = document.querySelector(".js-color-input");
