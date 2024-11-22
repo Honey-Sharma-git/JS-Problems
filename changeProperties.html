@@ -78,19 +78,19 @@
         />
         <label class="form__label" for="box-height">Enter box height:</label>
         <input
-          type="text"
+          type="number"
           name="box-height"
           id="box-height"
           class="js-height-input form__input"
-          placeholder="Enter height in px"
+          placeholder="Enter height"
         />
         <label class="form__label" for="box-width">Enter box width:</label>
         <input
-          type="text"
+          type="number"
           id="box-width"
           name="box-width"
           class="js-width-input form__input"
-          placeholder="Enter width in px"
+          placeholder="Enter width"
         />
       </form>
     </main>
@@ -112,7 +112,7 @@
       });
       //This modifies the height of the box
       function getHeight() {
-        const height = heightInputElement.value;
+        const height = heightInputElement.value + "px";
         document.documentElement.style.setProperty("--HEIGHT", height);
       }
       //Adding event listener to the width input
@@ -122,7 +122,7 @@
       });
       //This modifies the width of the box
       function getWidth() {
-        const width = widthInputElement.value;
+        const width = widthInputElement.value + "px";
         document.documentElement.style.setProperty("--WIDTH", width);
       }
     </script>
