@@ -32,6 +32,9 @@
         place-items: center;
         margin: 32px 16px;
       }
+      .main__title {
+        text-align: center;
+      }
       .main__form {
         place-self: stretch;
         display: grid;
@@ -39,7 +42,8 @@
         row-gap: 32px;
         column-gap: 16px;
         align-items: center;
-        margin: 32px 5px;
+        padding: 32px 5px;
+        border-top: 3px solid lightgray;
       }
       .form__label {
         font-size: 1.25rem;
@@ -59,12 +63,13 @@
         border: 3px solid black;
         border-radius: var(--CORNERS);
         background-color: var(--BG-COLOR);
+        margin: 32px;
       }
     </style>
   </head>
   <body>
     <main class="main__container">
-      <h1>Change background color of the square</h1>
+      <h1 class="main__title">Change background color of the square</h1>
       <div class="box"></div>
       <form class="main__form">
         <label class="form__label" for="box-color">Enter box color:</label>
