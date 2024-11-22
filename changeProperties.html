@@ -21,21 +21,31 @@
   </head>
   <body>
     <h1>Change background color of the square</h1>
-    <label for="colorName"
-      >Enter a valid color name to change background color:</label
-    ><br />
+    <label for="box-color">Enter box color:</label>
     <input
       type="text"
+      name="box-color"
+      id="box-color"
       class="js-color-input"
       placeholder="Enter color name"
       autofocus
     />
+    <label for="box-height">Enter box height:</label>
     <input
       type="text"
+      name="box-height"
+      id="box-height"
       class="js-height-input"
       placeholder="Enter height in px"
     />
-    <input type="text" class="js-width-input" placeholder="Enter width in px" />
+    <label for="box-width">Enter box width:</label>
+    <input
+      type="text"
+      id="box-width"
+      name="box-width"
+      class="js-width-input"
+      placeholder="Enter width in px"
+    />
     <div class="js-div"></div>
     <script>
       //Adding event listener to color input
