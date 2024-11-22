@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Check empty string</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Check empty string</title>
   </head>
   <body>
     <!-- Implement a program to check if a string is empty or not. -->
-    <label for="username">Please enter your username:</label><br />
-    <input
-      type="text"
-      class="js-input"
-      id="username"
-      name="username"
-      autofocus
-      placeholder="username"
-    /><br />
-    <button class="js-button" onclick="checkString()">Submit</button>
-    <output class="js-output"></output>
+    <main class="main">
+      <form class="main__form js-form">
+        <label class="form__label" for="username"
+          >Please enter your username:</label
+        >
+        <input
+          type="text"
+          class="js-input form__input"
+          id="username"
+          name="username"
+          autofocus
+          placeholder="username"
+        />
+        <button class="js-button form__button">Submit</button>
+      </form>
+      <output class="js-output main__output"></output>
+    </main>
     <script>
+      //Added event listener for button element.
+      const buttonElement = document.querySelector(".js-button");
+      buttonElement.addEventListener("click", () => {
+        checkString();
+      });
+      //Added event listener to prevent form element from submitting.
+      const formElement = document.querySelector(".js-form");
+      formElement.addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+      //To check if the input is empty or not
       function checkString() {
         const inputElement = document.querySelector(".js-input").value;
         let outputElement;
@@ -27,6 +44,7 @@
         } else {
           outputElement = `Your name is ${inputElement}`;
         }
+        //Showing message in output element
         document.querySelector(".js-output").innerHTML = outputElement;
       }
     </script>
