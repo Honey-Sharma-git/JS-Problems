@@ -5,16 +5,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      /*CSS RESET*/
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        /* outline: 1px solid red; */
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
       :root {
         --BG-COLOR: transparent;
         --WIDTH: 150px;
         --HEIGHT: 150px;
+        --FF: "Roboto", Sans-serif;
+        --CORNERS: 7px;
+      }
+      body {
+        font-family: var(--FF);
+      }
+      .main__container {
+        display: grid;
+        place-items: center;
+        margin: 32px 16px;
+      }
+      .main__form {
+        place-self: stretch;
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 32px;
+        column-gap: 16px;
+        align-items: center;
+        margin: 32px 5px;
+      }
+      .form__label {
+        font-size: 1.25rem;
+      }
+      .form__input {
+        font-size: 1rem;
+        padding: 7px;
+        outline: transparent;
+        border: 2px solid black;
+        border-radius: var(--CORNERS);
+        min-width: 100px;
       }
       .box {
         margin-top: 1rem;
         height: var(--HEIGHT);
         width: var(--WIDTH);
-        border: 3px solid grey;
+        border: 3px solid black;
+        border-radius: var(--CORNERS);
         background-color: var(--BG-COLOR);
       }
     </style>
@@ -22,7 +65,8 @@
   <body>
     <main class="main__container">
       <h1>Change background color of the square</h1>
-      <form>
+      <div class="box"></div>
+      <form class="main__form">
         <label class="form__label" for="box-color">Enter box color:</label>
         <input
           type="text"
@@ -49,7 +93,6 @@
           placeholder="Enter width in px"
         />
       </form>
-      <div class="box"></div>
     </main>
     <script>
       //Adding event listener to color input
