@@ -5,36 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Color Generator</title>
     <style>
+      * {
+        /* outline: 2px solid red; */
+      }
       :root {
         --RED: 0;
         --BLUE: 0;
         --GREEN: 0;
       }
       body {
+        margin: 0;
         background-color: rgb(var(--RED), var(--BLUE), var(--GREEN));
+        min-height: 98vh;
+        display: grid;
+        place-content: center stretch;
+      }
+      .para {
+        background-color: rgba(255, 255, 255, 0.408);
+        font-size: 2rem;
+        padding: 2rem;
+        text-align: center;
       }
     </style>
   </head>
-  <body id="body">
-    <button type="button" class="js-button">Change</button>
+  <body id="body" class="js-body">
+    <p class="para">Press Space bar or tap on screen to change</p>
     <script>
-      const buttonElement = document.querySelector(".js-button");
-      buttonElement.addEventListener("click", () => {
+      body.addEventListener("keydown", (event) => {
+        //On pressing spacebar
+        if (event.key === " ") {
+          changeColor();
+        }
+      });
+      body.addEventListener("click", () => {
         changeColor();
       });
-
+      //Applies a random color to the element
       function changeColor() {
+        //Storing RGB values
+        const redColor = randomNumber(0, 255);
+        const blueColor = randomNumber(0, 255);
+        const greenColor = randomNumber(0, 255);
+        //Modifying properties
+        document.getElementById("body").style.setProperty("--RED", redColor);
+        document.getElementById("body").style.setProperty("--BLUE", blueColor);
         document
           .getElementById("body")
-          .style.setProperty("--RED", randomNumber(0, 255));
-        document
-          .getElementById("body")
-          .style.setProperty("--BLUE", randomNumber(0, 255));
-        document
-          .getElementById("body")
-          .style.setProperty("--GREEN", randomNumber(0, 255));
+          .style.setProperty("--GREEN", greenColor);
+        console.log(redColor);
+        console.log(greenColor);
+        console.log(blueColor);
       }
-      randomNumber(1, 5);
+      //Generating random number
       function randomNumber(min, max) {
         const randomValue = min + Math.floor(Math.random() * (max - min + 1));
         return randomValue;
