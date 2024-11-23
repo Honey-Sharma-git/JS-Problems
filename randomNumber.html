@@ -7,12 +7,57 @@
   </head>
   <body>
     <h1>randomNumber(min, max);</h1>
+    <main class="main">
+      <form class="main__form">
+        <label for="minValue" class="form__label"
+          >Enter a minimum value for the range:</label
+        >
+        <input
+          type="number"
+          placeholder="Minimum value"
+          autofocus
+          id="minValue"
+          name="minValue"
+          class="form__input js-min-input"
+        />
+        <label for="maxValue" class="form__label"
+          >Enter a maximum value for the range:</label
+        >
+        <input
+          type="number"
+          placeholder="Maximum value"
+          id="maxValue"
+          name="maxValue"
+          class="form__input js-max-input"
+        />
+        <button type="button" class="form__button js-generate-button">
+          Generate
+        </button>
+        <button type="reset" class="form__button js-reset-button">Reset</button>
+        <output class="form__output js-output"></output>
+      </form>
+    </main>
     <script>
-      console.log(randomNumber(0, 255));
+      //Selecting elements
+      const minInputElement = document.querySelector(".js-min-input");
+      const maxInputElement = document.querySelector(".js-max-input");
+      const generateButtonElement = document.querySelector(
+        ".js-generate-button"
+      );
+      const resetButtonElement = document.querySelector(".js-reset-button");
+      const outputElement = document.querySelector(".js-output");
+      //Adding event listener to button
+      generateButtonElement.addEventListener("click", () => {
+        //Saving values
+        const minValue = Number(minInputElement.value);
+        const maxValue = Number(maxInputElement.value);
+        console.log(randomNumber(minValue, maxValue));
+      });
+
+      // console.log(randomNumber(0, 255));
       function randomNumber(min, max) {
-        //Adding 1 to make maximum number inclusive
-        let randomValue = min + Math.floor(Math.random() * (max - min + 1));
-        return randomValue;
+        const randomValue = min + Math.floor(Math.random() * (max - min + 1));
+        outputElement.innerHTML = randomValue;
       }
     </script>
   </body>
