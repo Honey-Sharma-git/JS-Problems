@@ -1,0 +1,19 @@
+~<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>randomNumber(min, max)</title>
+  </head>
+  <body>
+    <h1>randomNumber(min, max);</h1>
+    <script>
+      console.log(randomNumber(0, 255));
+      function randomNumber(min, max) {
+        //Adding 1 to make maximum number inclusive
+        let randomValue = min + Math.floor(Math.random() * (max - min + 1));
+        return randomValue;
+      }
+    </script>
+  </body>
+</html>
