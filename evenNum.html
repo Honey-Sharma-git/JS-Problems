@@ -16,26 +16,81 @@
           autofocus
           name="startNum"
           id="startNum"
-          class="form__input"
+          class="form__input js-startNum"
         />
         <label for="endNum" class="form__label">Enter ending number:</label>
-        <input type="number" name="endNum" id="endNum" class="form__input" />
-        <select name="numType" id="numType" class="form__select">
+        <input
+          type="number"
+          name="endNum"
+          id="endNum"
+          placeholder="Ending number"
+          class="form__input js-endNum"
+        />
+        <select name="numType" id="numType" class="form__select js-option">
           <option value="positive">Only positive</option>
           <option value="negative">Only negative</option>
         </select>
+        <button type="button" class="form__button js-button">Generate</button>
       </form>
+      <div class="main__output js-output"></div>
     </main>
     <script>
+      /* //Preventing form from submitting
+      const formElement = document.getElementById("main__form");
+      formElement.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }); */
+
+      //Selecting elements:
+      const optionElement = document.querySelector(".js-option");
+      const startNumInputElement = document.querySelector(".js-startNum");
+      const endNumInputElement = document.querySelector(".js-endNum");
+      const outputElement = document.querySelector(".js-output");
+
+      //Adding eventListener to button
+      const buttonElement = document.querySelector(".js-button");
+      buttonElement.addEventListener("click", () => {
+        //Saving element's values:
+        const startNum = Number(startNumInputElement.value);
+        const endNum = Number(endNumInputElement.value);
+
+        displayEvenNum(startNum, endNum);
+      });
+
       //To display even numbers
-      const fNum = 1;
-      const lNum = 11;
-      displayEvenNum(-2, 12);
       function displayEvenNum(start, end) {
-        start = start % 2 === 0 ? start : start + 1;
-        for (i = start; i <= end; i += 2) {
-          console.log(i);
+        if (start > end) {
+          return console.log(
+            "Starting number cannot be greater than ending number."
+          );
         }
+        //An empty array to store even numbers
+        const myArray = [];
+        //To make first number suitable for calculation
+        start = start % 2 === 0 ? start : start + 1;
+        //Adding even numbers to the array
+        for (i = start; i <= end; i += 2) {
+          myArray.push(i);
+        }
+        //For filtering positive/negative values
+        const option = optionElement.value;
+        let filteredArray;
+        if (option === "positive") {
+          //Only positive values are added
+          filteredArray = myArray.filter((value) => {
+            if (value >= 0) {
+              return true;
+            }
+          });
+        } else {
+          //Only negative values are added
+          filteredArray = myArray.filter((value) => {
+            if (value < 0) {
+              return true;
+            }
+          });
+        }
+        console.log(filteredArray);
       }
     </script>
   </body>
