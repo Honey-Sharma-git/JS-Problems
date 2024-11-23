@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even numbers</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="main__title">Even Numbers</h1>
+      <form class="main__form" id="main__form">
+        <label for="startNum" class="form__label">Enter starting number:</label>
+        <input
+          type="number"
+          placeholder="Starting number"
+          autofocus
+          name="startNum"
+          id="startNum"
+          class="form__input"
+        />
+        <label for="endNum" class="form__label">Enter ending number:</label>
+        <input type="number" name="endNum" id="endNum" class="form__input" />
+        <select name="numType" id="numType" class="form__select">
+          <option value="positive">Only positive</option>
+          <option value="negative">Only negative</option>
+        </select>
+      </form>
+    </main>
+    <script>
+      //To display even numbers
+      const fNum = 1;
+      const lNum = 11;
+      displayEvenNum(-2, 12);
+      function displayEvenNum(start, end) {
+        start = start % 2 === 0 ? start : start + 1;
+        for (i = start; i <= end; i += 2) {
+          console.log(i);
+        }
+      }
+    </script>
+  </body>
+</html>
