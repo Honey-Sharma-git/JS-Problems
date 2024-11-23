@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Color Generator</title>
     <style>
-      * {
-        /* outline: 2px solid red; */
-      }
       :root {
         --RED: 0;
         --BLUE: 0;
@@ -30,9 +27,10 @@
   </head>
   <body id="body" class="js-body">
     <p class="para">Press Space bar or tap on screen to change</p>
+    <p class="para js-para"></p>
     <script>
       body.addEventListener("keydown", (event) => {
-        //On pressing spacebar
+        //On pressing space-bar
         if (event.key === " ") {
           changeColor();
         }
@@ -52,9 +50,9 @@
         document
           .getElementById("body")
           .style.setProperty("--GREEN", greenColor);
-        console.log(redColor);
-        console.log(greenColor);
-        console.log(blueColor);
+        document.querySelector(
+          ".js-para"
+        ).innerHTML = `RED: ${redColor} GREEN: ${greenColor} BLUE: ${blueColor}`;
       }
       //Generating random number
       function randomNumber(min, max) {
