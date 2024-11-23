@@ -26,6 +26,10 @@
       }
       body {
         font-family: var(--FF);
+        background-image: url("/Images/backdrop-7.png");
+        background-repeat: no-repeat;
+        background-position: top center;
+        color: white;
       }
       .main__container {
         display: grid;
@@ -49,18 +53,23 @@
         font-size: 1.25rem;
       }
       .form__input {
+        background-color: transparent;
         font-size: 1rem;
         padding: 7px;
         outline: transparent;
-        border: 2px solid black;
+        border: 2px solid white;
         border-radius: var(--CORNERS);
         min-width: 100px;
+        color: white;
+      }
+      .form__input::placeholder {
+        color: white;
       }
       .box {
         margin-top: 1rem;
         height: var(--HEIGHT);
         width: var(--WIDTH);
-        border: 3px solid black;
+        border: 3px solid white;
         border-radius: var(--CORNERS);
         background-color: var(--BG-COLOR);
         margin: 32px;
