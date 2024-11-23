@@ -32,6 +32,7 @@
           <option value="negative">Only negative</option>
         </select>
         <button type="button" class="form__button js-button">Generate</button>
+        <button type="reset" class="form__button js-reset-button">Reset</button>
       </form>
       <ul class="main__output js-output"></ul>
     </main>
@@ -42,6 +43,7 @@
       const endNumInputElement = document.querySelector(".js-endNum");
       const outputElement = document.querySelector(".js-output");
       const buttonElement = document.querySelector(".js-button");
+      const resetButtonElement = document.querySelector(".js-reset-button");
 
       //Adding eventListener to button
       buttonElement.addEventListener("click", () => {
@@ -52,15 +54,22 @@
         displayEvenNum(startNum, endNum);
       });
 
+      //Adding event to reset button
+      resetButtonElement.addEventListener("click", () => {
+        reset();
+      });
       //To display even numbers
       function displayEvenNum(start, end) {
+        //Check-1: For inappropriate range
         if (start > end) {
           return (outputElement.innerHTML = `<li>Starting number cannot be greater than ending number.</li>`);
         }
+        // Check-2 if range is negative but option is positive
         const option = optionElement.value;
         if (start < 0 && end < 0 && option === "positive") {
           return (outputElement.innerHTML = "There is no positive number.");
         }
+        // Check-3 if range is positive but option is negative
         if (start >= 0 && end >= 0 && option === "negative") {
           return (outputElement.innerHTML = "There is no negative number.");
         }
@@ -94,8 +103,12 @@
           filteredArray = myArray;
         }
         //Getting output
-        outputElement.innerHTML = filteredArray;
+        outputElement.innerHTML = `Count of numbers: ${filteredArray.length} <br> Even Numbers: ${filteredArray}`;
         console.log(filteredArray);
+      }
+      function reset() {
+        filteredArray = [];
+        outputElement.innerHTML = "";
       }
     </script>
   </body>
