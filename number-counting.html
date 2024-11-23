@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Counting numbers</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Number Counting</title>
     <link rel="stylesheet" href="CSS/number-counting.css" />
   </head>
-  <body>
+  <body class="body">
     <header class="header">
-      <h1 class="header__title">Number counting</h1>
+      <h1 class="header__title">Counting Numbers</h1>
     </header>
     <main class="main">
       <form action="https://httpbin.org/get" method="get" class="main__form">
@@ -36,14 +36,17 @@
           name="endNum"
           id="endNum"
         />
-
-        <button class="reset js-button-generate">Reset</button>
+        <button type="button" class="generate js-button-generate form__button">
+          Generate
+        </button>
+        <button type="reset" class="reset js-reset-button form__button">
+          Reset
+        </button>
       </form>
-      <button class="generate js-button-generate" onclick="generate();">
-        Generate
-      </button>
-      <article class="article">
-        <h3 class="article__title js-article__title"></h3>
+      <article class="main__article">
+        <h3 class="article__title js-article__title">
+          Your counting numbers will be displayed below
+        </h3>
       </article>
     </main>
     <script src="JS/number-counting.js"></script>
