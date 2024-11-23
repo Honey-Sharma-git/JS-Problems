@@ -27,28 +27,23 @@
           class="form__input js-endNum"
         />
         <select name="numType" id="numType" class="form__select js-option">
+          <option value="all" selected>All</option>
           <option value="positive">Only positive</option>
           <option value="negative">Only negative</option>
         </select>
         <button type="button" class="form__button js-button">Generate</button>
       </form>
-      <div class="main__output js-output"></div>
+      <ul class="main__output js-output"></ul>
     </main>
     <script>
-      /* //Preventing form from submitting
-      const formElement = document.getElementById("main__form");
-      formElement.addEventListener("submit", (event) => {
-        event.preventDefault();
-      }); */
-
       //Selecting elements:
       const optionElement = document.querySelector(".js-option");
       const startNumInputElement = document.querySelector(".js-startNum");
       const endNumInputElement = document.querySelector(".js-endNum");
       const outputElement = document.querySelector(".js-output");
+      const buttonElement = document.querySelector(".js-button");
 
       //Adding eventListener to button
-      const buttonElement = document.querySelector(".js-button");
       buttonElement.addEventListener("click", () => {
         //Saving element's values:
         const startNum = Number(startNumInputElement.value);
@@ -60,9 +55,7 @@
       //To display even numbers
       function displayEvenNum(start, end) {
         if (start > end) {
-          return console.log(
-            "Starting number cannot be greater than ending number."
-          );
+          return (outputElement.innerHTML = `<li>Starting number cannot be greater than ending number.</li>`);
         }
         //An empty array to store even numbers
         const myArray = [];
@@ -82,14 +75,19 @@
               return true;
             }
           });
-        } else {
+        } else if (option === "negative") {
           //Only negative values are added
           filteredArray = myArray.filter((value) => {
             if (value < 0) {
               return true;
             }
           });
+        } else {
+          //All the values are added.
+          filteredArray = myArray;
         }
+        //Getting output
+        outputElement.innerHTML = filteredArray;
         console.log(filteredArray);
       }
     </script>
