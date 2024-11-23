@@ -57,6 +57,13 @@
         if (start > end) {
           return (outputElement.innerHTML = `<li>Starting number cannot be greater than ending number.</li>`);
         }
+        const option = optionElement.value;
+        if (start < 0 && end < 0 && option === "positive") {
+          return (outputElement.innerHTML = "There is no positive number.");
+        }
+        if (start >= 0 && end >= 0 && option === "negative") {
+          return (outputElement.innerHTML = "There is no negative number.");
+        }
         //An empty array to store even numbers
         const myArray = [];
         //To make first number suitable for calculation
@@ -65,8 +72,8 @@
         for (i = start; i <= end; i += 2) {
           myArray.push(i);
         }
+        console.log(myArray);
         //For filtering positive/negative values
-        const option = optionElement.value;
         let filteredArray;
         if (option === "positive") {
           //Only positive values are added
