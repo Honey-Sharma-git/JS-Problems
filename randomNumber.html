@@ -1,14 +1,87 @@
-~<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>randomNumber(min, max)</title>
-    <style></style>
+    <style>
+      /* CSS RESET */
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        /* outline: 1px solid red; */
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --BG-COLOR: #ffdbda;
+        --BUTTON-BG-COLOR: #604d53;
+      }
+      body {
+        font-size: 1.25rem;
+        min-height: 100vh;
+        padding: 1rem;
+        background-color: var(--BG-COLOR);
+        background-image: url("/Images/backdrop-waves.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+      }
+      .main {
+        display: flex;
+        flex-flow: column;
+        place-items: center;
+        place-self: center;
+        row-gap: 20px;
+        padding: 1rem;
+        width: 70%;
+        background-color: rgba(255, 255, 255, 0.51);
+        backdrop-filter: blur(5px);
+      }
+      .main__form {
+        display: grid;
+        width: 70%;
+        row-gap: 20px;
+      }
+      .form__label,
+      .form__input,
+      .form__button {
+        justify-self: center;
+        padding: 0.3rem;
+        width: 70%;
+
+        font: inherit;
+      }
+      .form__input {
+        border: 1px solid gray;
+        border-radius: 5px;
+        background-color: transparent;
+      }
+      .form__button {
+        background-color: var(--BUTTON-BG-COLOR);
+        color: white;
+      }
+      .form__button {
+        border: 1px solid gray;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 250px;
+      }
+      .form__button:active {
+        background-color: #483b3f;
+      }
+      .form__output {
+        align-self: center;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>randomNumber(min, max);</h1>
     <main class="main">
+      <h1 class="main__title">randomNumber(min, max);</h1>
       <form class="main__form">
         <label for="minValue" class="form__label"
           >Enter a minimum value for the range:</label
@@ -35,7 +108,9 @@
           Generate
         </button>
         <button type="reset" class="form__button js-reset-button">Reset</button>
-        <output class="form__output js-output"></output>
+        <output class="form__output js-output"
+          >Random number will be displayed here</output
+        >
       </form>
     </main>
     <script>
@@ -56,7 +131,7 @@
       });
       //Adding event listener to reset button
       resetButtonElement.addEventListener("click", () => {
-        outputElement.innerHTML = "";
+        outputElement.innerHTML = "Random number will be displayed here";
       });
       //Generating random number between min and max values
       function randomNumber(min, max) {
