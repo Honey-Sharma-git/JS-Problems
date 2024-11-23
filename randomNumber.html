@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>randomNumber(min, max)</title>
+    <style></style>
   </head>
   <body>
     <h1>randomNumber(min, max);</h1>
@@ -46,15 +47,18 @@
       );
       const resetButtonElement = document.querySelector(".js-reset-button");
       const outputElement = document.querySelector(".js-output");
-      //Adding event listener to button
+      //Adding event listener to  generate button
       generateButtonElement.addEventListener("click", () => {
         //Saving values
         const minValue = Number(minInputElement.value);
         const maxValue = Number(maxInputElement.value);
-        console.log(randomNumber(minValue, maxValue));
+        randomNumber(minValue, maxValue);
       });
-
-      // console.log(randomNumber(0, 255));
+      //Adding event listener to reset button
+      resetButtonElement.addEventListener("click", () => {
+        outputElement.innerHTML = "";
+      });
+      //Generating random number between min and max values
       function randomNumber(min, max) {
         const randomValue = min + Math.floor(Math.random() * (max - min + 1));
         outputElement.innerHTML = randomValue;
