@@ -7,41 +7,6 @@
     <style></style>
   </head>
   <body>
-    <main class="main">
-      <form class="main__form">
-        <label for="minValue" class="form__label"
-          >Enter a minimum value for the range:</label
-        >
-        <input
-          type="number"
-          placeholder="Minimum value"
-          autofocus
-          id="minValue"
-          name="minValue"
-          class="form__input js-min-input"
-        />
-        <label for="maxValue" class="form__label"
-          >Enter a maximum value for the range:</label
-        >
-        <input
-          type="number"
-          placeholder="Maximum value"
-          id="maxValue"
-          name="maxValue"
-          class="form__input js-max-input"
-        />
-        <button type="button" class="form__button js-generate-button">
-          Generate
-        </button>
-        <button type="reset" class="form__button js-reset-button">Reset</button>
-        <output class="form__output js-output"></output>
-      </form>
-    </main>
-    <script>
-      console.log(randomNumber(0, 255));
-      function randomNumber(min, max) {
-        return min + Math.floor(Math.random() * (max - min + 1));
-      }
-    </script>
+  
   </body>
 </html>
