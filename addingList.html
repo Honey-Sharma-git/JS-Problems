@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <style>
+      .active {
+        background-color: beige;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <!--  <ul>
+      <li data-id="1" class="js-list-item">
+        Item-1 <span class="js-span"></span>
+      </li>
+      <li data-id="2" class="js-list-item">
+        Item-2 <span class="js-span"></span>
+      </li>
+      <li data-id="3" class="js-list-item">
+        Item-3 <span class="js-span"></span>
+      </li>
+    </ul> -->
+    <button class="js-button">Add</button>
+    <ul class="js-ul"></ul>
+
+    <script>
+      /* const list = document.querySelectorAll(".js-list-item");
+      list.forEach((item) => {
+        item.addEventListener("click", function () {
+          console.log(`You have clicked on ${item.dataset.id}`);
+          
+        });
+      }); */
+
+      /* Problem 1: Highlight the Clicked Item
+            Create a list where clicking on any <li> element will:
+
+            Log its data-id to the console.
+            Highlight the clicked <li> by adding a class active.
+            Remove the active class from any previously clicked items. */
+
+      // SOLUTION:
+      /* const listItems = document.querySelectorAll(".js-list-item");
+      listItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          listItems.forEach((item) => {
+            item.classList.remove("active");
+          });
+          console.log(`List item ID: ${item.dataset.id}`);
+          item.classList.add("active");
+        });
+      });
+ */
+      /*  Problem 2: Count Clicks on Each Item
+        Modify the list so that each <li> keeps track of how many times it has been clicked. When an item is clicked:
+
+        Increment and display the click count next to the item in parentheses.
+        Example:
+
+        Initial: Item-1
+        After 3 clicks: Item-1 (3) */
+
+      // WRONG SOLUTION:
+      /*   const listItems = document.querySelectorAll(".js-list-item");
+      listItems.forEach((item) => {
+        let counter = 0;
+        item.addEventListener("click", () => {
+          counter += 1;
+          const spanElement = document.querySelectorAll(".js-span");
+          spanElement.innerHTML = `(${counter})`;
+        });
+      }); */
+
+      /* Problem 3: Dynamic List with Data Attributes
+        Dynamically create a list of items using JavaScript, assigning a data-id to each <li> from 1 to 5.
+
+        Log the data-id of the clicked item. */
+
+      // Selecting the required elements:
+      const ulElement = document.querySelector(".js-ul");
+      const buttonElement = document.querySelector(".js-button");
+      // An empty array to store list items:
+      const myArray = [];
+      // Counter to generate unique list numbers and data-id values:
+      let counter = 0;
+      //Adding an event listener to the button
+      buttonElement.addEventListener("click", () => {
+        // Incrementing the counter on each button click to generate a new list item:
+        counter++;
+        // Creating a new list item with a class and data-id:
+        const list = `<li data-id = "${counter}" class = "js-list">List Item ${counter}</li>`;
+        // Adding the new list item to the array:
+        myArray.push(list);
+        /* 
+        //Looping through the array to append the list items:
+        let html = "";
+        myArray.forEach((item) => {
+            //Making list sequence
+          html += item;
+        });
+        //Adding the list sequence to ul element
+        ulElement.innerHTML = html;
+ */
+        // Alternative method to render the list: joining the array into a single string:
+        ulElement.innerHTML = myArray.join("");
+        // Selecting all the list items generated dynamically:
+        const listElements = document.querySelectorAll(".js-list");
+        // Adding event listeners to each list item:
+        listElements.forEach((listItem) => {
+          listItem.addEventListener("click", () => {
+            //Removing class for previous item as next list item is clicked
+            listElements.forEach((item) => {
+              item.classList.remove("active");
+            });
+            // Removing the "active" class from all items when a new item is clicked:
+            listItem.classList.add("active");
+            // Adding the "active" class to the clicked list item:
+            console.log(`data-id: ${listItem.dataset.id}`);
+          });
+        });
+      });
+
+     
+    </script>
+  </body>
+</html>
