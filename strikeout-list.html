@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <style>
+      .checked {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="checkbox"
+      name="Todo-1"
+      id="todo-1"
+      class="js-todo-input"
+      data-id="1"
+    />
+    <label for="Todo-1" class="js-todo-label" data-id="1">Todo item 1</label>
+    <button class="js-todo-button" data-id="1">Strikeout</button>
+    <br />
+    <input
+      type="checkbox"
+      name="Todo-2"
+      id="todo-2"
+      class="js-todo-input"
+      data-id="2"
+    />
+    <label for="Todo-2" class="js-todo-label" data-id="2">Todo item 2</label>
+    <button class="js-todo-button" data-id="2">Strikeout</button>
+    <br />
+    <input
+      type="checkbox"
+      name="Todo-3"
+      id="todo-3"
+      class="js-todo-input"
+      data-id="3"
+    />
+    <label for="Todo-3" class="js-todo-label" data-id="3">Todo item 3</label>
+    <button class="js-todo-button" data-id="3">Strikeout</button>
+    <script>
+      //Add event listeners to all checkbox inputs
+      const checkboxElements = document.querySelectorAll(".js-todo-input");
+      const buttonElements = document.querySelectorAll(".js-todo-button");
+      buttonElements.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          //get unique button id:
+          const buttonId = event.target.dataset.id;
+          const inputElement = document.querySelector(
+            `.js-todo-input[data-id="${buttonId}"]`
+          );
+          const buttonElement = document.querySelector(
+            `.js-todo-button[data-id="${buttonId}"]`
+          );
+          const labelElement = document.querySelector(
+            `.js-todo-label[data-id="${buttonId}"]`
+          );
+          //functionality:
+          if (buttonElement.textContent === "Strikeout") {
+            buttonElement.textContent = "undo";
+            inputElement.checked = true;
+            labelElement.classList.add("checked");
+          } else {
+            buttonElement.textContent = "Strikeout";
+            inputElement.checked = false;
+            labelElement.classList.remove("checked");
+          }
+        });
+      });
+
+      checkboxElements.forEach((checkbox) => {
+        checkbox.addEventListener("click", (event) => {
+          //Get the unique Id:
+          const checkboxId = event.target.dataset.id;
+          //Select related elements:
+          const inputElement = document.querySelector(
+            `.js-todo-input[data-id = "${checkboxId}"]`
+          );
+          const buttonElement = document.querySelector(
+            `.js-todo-button[data-id="${checkboxId}"]`
+          );
+          const labelElement = document.querySelector(
+            `.js-todo-label[data-id="${checkboxId}"]`
+          );
+          //functionality
+          if (inputElement.checked === true) {
+            buttonElement.textContent = "undo";
+            labelElement.classList.add("checked");
+          } else {
+            buttonElement.textContent = "Strikeout";
+            labelElement.classList.remove("checked");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
