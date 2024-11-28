@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter List</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="js-button">Show Even Id List Items</button>
+    <ul>
+      <li class="js-list" data-id="1">List-item-no-1</li>
+      <li class="js-list" data-id="2">List-item-no-2</li>
+      <li class="js-list" data-id="3">List-item-no-3</li>
+      <li class="js-list" data-id="4">List-item-no-4</li>
+      <li class="js-list" data-id="5">List-item-no-5</li>
+      <li class="js-list" data-id="6">List-item-no-6</li>
+      <li class="js-list" data-id="7">List-item-no-7</li>
+      <li class="js-list" data-id="8">List-item-no-8</li>
+      <li class="js-list" data-id="9">List-item-no-9</li>
+      <li class="js-list" data-id="10">List-item-no-10</li>
+      <li class="js-list" data-id="11">List-item-no-11</li>
+    </ul>
+    <script>
+      //Selecting the required elements:
+      const buttonElement = document.querySelector(".js-button");
+      const listElement = document.querySelectorAll(".js-list");
+      //Adding event listeners to the button:
+
+      buttonElement.addEventListener("click", () => {
+        //Handling each list item
+        listElement.forEach((item) => {
+          let listId = Number(item.dataset.id);
+          //For even ids:
+          if (listId % 2) {
+            item.classList.add("hidden");
+          } else {
+            item.classList.remove("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
