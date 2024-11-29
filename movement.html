@@ -8,13 +8,15 @@
       .main {
         display: grid;
         place-content: center;
-        min-height: 90vh;
+        height: 250px;
+        width: 500px;
+        border: 5px dashed black;
       }
       .box {
         height: 50px;
         aspect-ratio: 1;
         background-color: black;
-        transition: transform 0.1s;
+        transition: transform 0.8s;
       }
     </style>
   </head>
@@ -31,46 +33,42 @@
       //Adding event listeners to the keys:
       document.body.addEventListener("keydown", (event) => {
         //For right arrow key:
-        if (event.key === "ArrowRight") {
+        //stepX < 225 for setting right boundary
+        if (event.key === "ArrowRight" && stepX < 225) {
           //Increase the stepX value to move right:
-          stepX += 20;
+          stepX += 25;
           //Keep the value of stepY as it was to keep the box in same vertical line
-          box.style.setProperty(
-            "transform",
-            `translate(${stepX}px ,${stepY}px)`
-          );
         }
         //For left arrow key:
-        if (event.key === "ArrowLeft") {
+        //stepX > -225 for setting left boundary
+        if (event.key === "ArrowLeft" && stepX > -225) {
           //Decrease the stepX value to move left:
-          stepX -= 20;
+          stepX -= 25;
           //Keep the value of stepY as it was to keep the box in same vertical line
-          box.style.setProperty(
-            "transform",
-            `translate(${stepX}px ,${stepY}px)`
-          );
         }
         //For up arrow key:
-        if (event.key === "ArrowUp") {
+        //StepY > -100 for setting upper boundary
+        if (event.key === "ArrowUp" && stepY > -100) {
           //Decrease the stepY value to move upwards:
-          stepY -= 20;
+          stepY -= 25;
           //Keep the value of stepX as it was to keep the box in same horizontal line
-          box.style.setProperty(
-            "transform",
-            `translate(${stepX}px ,${stepY}px)`
-          );
         }
         //For down arrow key:
-        if (event.key === "ArrowDown") {
+        //StepY > -100 for setting lower boundary
+        if (event.key === "ArrowDown" && stepY < 100) {
           //Increase the stepY value to move downwards:
-          stepY += 20;
+          stepY += 25;
           //Keep the value of stepX as it was to keep the box in same horizontal line
-          box.style.setProperty(
-            "transform",
-            `translate(${stepX}px ,${stepY}px)`
-          );
         }
+        //Apply the value of stepX and stepY to move:
+        box.style.setProperty("transform", `translate(${stepX}px ,${stepY}px)`);
       });
     </script>
   </body>
 </html>
+<!-- Todo: -->
+<!-- -Display the coordinates inside the box -->
+<!-- -Make a boundary for the movement so that box doesn't go out of the viewport -->
+<!-- -Set reset button and a key combination to reposition the box -->
+<!-- -Add instruction for the movement -->
+<!-- Change the box to something meaningful -->
