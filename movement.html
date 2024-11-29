@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movement</title>
+    <style>
+      .main {
+        display: grid;
+        place-content: center;
+        min-height: 90vh;
+      }
+      .box {
+        height: 50px;
+        aspect-ratio: 1;
+        background-color: black;
+        transition: transform 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <div class="box js-box"></div>
+    </main>
+    <script>
+      //Initial position of the box:
+      let stepX = 0;
+      let stepY = 0;
+      //Adding event listeners to the keys:
+      document.body.addEventListener("keydown", (event) => {
+        //For right arrow key:
+        if (event.key === "ArrowRight") {
+          //Increase the stepX value to move right:
+          stepX += 20;
+          //Keep the value of stepY as it was to keep the box in same vertical line
+          document
+            .querySelector(".js-box")
+            .style.setProperty(
+              "transform",
+              `translate(${stepX}px ,${stepY}px)`
+            );
+        }
+        //For left arrow key:
+        if (event.key === "ArrowLeft") {
+          //Decrease the stepX value to move left:
+          stepX -= 20;
+          //Keep the value of stepY as it was to keep the box in same vertical line
+          document
+            .querySelector(".js-box")
+            .style.setProperty(
+              "transform",
+              `translate(${stepX}px ,${stepY}px)`
+            );
+        }
+        //For up arrow key:
+        if (event.key === "ArrowUp") {
+          //Decrease the stepY value to move upwards:
+          stepY -= 20;
+          //Keep the value of stepX as it was to keep the box in same horizontal line
+          document
+            .querySelector(".js-box")
+            .style.setProperty(
+              "transform",
+              `translate(${stepX}px ,${stepY}px)`
+            );
+        }
+        //For down arrow key:
+        if (event.key === "ArrowDown") {
+          //Increase the stepY value to move downwards:
+          stepY += 20;
+          //Keep the value of stepX as it was to keep the box in same horizontal line
+          document
+            .querySelector(".js-box")
+            .style.setProperty(
+              "transform",
+              `translate(${stepX}px ,${stepY}px)`
+            );
+        }
+      });
+    </script>
+  </body>
+</html>
