@@ -7,13 +7,42 @@
   </head>
   <body>
     <script>
-      console.log(factorial(5));
+      /* console.log(factorial(5));
       function factorial(num) {
         let fact = 1;
         for (let i = num; i >= 1; i--) {
           fact = fact * i;
         }
         return fact;
+      } */
+
+      //METHOD-2
+      fact(5);
+      fact(4);
+      fact(3);
+      fact(2);
+      fact(1);
+      fact(-5);
+      fact(0);
+
+      function fact(number) {
+        let c = 2,
+          f = 1;
+        if (number < 0) {
+          console.log("Enter a positive number");
+          return;
+        }
+        if (number === 0) {
+          f = 1;
+          console.log(f);
+          return;
+        }
+
+        while (c <= number) {
+          f = f * c;
+          c++;
+        }
+        console.log(f);
       }
     </script>
   </body>
