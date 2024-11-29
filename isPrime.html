@@ -6,7 +6,7 @@
     <title>Is prime number?</title>
   </head>
   <body>
-    <h1>Prime Number Checker</h1>
+    <!-- <h1>Prime Number Checker</h1>
     <label for="number">Enter a number to check if it is a prime number:</label
     ><br />
     <input
@@ -18,11 +18,13 @@
     <button class="js-button" onclick="displayResult()">Check</button><br />
     <output class="js-output"></output>
     <script>
+      //METHOD-1
       function displayResult() {
         document.querySelector(".js-output").innerHTML = isPrime();
       }
       function isPrime() {
-        let num = Number(document.querySelector(".js-input").value);
+        le
+        t num = Number(document.querySelector(".js-input").value);
         if (num < 2 || !Number.isInteger(num)) {
           return "Not a prime number";
         }
@@ -32,6 +34,44 @@
           }
         }
         return "A prime number";
+      }
+    </script> -->
+    <script>
+      // METHOD-2
+      /*    isPrime(1);
+      function isPrime(number) {
+        if (number < 2) {
+          console.log("not prime");
+          return;
+        }
+        let counter = number - 1;
+        while (number % counter !== 0 && counter >= 2) {
+          counter--;
+        }
+        if (counter === 1) {
+          console.log(`${number} is prime number`);
+        } else {
+          console.log(`${number} is not a prime number`);
+        }
+      } */
+
+      // METHOD-3
+      isPrime(12);
+      function isPrime(number) {
+        if (number < 2) {
+          console.log("Not prime");
+          return;
+        }
+        let counter = 2;
+        while (counter <= number - 1) {
+          if (number % counter === 0) {
+            console.log("Not prime");
+            return;
+          } else {
+            counter++;
+          }
+        }
+        console.log("Prime");
       }
     </script>
   </body>
