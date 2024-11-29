@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Interest</title>
+  </head>
+  <body>
+    <script>
+      simpleInterest(1000, 7.5, 2);
+      function simpleInterest(p, r, t) {
+        const sI = (p * r * t) / 100;
+        const amount = p + sI;
+        console.log(`Simple interest is ${sI} and amount is ${amount}`);
+        return;
+      }
+    </script>
+  </body>
+</html>
