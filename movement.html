@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movement</title>
     <style>
+      .body {
+        display: grid;
+        place-content: center;
+      }
       .main {
         display: grid;
         place-content: center;
         height: 250px;
         width: 500px;
         border: 5px dashed black;
+        margin: 2rem;
+      }
+      .aside {
+        display: grid;
+        place-content: center;
       }
       .box {
         height: 50px;
@@ -20,11 +29,23 @@
       }
     </style>
   </head>
-  <body>
+  <body class="body">
     <main class="main">
       <div class="box js-box"></div>
     </main>
+    <aside class="aside"><button class="js-button">Reset</button></aside>
     <script>
+      //For Reset button:
+      //Select the button:
+      const buttonElement = document.querySelector(".js-button");
+      //Add event listener:
+      buttonElement.addEventListener("click", () => {
+        //Resetting the position:
+        stepX = 0;
+        stepY = 0;
+        box.style.setProperty("transform", `translate(${stepX}px ,${stepY}px)`);
+      });
+
       //Select the box:
       const box = document.querySelector(".js-box");
       //Initial position of the box:
@@ -68,7 +89,6 @@
 </html>
 <!-- Todo: -->
 <!-- -Display the coordinates inside the box -->
-<!-- -Make a boundary for the movement so that box doesn't go out of the viewport -->
 <!-- -Set reset button and a key combination to reposition the box -->
 <!-- -Add instruction for the movement -->
 <!-- Change the box to something meaningful -->
