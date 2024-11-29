@@ -30,18 +30,27 @@
       const buttonElement = document.querySelector(".js-button");
       const listElement = document.querySelectorAll(".js-list");
       //Adding event listeners to the button:
-
+      let state = false;
       buttonElement.addEventListener("click", () => {
-        //Handling each list item
-        listElement.forEach((item) => {
-          let listId = Number(item.dataset.id);
-          //For even ids:
-          if (listId % 2) {
-            item.classList.add("hidden");
-          } else {
+        //flip the state:
+        state = !state;
+        if (state === true) {
+          state = true;
+          //Handling each list item
+          listElement.forEach((item) => {
+            let listId = Number(item.dataset.id);
+            //For even ids:
+            if (listId % 2) {
+              item.classList.add("hidden");
+            }
+          });
+          buttonElement.innerHTML = "Show all";
+        } else {
+          listElement.forEach((item) => {
             item.classList.remove("hidden");
-          }
-        });
+          });
+          buttonElement.innerHTML = "Show even Ids";
+        }
       });
     </script>
   </body>
