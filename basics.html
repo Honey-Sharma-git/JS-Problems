@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basics of JS</title>
+  </head>
+  <body>
+    <p id="js-para"></p>
+    <script>
+      //QUESTION: REVERSING AN ARRAY
+      //Original array:
+      // const original = [1, 2, 3, 4];
+      // reverse(original);
+      //METHOD-1
+      /* function reverse(arr) {
+        //To store reversed values:
+        const newArray = [];
+        for (let i = 1; i <= arr.length; i++) {
+          //Taking index from the end.
+          let indexFromEnd = arr.length - i;
+          //Storing value to new array:
+          newArray.push(arr[indexFromEnd]);
+        }
+        console.log(newArray);
+      } */
+      //METHOD-2
+      /*
+      function reverse(arr) {
+        //Empty array to store reversed values
+        const newArray = [];
+        //Looping through an array:
+        arr.forEach((value, index) => {
+          //Pushing value from the end:
+          newArray.push(arr[arr.length - index - 1]);
+        });
+        console.log(newArray);
+      } */
+
+      //Question: Merge two arrays:
+      /*  merge([1, 2, 3, 4], [4, 3, 2, 1]);
+      function merge(arr1, arr2) {
+        //Empty array for storing values from both the array
+        const newArr = [];
+        arr1.forEach((value) => {
+          newArr.push(value);
+        });
+        arr2.forEach((value) => {
+          newArr.push(value);
+        });
+        console.log(newArr);
+      } */
+      //  METHOD-2
+      /*  const arr1 = [1, 2, 3, 4, 5];
+      const arr2 = [5, 4, 3, 2, 1];
+      merge(arr1, arr2);
+      function merge(a, b) {
+        const newArr = a.concat(b);
+        console.log(newArr);
+      }
+      //METHOD-3 (spread)
+      merge2(arr1, arr2);
+      function merge2(a, b) {
+        const newArr = [...a, ...b];
+        console.log(newArr);
+      } */
+
+      //QUESTION: FIND THE MIN AND MAX OUT OF AN ARRAY:
+      const myArray = [-1, 2, 3, -4, -5, 6, 7, 8, -9, -10, 0];
+      minMax(myArray);
+      function minMax(array) {
+        //Assuming the first element be the max an min:
+        let min = array[0];
+        let max = array[0];
+        for (let i = 1; i < array.length; i++) {
+          //Checking if first element is max:
+          if (max < array[i]) {
+            //Updating value
+            max = array[i];
+          }
+          //Checking if first element is min:
+          if (min > array[i]) {
+            //Updating value
+            min = array[i];
+          }
+        }
+        console.log(`The min: ${min} and max: ${max}`);
+      }
+    </script>
+  </body>
+</html>
