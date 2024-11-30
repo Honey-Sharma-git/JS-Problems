@@ -66,9 +66,15 @@
       } */
 
       //QUESTION: FIND THE MIN AND MAX OUT OF AN ARRAY:
-      const myArray = [-1, 2, 3, -4, -5, 6, 7, 8, -9, -10, 0];
+      /*  const myArray = [-1, 2, 3, -4, -5, 6, 7, 8, -9, -10, 0];
       minMax(myArray);
+      console.log(minMax(myArray));
       function minMax(array) {
+        //Check for empty array:
+        if (array.length === 0) {
+          console.log("This array is empty");
+          return;
+        }
         //Assuming the first element be the max an min:
         let min = array[0];
         let max = array[0];
@@ -85,7 +91,18 @@
           }
         }
         console.log(`The min: ${min} and max: ${max}`);
+        //Returning the value as an object:
+        return { min, max };
       }
+ */
+      //METHOD-2
+      /*  const myArray = [-1, 2, 3, -4, -5, 6, 7, 8, -9, -10, 0];
+      minMax(myArray);
+      function minMax(array) {
+        let min = Math.min(...array);
+        let max = Math.max(...array);
+        console.log(`Min: ${min} and Max: ${max}`);
+      } */
     </script>
   </body>
 </html>
