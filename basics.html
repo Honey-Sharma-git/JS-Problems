@@ -14,162 +14,205 @@
       // reverse(original);
       //METHOD-1
       /* function reverse(arr) {
-        //To store reversed values:
-        const newArray = [];
-        for (let i = 1; i <= arr.length; i++) {
-          //Taking index from the end.
-          let indexFromEnd = arr.length - i;
-          //Storing value to new array:
-          newArray.push(arr[indexFromEnd]);
-        }
-        console.log(newArray);
-      } */
+             //To store reversed values:
+             const newArray = [];
+             for (let i = 1; i <= arr.length; i++) {
+               //Taking index from the end.
+               let indexFromEnd = arr.length - i;
+               //Storing value to new array:
+               newArray.push(arr[indexFromEnd]);
+             }
+             console.log(newArray);
+           } */
       //METHOD-2
       /*
-      function reverse(arr) {
-        //Empty array to store reversed values
-        const newArray = [];
-        //Looping through an array:
-        arr.forEach((value, index) => {
-          //Pushing value from the end:
-          newArray.push(arr[arr.length - index - 1]);
-        });
-        console.log(newArray);
-      } */
+           function reverse(arr) {
+             //Empty array to store reversed values
+             const newArray = [];
+             //Looping through an array:
+             arr.forEach((value, index) => {
+               //Pushing value from the end:
+               newArray.push(arr[arr.length - index - 1]);
+             });
+             console.log(newArray);
+           } */
 
       //Question: Merge two arrays:
       /*  merge([1, 2, 3, 4], [4, 3, 2, 1]);
-      function merge(arr1, arr2) {
-        //Empty array for storing values from both the array
-        const newArr = [];
-        arr1.forEach((value) => {
-          newArr.push(value);
-        });
-        arr2.forEach((value) => {
-          newArr.push(value);
-        });
-        console.log(newArr);
-      } */
+           function merge(arr1, arr2) {
+             //Empty array for storing values from both the array
+             const newArr = [];
+             arr1.forEach((value) => {
+               newArr.push(value);
+             });
+             arr2.forEach((value) => {
+               newArr.push(value);
+             });
+             console.log(newArr);
+           } */
       //  METHOD-2
       /*  const arr1 = [1, 2, 3, 4, 5];
-      const arr2 = [5, 4, 3, 2, 1];
-      merge(arr1, arr2);
-      function merge(a, b) {
-        const newArr = a.concat(b);
-        console.log(newArr);
-      }
-      //METHOD-3 (spread)
-      merge2(arr1, arr2);
-      function merge2(a, b) {
-        const newArr = [...a, ...b];
-        console.log(newArr);
-      } */
+           const arr2 = [5, 4, 3, 2, 1];
+           merge(arr1, arr2);
+           function merge(a, b) {
+             const newArr = a.concat(b);
+             console.log(newArr);
+           }
+           //METHOD-3 (spread)
+           merge2(arr1, arr2);
+           function merge2(a, b) {
+             const newArr = [...a, ...b];
+             console.log(newArr);
+           } */
 
       //QUESTION: FIND THE MIN AND MAX OUT OF AN ARRAY:
       /*  const myArray = [-1, 2, 3, -4, -5, 6, 7, 8, -9, -10, 0];
-      minMax(myArray);
-      console.log(minMax(myArray));
-      function minMax(array) {
-        //Check for empty array:
-        if (array.length === 0) {
-          console.log("This array is empty");
-          return;
-        }
-        //Assuming the first element be the max an min:
-        let min = array[0];
-        let max = array[0];
-        for (let i = 1; i < array.length; i++) {
-          //Checking if first element is max:
-          if (max < array[i]) {
-            //Updating value
-            max = array[i];
-          }
-          //Checking if first element is min:
-          if (min > array[i]) {
-            //Updating value
-            min = array[i];
-          }
-        }
-        console.log(`The min: ${min} and max: ${max}`);
-        //Returning the value as an object:
-        return { min, max };
-      }
- */
+           minMax(myArray);
+           console.log(minMax(myArray));
+           function minMax(array) {
+             //Check for empty array:
+             if (array.length === 0) {
+               console.log("This array is empty");
+               return;
+             }
+             //Assuming the first element be the max an min:
+             let min = array[0];
+             let max = array[0];
+             for (let i = 1; i < array.length; i++) {
+               //Checking if first element is max:
+               if (max < array[i]) {
+                 //Updating value
+                 max = array[i];
+               }
+               //Checking if first element is min:
+               if (min > array[i]) {
+                 //Updating value
+                 min = array[i];
+               }
+             }
+             console.log(`The min: ${min} and max: ${max}`);
+             //Returning the value as an object:
+             return { min, max };
+           }
+      */
       //METHOD-2
       /*  const myArray = [-1, 2, 3, -4, -5, 6, 7, 8, -9, -10, 0];
-      minMax(myArray);
-      function minMax(array) {
-        let min = Math.min(...array);
-        let max = Math.max(...array);
-        console.log(`Min: ${min} and Max: ${max}`);
-      } */
+           minMax(myArray);
+           function minMax(array) {
+             let min = Math.min(...array);
+             let max = Math.max(...array);
+             console.log(`Min: ${min} and Max: ${max}`);
+           } */
 
       //QUESTION: Displaying all the elements of an array
-      /* 
-      const myArray = [
-        "Honey",
-        27,
-        true,
-        ["black", "pink"],
-        { grad: true, job: "NO", favSub: "Psychology" },
-        0,
-        null,
-        '$',
-      ];
-      display(myArray);
-      function display(array) {
-        array.forEach((value) => {
-          console.log(value);
-        });
-      } */
+      /*
+           const myArray = [
+             "Honey",
+             27,
+             true,
+             ["black", "pink"],
+             { grad: true, job: "NO", favSub: "Psychology" },
+             0,
+             null,
+             '$',
+           ];
+           display(myArray);
+           function display(array) {
+             array.forEach((value) => {
+               console.log(value);
+             });
+           } */
       //Question: Multiply each value of array by 2:
       /*  const myArray = [1, 2, 3, 4, 5, 6];
-      multiply2(myArray);
-      function multiply2(array) {
-        const newArray = [];
-        array.forEach((value) => {
-          newArray.push(value * 2);
-        });
-        console.log(newArray);
-      } */
+           multiply2(myArray);
+           function multiply2(array) {
+             const newArray = [];
+             array.forEach((value) => {
+               newArray.push(value * 2);
+             });
+             console.log(newArray);
+           } */
       //Question: Multiply only numeric values:
-    /*   const myArray = [1, "a", "b", "c", "d", 6];
-      multiply2(myArray);
-      function multiply2(array) {
-        const newArray = [];
-        array.forEach((value) => {
-          if (typeof value === "number") {
-            newArray.push(value * 2);
-          } else {
-            newArray.push(value);
-          }
-        });
-        console.log(newArray);
-      } */
+      /*   const myArray = [1, "a", "b", "c", "d", 6];
+           multiply2(myArray);
+           function multiply2(array) {
+             const newArray = [];
+             array.forEach((value) => {
+               if (typeof value === "number") {
+                 newArray.push(value * 2);
+               } else {
+                 newArray.push(value);
+               }
+             });
+             console.log(newArray);
+           } */
 
       //METHOD-2
-     /*  const array1 = [1, "a", "b", "c", 4];
-      multiply4(array1);
-      function multiply4(array) {
-        let newArray = array.map((value) => {
-          if (typeof value === "number") {
-            return value * 4;
-          } else {
-            return value;
-          }
-        });
-        console.log(newArray);
-      } */
+      /*  const array1 = [1, "a", "b", "c", 4];
+           multiply4(array1);
+           function multiply4(array) {
+             let newArray = array.map((value) => {
+               if (typeof value === "number") {
+                 return value * 4;
+               } else {
+                 return value;
+               }
+             });
+             console.log(newArray);
+           } */
       // METHOD-4
-     /*  const array2 = [1, "a", "b", "c", 4];
-      multiply5(array2);
-      function multiply5(array) {
-        const newArray = array.map((value) => {
-          return value === "number" ? value * 5 : value;
-        });
-        console.log(newArray);
-      } */
+      /*  const array2 = [1, "a", "b", "c", 4];
+           multiply5(array2);
+           function multiply5(array) {
+             const newArray = array.map((value) => {
+               return value === "number" ? value * 5 : value;
+             });
+             console.log(newArray);
+           } */
       // Question: Filter negative and positive values
+
+      //Check if the character is a consonant or a vowel
+
+      /* //Input character
+      const char = "u";
+      //Call a function
+      checkChar(char);
+      //Function definition
+      function checkChar(character) {
+        //Convert character to lowercase
+       let character = character.toLowerCase();
+        //Set of vowels
+        const vowels = ["a", "e", "i", "o", "u"];
+        //A variable to store status
+        let isVowel = false;
+        //Loop through vowels array to see if character is a vowel
+        for (let i = 0; i < vowels.length; i++) {
+          let vowel = vowels[i];
+          if (vowel === character) {
+            isVowel = true;
+            break;
+          }
+        }
+        //Display result according to status
+        isVowel ? console.log("vowel") : console.log("Consonant");
+      } */
+      //METHOD-2
+      /* 
+      //Input character
+      const char = "a";
+      //Call a function
+      checkChar(char);
+      //Function definition
+      function checkChar(character) {
+        //Convert character to lowercase
+        let lowerChar = character.toLowerCase();
+        //Set of vowels
+        const vowels = ["a", "e", "i", "o", "u"];
+        //Check if it includes character
+        let isVowel = vowels.includes(lowerChar);
+        //Display result according to status
+        isVowel ? console.log("vowel") : console.log("Consonant");
+      } */
     </script>
   </body>
 </html>
