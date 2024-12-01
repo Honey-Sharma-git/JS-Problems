@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Method</title>
+  </head>
+  <body>
+    <script>
+      //Filter even nos from an array.
+      /*  const arr = [1, 2, 3, 4, -3, -2, 16, 5, 8, 92, 103];
+           filterEven(arr);
+           function filterEven(array) {
+             //If condition is true it returns filtered array
+             const filteredArray = array.filter((value) => {
+               if (value % 2 === 0) {
+                 return true;
+               }
+             });
+             console.log(filteredArray);
+           } */
+
+      //Filter odd nos from an array.
+      /* const arr = [1, 2, 3, 4, -3, -2, 16, 5, 8, 92, 103];
+           filterOdd(arr);
+           function filterOdd(array) {
+             const filteredArray = array.filter((value) => {
+               return value % 2 !== 0;
+             });
+             console.log(filteredArray);
+           } */
+      //Filter positive numbers:
+      /*   const arr = [1, 2, 3, 4, -3, -2, 16, 5, 8, 92, 103];
+           filterPositive(arr);
+           function filterPositive(array) {
+             const filteredArray = array.filter((value) => {
+               return value > 0;
+             });
+             console.log(filteredArray);
+           } */
+
+      //Filter negative numbers:
+      /* const arr = [1, 2, 3, 4, -3, -2, 16, 5, 8, 92, 103];
+           filterNegative(arr);
+           function filterNegative(array) {
+             const filteredArray = array.filter((value) => {
+               return value < 0;
+             });
+             console.log(filteredArray);
+           }
+      */
+      //Filter number greater than 10:
+      /* const arr = [1, 2, 3, 4, -3, -2, 16, 5, 8, 92, 103];
+           filterGreaterThan10(arr);
+           function filterGreaterThan10(array) {
+             const filteredArray = array.filter((value) => {
+               return value > 10;
+             });
+             console.log(filteredArray);
+           } */
+      //Filter words that start with "a"
+      /*  const words = [
+             "apples",
+             "banana",
+             "cat",
+             "ape",
+             "avocado",
+             "berries",
+             "cactus",
+           ];
+
+           startWithA(words);
+           function startWithA(array) {
+             const filteredArray = array.filter((value) => {
+               //Comparing the first letter in lowercase
+               return value.toLowerCase().charAt(0) === "a";
+             });
+             console.log(filteredArray);
+           } */
+
+      //Filter words ending with 's'
+      /*  const words = [
+             "apples",
+             "banana",
+             "cat",
+             "ape",
+             "avocado",
+             "berries",
+             "cactus",
+             'honey',
+             'bees'
+           ];
+           endWithS(words);
+           function endWithS(array) {
+             const filteredArray = array.filter((value) => {
+               //To get last character of a word:
+               let lastChar = value.charAt(value.length-1);
+               //Converting last character to lowercase for comparison
+               return lastChar.toLowerCase() === "s";
+             });
+             console.log(filteredArray);
+           } */
+
+      //Filter words shorter than 6 characters:
+      /*  const words = [
+             "apples",
+             "banana",
+             "cat",
+             "ape",
+             "avocado",
+             "berries",
+             "cactus",
+             "honey",
+             "bees",
+           ];
+           filterShorter(words);
+
+           function filterShorter(array) {
+             const filteredArray = array.filter((value) => {
+               return value.length < 6;
+             });
+             console.log(filteredArray);
+           } */
+      //Filter words containing letter 't'
+      /*   const words = [
+             "apples",
+             "banana",
+             "cat",
+             "ape",
+             "avocado",
+             "berries",
+             "cactus",
+             "honey",
+             "bees",
+             "Tarzan",
+             "tasty",
+             "attach",
+           ];
+           filterT(words);
+           function filterT(array) {
+             const filteredArray = array.filter((value) => {
+             //To check if value includes letter 't'
+               return value.toLowerCase().includes("t");
+             });
+             console.log(filteredArray);
+           } */
+
+      //Filter objects with age greater than 18:
+      /*  const citizens = [
+             { name: "Alice", age: 22 },
+             { name: "Bob", age: 34 },
+             { name: "Charlie", age: 13 },
+             { name: "Diana", age: 29 },
+             { name: "Ethan", age: 19 },
+             { name: "Fiona", age: 35 },
+             { name: "George", age: 10 },
+             { name: "Hannah", age: 31 },
+             { name: "Ian", age: 16 },
+             { name: "Jane", age: 25 },
+           ];
+           function filterVoters(array) {
+             const filteredArray = array.filter((value) => {
+               return value.age > 18;
+             });
+             console.log(filteredArray);
+           }
+           filterVoters(citizens);
+      */
+      //Filter objects on multiple criteria
+      /*  const laptops = [
+             { brand: "HP", price: 77766, launchYear: 2022 },
+             { brand: "HP", price: 135165, launchYear: 2023 },
+             { brand: "DELL", price: 123024, launchYear: 2024 },
+             { brand: "DELL", price: 98527, launchYear: 2023 },
+             { brand: "DELL", price: 149711, launchYear: 2024 },
+             { brand: "Apple", price: 63639, launchYear: 2022 },
+             { brand: "Apple", price: 109736, launchYear: 2024 },
+             { brand: "DELL", price: 148312, launchYear: 2024 },
+             { brand: "DELL", price: 75355, launchYear: 2023 },
+             { brand: "HP", price: 127893, launchYear: 2022 },
+           ];
+
+           //function to filter HP laptops under 150000, launched in year 2022
+           function filterLaptops(array) {
+             const filteredArray = array.filter((value) => {
+               return (
+                 value.brand === "HP" &&
+                 value.price < 150000 &&
+                 value.launchYear === 2022
+               );
+             });
+             console.log(filteredArray);
+           }
+           filterLaptops(laptops); */
+
+      //Filter unique values:
+      /*   const numbers = [1, 2, 1, 2, 3, 3, 4, 3, 1, 4];
+           function filterUnique(array) {
+             const filteredArray = array.filter((value, index, arr) => {
+               //arr.indexOf(value) gives index of the first occurrence of an element.
+               return arr.indexOf(value) === index;
+             });
+             console.log(filteredArray);
+           }
+           filterUnique(numbers); */
+
+      //Filter words of certain length:
+      /*  const words = [
+             "mango",
+             "grapes",
+             "berry",
+             "table",
+             "garden",
+             "apple",
+             "animal",
+             "orange",
+             "flower",
+             "drums",
+             "camera",
+             "forest",
+             "phone",
+             "forest",
+             "violin",
+             "falcon",
+             "valley",
+             "spider",
+             "plane",
+             "pencil",
+             "bridge",
+             "bottle",
+             "zebra",
+             "island",
+             "cloud",
+             "horse",
+             "clock",
+             "tiger",
+             "village",
+             "window",
+             "school",
+             "market",
+             "ocean",
+             "chair",
+             "river",
+             "mountain",
+             "guitar",
+             "shadow",
+             "lion",
+             "melon",
+             "banana",
+             "rabbit",
+             "desert",
+             "piano",
+             "house",
+             "truck",
+             "train",
+             "pear",
+             "eagle",
+             "street",
+           ];
+           function fiveCharWords(array) {
+             const filteredArray = array.filter((value) => {
+               return value.length === 5;
+             });
+             console.log(filteredArray);
+           }
+           fiveCharWords(words); */
+
+      //Filter numbers that are greater than previous and next numbers:
+      /* const numbers = [1, 2, 4, 1, 8, 7, 3, 2, 6, 4];
+      function filterNumbers(array) {
+        const filteredArray = array.filter((value, index, arr) => {
+          return arr[index - 1] < value && arr[index + 1] < value;
+        });
+        console.log(filteredArray);
+      }
+      filterNumbers(numbers); */
+    </script>
+  </body>
+</html>
