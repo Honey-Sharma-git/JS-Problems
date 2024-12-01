@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Data</title>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter name" class="js-name-input" />
+    <button class="js-find-button">Find</button>
+    <div>
+      <p class="js-output"></p>
+    </div>
+    <script>
+      //Select element:
+      const nameInputElement = document.querySelector(".js-name-input");
+      const findButton = document.querySelector(".js-find-button");
+      const outputElement = document.querySelector(".js-output");
+
+      //Add event listener:
+      findButton.addEventListener("click", () => {
+        //Get value from element:
+        const username = nameInputElement.value;
+        //Fetching data
+        fetchData(username);
+      });
+      const data = [
+        { name: "honey", phone: 9694902670 },
+        { name: "baba", phone: 9571766555 },
+        { name: "vansh", phone: 8955687845 },
+      ];
+
+      function fetchData(name) {
+        //Default result:
+        let result = "Search by name";
+        //Converting name into lowercase for matching:
+        let lowerName = name.toLowerCase();
+        //Looping through data to find match
+        for (let i = 0; i < data.length; i++) {
+          if (lowerName === data[i].name) {
+            result = data[i].phone;
+            //Stop loop once it finds match.
+            break;
+          }
+        }
+        //Display result
+        outputElement.innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
