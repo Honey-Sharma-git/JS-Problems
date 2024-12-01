@@ -123,7 +123,7 @@
         });
       } */
       //Question: Multiply each value of array by 2:
-     /*  const myArray = [1, 2, 3, 4, 5, 6];
+      /*  const myArray = [1, 2, 3, 4, 5, 6];
       multiply2(myArray);
       function multiply2(array) {
         const newArray = [];
@@ -132,6 +132,44 @@
         });
         console.log(newArray);
       } */
+      //Question: Multiply only numeric values:
+    /*   const myArray = [1, "a", "b", "c", "d", 6];
+      multiply2(myArray);
+      function multiply2(array) {
+        const newArray = [];
+        array.forEach((value) => {
+          if (typeof value === "number") {
+            newArray.push(value * 2);
+          } else {
+            newArray.push(value);
+          }
+        });
+        console.log(newArray);
+      } */
+
+      //METHOD-2
+     /*  const array1 = [1, "a", "b", "c", 4];
+      multiply4(array1);
+      function multiply4(array) {
+        let newArray = array.map((value) => {
+          if (typeof value === "number") {
+            return value * 4;
+          } else {
+            return value;
+          }
+        });
+        console.log(newArray);
+      } */
+      // METHOD-4
+     /*  const array2 = [1, "a", "b", "c", 4];
+      multiply5(array2);
+      function multiply5(array) {
+        const newArray = array.map((value) => {
+          return value === "number" ? value * 5 : value;
+        });
+        console.log(newArray);
+      } */
+      // Question: Filter negative and positive values
     </script>
   </body>
 </html>
