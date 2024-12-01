@@ -197,7 +197,7 @@
         isVowel ? console.log("vowel") : console.log("Consonant");
       } */
       //METHOD-2
-      /* 
+      /*
       //Input character
       const char = "a";
       //Call a function
@@ -248,7 +248,7 @@
         console.log(result);
       } */
       //METHOD-2
-     /*  const score = 58;
+      /*  const score = 58;
       calculateGrade(score);
       function calculateGrade(marks) {
         //Check to ensure marks inputted are numbers only.
@@ -274,6 +274,21 @@
         console.log(result);
       } */
 
+     
+      //Find a number in an array
+      const codes = [1, 3, 3, 424, 25, 25, 15125, 125, 45];
+      findCode(45, codes);
+      function findCode(code, array) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === code) {
+            result = "Found";
+            break;
+          } else {
+            result = "Not found";
+          }
+        }
+        console.log(result);
+      }
     </script>
   </body>
 </html>
