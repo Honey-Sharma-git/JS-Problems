@@ -213,6 +213,67 @@
         //Display result according to status
         isVowel ? console.log("vowel") : console.log("Consonant");
       } */
+
+      //Grade calculator:
+      /* const score = 58;
+      calculateGrade(score);
+      function calculateGrade(marks) {
+        //Check to ensure marks inputted are numbers only.
+        if (typeof marks !== "number") {
+          console.log("Error: You have not entered a number.");
+          return;
+        }
+        //Check to ensure the score is between 0-100
+        if (marks > 100) {
+          console.log(`Error: You have entered a score greater than 100`);
+          return;
+        }
+        if (marks < 0) {
+          console.log("Error: You have entered a score less than zero");
+          return;
+        }
+        //Assigning grade according to score:
+        let result = "";
+        if (marks <= 100 && marks > 80) {
+          result = "Grade: A";
+        } else if (marks <= 80 && marks > 60) {
+          result = "Grade: B";
+        } else if (marks <= 60 && marks >= 40) {
+          result = "Grade: C";
+        } else if (marks < 40) {
+          result = "Failed";
+        } else {
+          console.log("Please contact developer");
+        }
+        console.log(result);
+      } */
+      //METHOD-2
+     /*  const score = 58;
+      calculateGrade(score);
+      function calculateGrade(marks) {
+        //Check to ensure marks inputted are numbers only.
+        //Check to ensure the score is between 0-100
+        if (typeof marks !== "number" || marks > 100 || marks < 0) {
+          console.log("Please enter a number between 0-100");
+          return;
+        }
+
+        //Assigning grade according to score:
+        let result;
+        if (marks > 80) {
+          result = "Grade: A";
+        } else if (marks > 60) {
+          result = "Grade: B";
+        } else if (marks >= 40) {
+          result = "Grade: C";
+        } else if (marks < 40) {
+          result = "Failed";
+        } else {
+          console.log("Please contact developer");
+        }
+        console.log(result);
+      } */
+
     </script>
   </body>
 </html>
