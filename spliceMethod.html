@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splice Method</title>
+  </head>
+  <body>
+    <script>
+      // Create an array of fruits and remove the first two elements using splice.
+      /*  const fruits = ["apple", "banana", "watermelon", "strawberry", "papaya"];
+           fruits.splice(0, 2);
+           console.log(fruits);
+      */
+      //Add two new fruits to the beginning of the array using splice.
+      /*    const fruits = ["apple", "banana", "watermelon", "strawberry", "papaya"];
+           fruits.splice(0,0,'grapes', 'Guava');
+           console.log(fruits); */
+
+      //   Remove the last element from the array using splice.
+      /* const fruits = ["apple", "banana", "watermelon", "strawberry", "papaya"];
+         fruits.splice(fruits.length-1, 1);
+         console.log(fruits); */
+      // Remove every other element from the array using splice.
+      /*  const fruits = [
+             "apple",
+             1,
+             "banana",
+             2,
+             "watermelon",
+             3,
+             "strawberry",
+             4,
+             "papaya",
+           ];
+           for (i = fruits.length - 1; i >= 0; i -= 2) {
+             fruits.splice(i, 1);
+           }
+           console.log(fruits); */
+
+      //   Replace the middle element of the array with a new value using splice.
+      /*
+           const numbers = [0, 1, 2, 3, 4, 5];
+           console.log(numbers.length);
+
+           replaceMid(numbers, "hello");
+
+           function replaceMid(array, replacement) {
+             if (array.length % 2 === 0) {
+               console.log("Even length array");
+               const mid1 = array.length / 2 - 1;
+               const mid2 = array.length / 2;
+               // Replace both middle elements
+               array.splice(mid1, 2, replacement);
+             } else {
+               console.log("Odd length array");
+               const mid = Math.floor(array.length / 2); // Calculate middle index
+               array.splice(mid, 1, replacement); // Replace the single middle element
+             }
+             console.log(array);
+           }
+      */
+      //   Sort an array in descending order using splice and a temporary array.
+      /*  const arr = [1, 2, 8, -4];
+           sortArray(arr);
+           function sortArray(array) {
+             //Creating a temp array to hold sorted elements:
+             const tempArr = [];
+             //Initial size of the original array:
+             let size = array.length;
+             //Repeatedly finding the max and removing it:
+             for (let i = 0; i < size; i++) {
+               //Find the max number in the array:
+               let max = Math.max(...array);
+               //Find the index of max number:
+               let index = array.indexOf(max);
+               //Push the max number to temparr:
+               tempArr.push(max);
+               //Remove the max number from original arr:
+               arr.splice(index, 1);
+             }
+             //Display sorted array:
+             console.log(tempArr);
+           }
+      */
+      // Create a function to remove a specific element from an array using splice and its index.
+      /* function removeElement(array, index) {
+             array.splice(index, 1);
+             console.log(array);
+           }
+           const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+           removeElement(numbers, 2); */
+
+      // Sort an array in ascending order using splice and a temporary array.
+      /*  const numbers = [1, 2, 3, -5, -4, 23, 45, 1, 8, 3, 4, 2, 2, 2, 2, 1];
+           sortArray(numbers);
+           function sortArray(array) {
+             //Temporary array to store sorted array:
+             const tempArray = [];
+             //Length of original array:
+             let size = array.length;
+             for (let i = 0; i < size; i++) {
+               //Find the minimum number:
+               let min = Math.min(...array);
+               console.log(min);
+               //Find index of minimum number:
+               let index = array.indexOf(min);
+               console.log(index);
+               //Push the min number to tempArray
+               tempArray.push(min);
+               console.log(tempArray);
+               //Remove min from original array:
+               array.splice(index, 1);
+             }
+           } */
+
+      //   Create a function to reverse an array using splice.
+
+      /* function reverseArray(array) {
+        //Length of the original array:
+        const size = array.length;
+
+        //Looping until all elements get inside the temp from backwards:
+        //Temporary array to store reversed array:
+        const temp = [];
+        for (let i = 0; i < size; i++) {
+          //Last element of array:
+          const lastIndex = array.length - 1;
+          //Pushing element to temp array
+          temp.push(array[lastIndex]);
+          array.splice(lastIndex, 1);
+        }
+
+        //Pushing elements back to the original:
+        for (i = 0; i < temp.length; i++) {
+          array.push(temp[i]);
+        }
+        //Displaying the result
+        console.log(array);
+      }
+      const numbers = [1, 2, 3, 4];
+      reverseArray(numbers); */
+
+      //   Create a function to merge two arrays using splice.
+      /* 
+      function merge(arr1, arr2) {
+        //Iterating until arr2 empties:
+        for (let i = 0; i < arr2.length; i++) {
+          //Elements of arr2:
+          let element = arr2[i];
+          //Insert position for new element:
+          const insertPosition = arr1.length;
+          //Merging elements to arr1:
+          arr1.splice(insertPosition, 0, element);
+        }
+        console.log(arr1);
+      }
+      const nums1 = [1, 2, 3, 4];
+      const nums2 = ["a", "b", 10];
+      merge(nums1, nums2); */
+
+      //   Create a function to flatten a nested array using splice.
+      const arr = [1, 2, 3, 4, "a", ["a", "b"], 5, 6, 7, 8];
+
+      flattenArray(arr);
+      //To get nested array and its index:
+      function flattenArray(array) {
+        let nestedArray;
+        let arrayIndex;
+        array.forEach((value, index) => {
+          //Store value and index if it is a nested array:
+          if (typeof value === "object") {
+            nestedArray = value;
+            arrayIndex = index;
+          }
+        });
+        nestedArray.forEach((value) => {
+          array.splice(arrayIndex, 1, value);
+        });
+        console.log(array);
+      }
+    </script>
+  </body>
+</html>
