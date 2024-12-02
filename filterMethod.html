@@ -274,6 +274,123 @@
         console.log(filteredArray);
       }
       filterNumbers(numbers); */
+
+      //Prime Numbers: Given an array of numbers, filter out prime numbers.
+      /* function isPrime(num) {
+        if (num <= 1) {
+          // console.log("not prime");
+          return false;
+        }
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            // console.log("not prime");
+            return false;
+          }
+        }
+        return true;
+        // console.log("prime");
+      }
+      const numbers = [1, 2, 3, 4, -5, 3, 19, 24, 21, 29, -2, 2, 1, 0, 7, 5];
+      function filterPrime(array) {
+        const filteredArray = array.filter((value) => {
+          return isPrime(value);
+        });
+        console.log(filteredArray);
+      }
+      filterPrime(numbers);
+ */
+      //Filter palindromic words from an array:
+      const words = [
+        "racecar",
+        "level",
+        "civic",
+        "radar",
+        "rotor",
+        "refer",
+        "kayak",
+        "madam",
+        "noon",
+        "deed",
+        "stats",
+        "solos",
+        "tenet",
+        "pop",
+        "minim",
+        "reviver",
+        "rotator",
+        "sagas",
+        "madamimadam",
+        "aibohphobia",
+        "Malayalam",
+        "repaper",
+        "detartrated",
+        "murdrum",
+        "wow",
+        "orange",
+        "umbrella",
+        "dragon",
+        "waterfall",
+        "candle",
+        "elephant",
+        "keyboard",
+        "mountain",
+        "lightning",
+        "potato",
+        "sunset",
+        "basket",
+        "mirror",
+        "galaxy",
+        "whisper",
+        "journey",
+        "passion",
+        "sapphire",
+        "random",
+        "crimson",
+        "fantasy",
+        "melody",
+        "thunder",
+        "orchard",
+        "prairie",
+      ];
+      filterPalindromicWords(words);
+      function filterPalindromicWords(array) {
+        const filteredArray = array.filter((value) => {
+          //Converting value to lowercase before checking to ensure capital- case words are not excluded
+          return checkPalindrome(value.toLowerCase());
+        });
+        console.log(filteredArray);
+      }
+
+      // Check if it is a palindrome
+      function checkPalindrome(string) {
+        //If original string is equal to reversed string
+        if (string === reverseString(string)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      //Reversing a string:
+      function reverseString(string) {
+        //Storing each character into an array:
+        myArray = string.split("");
+        //Reversing the array and joining its elements to build the string
+        const reversedString = reverseArray(myArray).join("");
+        return reversedString;
+      }
+
+      //Reversing an array:
+      function reverseArray(array) {
+        //newArr to store elements backwards
+        const newArr = [];
+        //Looping through an array from last element
+        for (let i = array.length - 1; i >= 0; i--) {
+          //Pushing elements from the end
+          newArr.push(array[i]);
+        }
+        return newArr;
+      }
     </script>
   </body>
 </html>
