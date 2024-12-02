@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Method</title>
+  </head>
+  <body>
+    <script>
+      //Double each element of an array:
+      const numbers = [1, 2, 3, 4];
+      function doubleNumbers(array) {
+        const modifiedArray = array.map((value) => {
+          return value * 2;
+        });
+        console.log(modifiedArray);
+      }
+      doubleNumbers(numbers);
+      //Get an array with the length of strings:
+      const strings = ["a", "ab", "abc", "abcd"];
+      function stringLength(array) {
+        const modifiedArray = array.map((value) => {
+          return value.length;
+        });
+        console.log(modifiedArray);
+      }
+
+      stringLength(strings);
+      //To convert array elements to fahrenheit
+      const celsius = [15, 30, 95, 82];
+      function toFahrenheitArray(array) {
+        const modifiedArray = array.map(toFahrenheit);
+        console.log(modifiedArray);
+      }
+
+      function toFahrenheit(temp) {
+        return (9 / 5) * temp + 32;
+      }
+      toFahrenheitArray(celsius);
+
+      //Capitalize each word
+      const words = ["a", "b", "C", "d", 1];
+      function capitalize(array) {
+        const modifiedArray = array.map((value) => {
+          //Check if element is a string:
+          if (typeof value === "string") {
+            return value.toUpperCase();
+          } else {
+            //Leave non-string elements unchanged.
+            return value;
+          }
+        });
+        console.log(modifiedArray);
+      }
+      capitalize(words);
+
+      //Currency formatting
+      const prices = [40, 450, 60];
+      function currencyFormatter(array) {
+        const modifiedArray = array.map((value) => {
+          return "Rs." + String(value);
+        });
+        console.log(modifiedArray);
+      }
+      currencyFormatter(prices);
+
+      //Object transformation
+      // Object Transformation: Given an array of objects with properties name and age, create a new array of objects with properties firstName, lastName, and isAdult.
+      const userDetails = [
+        { name: "Honey Sharma", age: 26 },
+        { name: "Money Sharma", age: 23 },
+        { name: "Vansh Sharma", age: 16 },
+      ];
+
+      function modifyDetails(array) {
+        const modifiedArray = array.map((value) => {
+          //Splitting name into first and last name:
+          const names = value.name.split(" ");
+          //Returning an array with modified object properties:
+          return {
+            firstName: names[0],
+            lastName: names[1],
+            //Checking adulthood
+            isAdult: value.age >= 18,
+          };
+        });
+        console.log(modifiedArray);
+      }
+      modifyDetails(userDetails);
+      // Chaining Map and Filter: Given an array of numbers, filter out even numbers and then square the remaining numbers.
+      /*  const digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      function squareNonEven(array) {
+        //Filter non-even numbers:
+        const filteredArray = array.filter((value) => {
+          return value % 2 !== 0;
+        });
+        //Squaring non-even array:
+        const modifiedArray = filteredArray.map((value) => {
+          return value * value;
+        });
+        console.log(modifiedArray);
+      }
+      squareNonEven(digits); */
+
+      // METHOD-2 CHAINING
+      const digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      function squareNonEven(array) {
+        const result = array
+          .filter((value) => {
+            return value % 2 !== 0;
+          })
+          .map((value) => {
+            return value * value;
+          });
+        console.log(result);
+      }
+      squareNonEven(digits);
+    </script>
+  </body>
+</html>
