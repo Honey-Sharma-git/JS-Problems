@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Each Method()</title>
+  </head>
+  <body>
+    <script>
+      //Iterating over an array of numbers: Print each number to the console.
+      /* const numbers = [1, 2, 3, 4, 5];
+      function printNumbers(array) {
+        array.forEach((value) => {
+          console.log(value);
+        });
+      }
+      printNumbers(numbers); */
+      //   Iterating over an array of strings: Print the length of each string to the console.
+      /* const strings = ["a", "ab", "abc", "abcd", "abcde"];
+      function stringLength(array) {
+        array.forEach((value) => {
+          console.log(value.length);
+        });
+      }
+      stringLength(strings); */
+
+      //Iterating over an array of objects: Print the name property of each object to the console.
+      /* 
+      const userDetails = [
+        { name: "Honey", age: 26 },
+        { name: "Vansh", age: 16 },
+        { name: "Money", age: 23 },
+      ];
+      function printName(array) {
+        array.forEach((value) => {
+          console.log(value.name);
+        });
+      }
+      printName(userDetails); */
+
+      //Sum of numbers: Calculate the sum of all numbers in an array.
+
+      /*  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      function addNumbers(array) {
+        let sum = 0;
+        array.forEach((value) => {
+          sum = sum + value;
+        });
+        console.log(sum);
+      }
+      addNumbers(numbers); */
+
+      //String concatenation: Concatenate all strings in an array into a single string, separated by commas.
+
+      /*  const letters = ["a", "b", "c", "d"];
+      function joinLetters(array) {
+        let concat = "";
+        array.forEach((value) => {
+          concat = concat + value + ",";
+        });
+        console.log(concat);
+      }
+
+      joinLetters(letters); */
+      //METHOD-2
+      /*  const letters = ["a", "b", "c", "d"];
+
+      function joinLetters(array) {
+        let concat = "";
+
+        // Loop through the array
+        for (let i = 0; i < array.length; i++) {
+          // Add the current element to the result
+          concat += array[i];
+
+          // Add a comma if it's not the last element
+          if (i < array.length - 1) {
+            concat += ",";
+          }
+        }
+
+        console.log(concat);
+      }
+
+      joinLetters(letters); // Output: "a,b,c,d"
+ */
+      //METHOD-3
+      //   console.log(letters.join(","));
+
+      //Filtering even numbers: Iterate over an array of numbers and print only the even numbers.
+
+      /*  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      function printEven(array) {
+        array.forEach((value) => {
+          if (value % 2 === 0) {
+            console.log(value);
+          }
+        });
+      }
+      printEven(numbers); */
+
+      /* //Finding the maximum number: Find the maximum number in an array.
+      const numbers = [1, 2, -3, 4, 5, 6, -7, 8, 9, -10];
+      function findMax(array) {
+        let max = array[0];
+        array.forEach((value) => {
+          if (max < value) {
+            max = value;
+          }
+        });
+        console.log(max);
+      }
+      findMax(numbers); */
+
+      //METHOD-2
+      //   const numbers = [1, 2, -3, 4, 5, 6, -7, 8, 9, -10];
+      //   console.log(Math.max(...numbers));
+
+      //Creating a new array: Create a new array with the squares of each number in an array.
+    //   const numbers = [1, 2, 3, 4];
+    //   function square(array) {
+    //     const squaredArray = [];
+    //     array.forEach((value) => {
+    //       squaredArray.push(value * value);
+    //     });
+    //     console.log(squaredArray);
+    //   }
+    //   square(numbers);
+
+    
+    </script>
+  </body>
+</html>
