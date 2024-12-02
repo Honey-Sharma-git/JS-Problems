@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete operator</title>
+  </head>
+  <body>
+    <script>
+      // Create an object with name, age, and city properties, then delete the age property.
+      /*     const userDetails = {
+        name: "Honey",
+        age: 26,
+        city: "Jaipur",
+      };
+      console.log(userDetails);
+      delete userDetails.age;
+      console.log(userDetails); */
+
+      //   Create a number array, delete the element at index 2.
+      /* const numbers = [0, 1, 2, 3, 4, 5];
+      console.log(numbers);
+      delete numbers[2]; //it creates holes in the array and doesn't change the length of the array.
+      console.log(numbers);
+      numbers.splice(2,1);
+      console.log(numbers) */
+
+      //Create an object with name and age properties, write a function to delete age if it exists
+      /* const obj1 = { name: "Honey", age: 23 };
+      const obj2 = { age: 23 };
+      const obj3 = { name: "Honey" };
+      const obj4 = { name: "Honey", age: 23 };
+
+      function deleteAge(object) {
+        if (object.age !== undefined) {
+          delete object.age;
+        }
+        console.log(object);
+      }
+      deleteAge(obj1);
+      deleteAge(obj2);
+      deleteAge(obj3);
+      deleteAge(obj4); */
+
+      // Create a nested object with person and address properties, delete the street property from address.
+
+   /*    const nested = {
+        name: "Honey Sharma",
+        address: { HouseNumber: 2154, street: "Gangori Bazar" },
+      };
+      delete nested.address.street;
+      console.log(nested); */
+    </script>
+  </body>
+</html>
