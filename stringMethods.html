@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String methods</title>
+  </head>
+  <body>
+    <script>
+      // Given a string, find its length.
+      const string = "Honey Sharma";
+      const length = string.length;
+      console.log(length);
+
+      //   Extract a specific character from a string at a given index.
+      const lastChar = string.at(string.length - 1);
+      console.log(lastChar);
+
+      // Convert a character to its corresponding Unicode code point.
+      console.log("B".charCodeAt(0));
+      const unicode = string.charCodeAt(0);
+      console.log(unicode);
+
+      // Create a copy of a string.
+      copiedString = string.slice(0);
+      console.log(copiedString);
+
+      //Check if a string is empty.
+      const emptyString = "";
+      isEmpty(emptyString);
+      isEmpty(string);
+      function isEmpty(str) {
+        if (str.length === 0) {
+          console.log("string is empty");
+        } else {
+          console.log("String is not empty");
+        }
+      }
+
+      //Concatenate two strings.
+      const prefix = "My name is ";
+      let fullString = prefix + string;
+      console.log(fullString);
+      //String is concatenated to string:
+      const suffix = " is my name.";
+      fullString = string.concat(suffix);
+      console.log(fullString);
+      //Suffix is concatenated to string:
+      fullString = suffix.concat(string, " ", prefix);
+      console.log(fullString);
+
+      //Convert a string to uppercase or lowercase.
+      const upperPrefix = prefix.toUpperCase();
+      console.log(upperPrefix);
+      const lowerPrefix = prefix.toLowerCase();
+      console.log(lowerPrefix);
+      console.log("ABCDEF".toLowerCase());
+      console.log("abcdef".toUpperCase());
+
+      //   Find the index of a specific character within a string.
+      const string2 = "ABCDEFGHIJKL";
+      const indexOfH = string2.indexOf("H");
+      console.log(indexOfH);
+
+      //Check if a string starts or ends with a specific substring.
+      const string3 = "Mr. Honey Sharma allowed";
+      const string4 = "Mrs. Falana Dhimkana Not-allowed";
+      const string5 = "No salutation name allowed";
+
+      isMr(string3);
+      isMr(string4);
+      isMr(string5);
+
+      isAllowed(string3);
+      isAllowed(string4);
+      isAllowed(string5);
+
+      function isMr(string) {
+        const firstThree = string.substr(0, 3);
+        firstThree === "Mr." ? console.log("male") : console.log("Not male");
+      }
+      function isAllowed(string) {
+        const lastWord = string.substr(-7, 7);
+        if (lastWord === "allowed") {
+          console.log("allowed");
+        }
+      }
+
+      //Count the occurrences of a specific character in a string.
+      //   Method-1
+      const string6 = "ABCDEFGAFGAFGAFGAFGAFGA";
+      let a = 0;
+      for (let i = 0; i < string6.length; i++) {
+        if (string6.at(i) === "A") {
+          a++;
+        }
+      }
+      console.log(a);
+
+      //   Method-2
+      const arrayOfChar = string6.split("");
+      const filteredArrayOfA = arrayOfChar.filter((value) => {
+        return value === "A";
+      });
+      console.log(filteredArrayOfA.length);
+
+      //   Find the last occurrence of a character in a string.
+      const string7 = "ABCDEFGAFGAFGAFGAFGAFG";
+      console.log(string7.lastIndexOf("A"));
+
+      //   Convert a string to an array of characters.
+      console.log(string7.split(""));
+
+      // Remove a specific character from a string.
+      const string8 = "Hello$ my$ name$ is$ Honey$";
+      let newString = string8.replace("$", "");
+      console.log(newString);
+
+      newString = string8.replaceAll("$", "");
+      console.log(newString);
+
+      const string9 = "Hello hello are two different types of hellos";
+      //   console.log(string9.replaceAll(/hello/i, "madaf"));
+
+      //   Count the number of vowels in a string.
+
+      //   METHOD-1
+      const string10 = "Hello, my name is Honey";
+      //Convert string to lowercase for comparison
+      /*   const lowerStr = string10.toLowerCase();
+      //Splitting characters into an array:
+      const arrayOfChars = lowerStr.split("");
+      //Filtering array for vowel 'a':
+      const vowelA = arrayOfChars.filter((value) => {
+        return value === "a";
+      });
+      const vowelE = arrayOfChars.filter((value) => {
+        return value === "e";
+      });
+      const vowelI = arrayOfChars.filter((value) => {
+        return value === "i";
+      });
+      const vowelO = arrayOfChars.filter((value) => {
+        return value === "o";
+      });
+      const vowelU = arrayOfChars.filter((value) => {
+        return value === "u";
+      });
+      //counting vowels:
+      const countOfVowels = {};
+      countOfVowels.countA = vowelA.length;
+      countOfVowels.countE = vowelE.length;
+      countOfVowels.countI = vowelI.length;
+      countOfVowels.countO = vowelO.length;
+      countOfVowels.countU = vowelU.length;
+      console.log(countOfVowels);
+ */
+      //   METHOD-2
+      const string_aeiou = "Helloo my name is Honey Sharma.";
+      //Calling the function to count vowels
+      countVowels(string_aeiou);
+
+      //Function definition:
+      function countVowels(str) {
+        //A string of vowels in English:
+        const vowels = "aeiouAEIOU";
+        //Counter for vowels:
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+          //Checking if string includes vowels
+          if (vowels.includes(str.at(i))) {
+            //Update counter if present
+            count++;
+          }
+        }
+        //Display count of vowels:
+        console.log(count);
+      }
+
+    //   Given a string, find the most frequent character.
+    const myString = "Helloo my name is Honey Sharma.";
+
+    </script>
+  </body>
+</html>
