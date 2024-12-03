@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>String methods</title>
   </head>
-  <body>
+  <body style="background-color: black">
     <script>
       // Given a string, find its length.
       const string = "Honey Sharma";
@@ -128,33 +128,33 @@
       const string10 = "Hello, my name is Honey";
       //Convert string to lowercase for comparison
       /*   const lowerStr = string10.toLowerCase();
-      //Splitting characters into an array:
-      const arrayOfChars = lowerStr.split("");
-      //Filtering array for vowel 'a':
-      const vowelA = arrayOfChars.filter((value) => {
-        return value === "a";
-      });
-      const vowelE = arrayOfChars.filter((value) => {
-        return value === "e";
-      });
-      const vowelI = arrayOfChars.filter((value) => {
-        return value === "i";
-      });
-      const vowelO = arrayOfChars.filter((value) => {
-        return value === "o";
-      });
-      const vowelU = arrayOfChars.filter((value) => {
-        return value === "u";
-      });
-      //counting vowels:
-      const countOfVowels = {};
-      countOfVowels.countA = vowelA.length;
-      countOfVowels.countE = vowelE.length;
-      countOfVowels.countI = vowelI.length;
-      countOfVowels.countO = vowelO.length;
-      countOfVowels.countU = vowelU.length;
-      console.log(countOfVowels);
- */
+           //Splitting characters into an array:
+           const arrayOfChars = lowerStr.split("");
+           //Filtering array for vowel 'a':
+           const vowelA = arrayOfChars.filter((value) => {
+             return value === "a";
+           });
+           const vowelE = arrayOfChars.filter((value) => {
+             return value === "e";
+           });
+           const vowelI = arrayOfChars.filter((value) => {
+             return value === "i";
+           });
+           const vowelO = arrayOfChars.filter((value) => {
+             return value === "o";
+           });
+           const vowelU = arrayOfChars.filter((value) => {
+             return value === "u";
+           });
+           //counting vowels:
+           const countOfVowels = {};
+           countOfVowels.countA = vowelA.length;
+           countOfVowels.countE = vowelE.length;
+           countOfVowels.countI = vowelI.length;
+           countOfVowels.countO = vowelO.length;
+           countOfVowels.countU = vowelU.length;
+           console.log(countOfVowels);
+      */
       //   METHOD-2
       const string_aeiou = "Helloo my name is Honey Sharma.";
       //Calling the function to count vowels
@@ -177,9 +177,109 @@
         console.log(count);
       }
 
-    //   Given a string, find the most frequent character.
-    const myString = "Helloo my name is Honey Sharma.";
+      //   Given a string, find the most frequent character.
+      const myString = "Helloo my name is Honey Sharma.";
 
+      // Write a function that takes two strings as input and returns the longer one's length.
+      function longerString(str1, str2) {
+        //Check: compare only strings
+        if (typeof str1 !== "string" || typeof str2 !== "string") {
+          console.log("Please check your input");
+          return;
+        }
+        //Store length of strings:
+        const l1 = str1.length;
+        const l2 = str2.length;
+        //Checking if string has characters:
+        if (l1 === 0) {
+          console.log("First string is empty");
+        }
+        if (l2 === 0) {
+          console.log("Second string is empty");
+        }
+        //Comparing string lengths:
+        if (l1 === l2) {
+          console.log("Both strings have equal lengths");
+        } else if (l1 > l2) {
+          console.log("First string is longer than second string");
+        } else {
+          console.log("Second string is longer than first string");
+        }
+      }
+      const a1 = "Honey Sharma";
+      const b1 = "Vansh Sharma";
+      let c1;
+      console.log(longerString(a1, b1));
+
+      //How can you loop through all characters in a string using its length?
+      const str3 = "HONEY Sharma";
+      for (let i = 0; i < str3.length; i++) {
+        console.log(str3.at(i));
+      }
+
+      // How can you write a function that returns the number of words in a string (assuming words are separated by spaces)?
+      let sentence = "Hello my name is Honey Sharma.";
+      console.log(countWords(sentence));
+      function countWords(string) {
+        //Converting string to array using space as delimiter
+        const words = string.split(" ");
+        //Counting the words:
+        return words.length;
+      }
+      // Write a function that takes a string and an index as input and returns the character at that index using string.at.
+      // +
+      // How would you handle accessing an index outside the string's length with string.at?
+      sentence = "ABCDEF";
+      console.log(characterAt(sentence, 14));
+
+      function characterAt(string, index) {
+        if (index >= 0 && index <= string.length - 1) {
+          return string.at(index);
+        } else {
+          return "Please check your index value";
+        }
+      }
+      // Write a function to obtain the Unicode code point of a character at a given index.
+      console.log(getUnicode("AB%", 0));
+      function getUnicode(string, index) {
+        return string.codePointAt(index);
+      }
+      // How can you distinguish between uppercase and lowercase letters based on their Unicode code points?
+
+      console.log(checkCase("Z"));
+      function checkCase(string) {
+        // Notes: a-z have unicode from 97-122
+        if (string.codePointAt(0) >= 97 && string.codePointAt(0) <= 122) {
+          return "Lowercase Alphabet";
+        }
+        // Notes: A-Z have unicode from 65-90
+        else if (string.codePointAt(0) >= 65 && string.codePointAt(0) <= 90) {
+          return "Uppercase Alphabet";
+        } else {
+          return "Not an Alphabet.";
+        }
+      }
+
+      //How to check if a string is all lowered case, all uppercased, sentence case and camelCase
+      sentence = "HONEYs";
+      console.log(findCase(sentence));
+      function findCase(string) {
+        result = "lowercase stringg";
+        for (let i = 0; i < string.length; i++) {
+          if (string.codePointAt(i) >= 97 && string.codePointAt(i) <= 122) {
+            result = "lowercase string";
+          } else if (
+            string.codePointAt(i) >= 65 &&
+            string.codePointAt(i) <= 90
+          ) {
+            result = "UPPERCASE string";
+          }
+        }
+        return result;
+      }
+      //Notes: blank space unicode: 32
+      // Notes: a-z have unicode from 97-122
+      // Notes: A-Z have unicode from 65-90
     </script>
   </body>
 </html>
