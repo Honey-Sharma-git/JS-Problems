@@ -127,34 +127,34 @@
       //   METHOD-1
       const string10 = "Hello, my name is Honey";
       //Convert string to lowercase for comparison
-      /*   const lowerStr = string10.toLowerCase();
-           //Splitting characters into an array:
-           const arrayOfChars = lowerStr.split("");
-           //Filtering array for vowel 'a':
-           const vowelA = arrayOfChars.filter((value) => {
-             return value === "a";
-           });
-           const vowelE = arrayOfChars.filter((value) => {
-             return value === "e";
-           });
-           const vowelI = arrayOfChars.filter((value) => {
-             return value === "i";
-           });
-           const vowelO = arrayOfChars.filter((value) => {
-             return value === "o";
-           });
-           const vowelU = arrayOfChars.filter((value) => {
-             return value === "u";
-           });
-           //counting vowels:
-           const countOfVowels = {};
-           countOfVowels.countA = vowelA.length;
-           countOfVowels.countE = vowelE.length;
-           countOfVowels.countI = vowelI.length;
-           countOfVowels.countO = vowelO.length;
-           countOfVowels.countU = vowelU.length;
-           console.log(countOfVowels);
-      */
+      const lowerStr = string10.toLowerCase();
+      //Splitting characters into an array:
+      const arrayOfChars = lowerStr.split("");
+      //Filtering array for vowel 'a':
+      const vowelA = arrayOfChars.filter((value) => {
+        return value === "a";
+      });
+      const vowelE = arrayOfChars.filter((value) => {
+        return value === "e";
+      });
+      const vowelI = arrayOfChars.filter((value) => {
+        return value === "i";
+      });
+      const vowelO = arrayOfChars.filter((value) => {
+        return value === "o";
+      });
+      const vowelU = arrayOfChars.filter((value) => {
+        return value === "u";
+      });
+      //counting vowels:
+      const countOfVowels = {};
+      countOfVowels.countA = vowelA.length;
+      countOfVowels.countE = vowelE.length;
+      countOfVowels.countI = vowelI.length;
+      countOfVowels.countO = vowelO.length;
+      countOfVowels.countU = vowelU.length;
+      console.log(countOfVowels);
+
       //   METHOD-2
       const string_aeiou = "Helloo my name is Honey Sharma.";
       //Calling the function to count vowels
