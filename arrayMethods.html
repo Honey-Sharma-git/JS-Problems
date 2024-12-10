@@ -160,6 +160,34 @@ o	Map and flatten an array of objects to extract a specific property: [{name: "A
       const names = ["honey", "money", "Vansh", "Ram", "Mohan"];
       const copiedArray = names.copyWithin(2, 0, 4);
       console.log(`Copied array:`, copiedArray);
+
+      //   •	Given an array of numbers, calculate the average, maximum, and minimum values.
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let sum = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        sum += numbers.at(i);
+      }
+      const avg = sum / numbers.length;
+      const max = Math.max(...numbers);
+      const min = Math.min(...numbers);
+      console.log(`Provided numbers: ${numbers}\n
+      Sum: ${sum}\n
+      Avg: ${avg}\n
+      Max: ${max}\n
+      Min: ${min}\n`);
+
+      //   •	Filter an array of products to find products that match a certain price range.
+
+      const prices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const from = 3;
+      const to = 8;
+      const filteredPrices = prices.filter((value) => {
+        if (value >= from && value <= to) {
+          return true;
+        }
+      });
+      console.log(filteredPrices);
+
     </script>
   </body>
 </html>
