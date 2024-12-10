@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      /*         1.	Array Creation and Access:
+o	Create an array of 5 fruits.
+o	Access the third fruit in the array and print it to the console.
+ */
+      const fruits = ["Banana", "Apple", "Kiwi", "Grapes", "Mango"];
+      const thirdFruit = fruits.at(3);
+      const lastFruit = fruits.at(-1);
+      const firstFruit = fruits.at(0);
+      const secondFruit = fruits[1];
+      console.log(`first fruit: ${firstFruit}\nsecond fruit: ${secondFruit}\nthird fruit: ${thirdFruit}\nlast fruit: ${lastFruit}\n
+        `);
+
+      /*         2.	Array Modification:
+o	Add "kiwi" to the end of the fruit array.
+o	Remove the first fruit from the array.
+o	Replace the second fruit with "banana".
+ */
+      fruits.push("Pineapple");
+      console.log(`After adding Pineapple to the end: `, fruits);
+      fruits.shift(0);
+      console.log(
+        `After removing first element from the array using shift(): `,
+        fruits
+      );
+      fruits.splice(0, 1);
+      console.log(
+        `After removing first element from the array using splice: `,
+        fruits
+      );
+      fruits.splice(1, 1, "Banana");
+      console.log(`After replacing second fruit with banana `, fruits);
+
+      /*       3.	Array Length and Iteration:
+o	Determine the number of fruits in the array.
+o	Iterate over the fruit array and print each fruit on a new line.
+ */
+      const fLen = fruits.length;
+      console.log(`Number of fruits in an array: ${fLen}`);
+      console.log("List of fruits in new line:");
+      fruits.forEach((value) => {
+        console.log(value);
+      });
+
+      /*       4.	Array Slicing and Splicing:
+o	Extract the first 3 fruits from the array and store them in a new array.
+o	Remove the last 2 fruits from the original array.
+o	Insert "grape" and "orange" at the beginning of the array.
+ */
+      const newFruits = [
+        "Banana",
+        "Apple",
+        "Kiwi",
+        "Grapes",
+        "Mango",
+        "Pineapple",
+        "Dates",
+      ];
+      console.log(`The array before extraction:`, newFruits);
+      const newArr = newFruits.slice(0, 3);
+      console.log(`The new array made from extraction: `, newArr);
+
+      newFruits.splice(newFruits.length - 2, 2);
+      console.log(`Original array after removing last two fruits: `, newFruits);
+
+      newFruits.splice(0, 0, "Grapes", "Orange");
+      console.log(
+        `After inserting grapes and orange at the beginning:`,
+        newFruits
+      );
+
+      /*       5.	Array Joining and Concatenation:
+o	Combine all the fruits into a single string separated by commas.
+o	Create a new array by combining the fruit array with a vegetable array: ["carrot", "broccoli", "potato"].
+ */
+      const fruitsString = newFruits.toString();
+      console.log(
+        `String of fruits using toString()separated by commas:`,
+        fruitsString
+      );
+      const newFruitsString = newFruits.join(" ");
+      console.log(
+        `String of fruits using join() separated by space:`,
+        newFruitsString
+      );
+
+      const vegetables = ["Carrot", "LadyFinger", "Eggplant"];
+
+      const combiArr = newFruits.concat(vegetables);
+      console.log(
+        `New array after combining newFruits to vegetables`,
+        combiArr
+      );
+
+      /*       6.	Array Sorting and Reversing:
+o	Sort the fruit array alphabetically.
+o	Reverse the order of the fruits in the array.
+ */
+
+      /*  7.	Array Mapping and Filtering:
+o	Create a new array containing the length of each fruit name.
+o	Filter the fruit array to keep only fruits with more than 5 characters.
+ */
+
+      const newArray = newFruits.map((value, index) => {
+        const fruitLen = value.length;
+        return fruitLen;
+      });
+      console.log(
+        `New array with it containing length of each fruit`,
+        newArray
+      );
+      const filteredArray = newFruits.filter((value) => {
+        if (value.length > 5) {
+          return true;
+        }
+      });
+      console.log(
+        `Array containing fruits with more than 5 characters`,
+        filteredArray
+      );
+
+      /*       9.	Array Flattening and FlatMapping:
+o	Flatten a nested array: [[1, 2], [3, 4], [5, 6]].
+o	Map and flatten an array of objects to extract a specific property: [{name: "Alice", age: 25}, {name: "Bob", age: 30}].
+ */
+      const nestedArray = [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+      ];
+
+      const flattenedArray = nestedArray.flat();
+      console.log(`Flattened array:`, flattenedArray);
+
+      const nestedObj = [
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 30 },
+      ];
+
+      const flattenedObj = nestedObj.flatMap((value) => {
+        return value.age;
+      });
+      console.log(`Flattened Obj: `, flattenedObj);
+
+      //Use copy within:
+      const names = ["honey", "money", "Vansh", "Ram", "Mohan"];
+      const copiedArray = names.copyWithin(2, 0, 4);
+      console.log(`Copied array:`, copiedArray);
+    </script>
+  </body>
+</html>
