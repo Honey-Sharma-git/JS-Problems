@@ -13,22 +13,22 @@
   <body>
     <script>
       /*         1.	Array Creation and Access:
-o	Create an array of 5 fruits.
-o	Access the third fruit in the array and print it to the console.
- */
+      o	Create an array of 5 fruits.
+      o	Access the third fruit in the array and print it to the console.
+       */
       const fruits = ["Banana", "Apple", "Kiwi", "Grapes", "Mango"];
       const thirdFruit = fruits.at(3);
       const lastFruit = fruits.at(-1);
       const firstFruit = fruits.at(0);
       const secondFruit = fruits[1];
       console.log(`first fruit: ${firstFruit}\nsecond fruit: ${secondFruit}\nthird fruit: ${thirdFruit}\nlast fruit: ${lastFruit}\n
-        `);
+              `);
 
       /*         2.	Array Modification:
-o	Add "kiwi" to the end of the fruit array.
-o	Remove the first fruit from the array.
-o	Replace the second fruit with "banana".
- */
+      o	Add "kiwi" to the end of the fruit array.
+      o	Remove the first fruit from the array.
+      o	Replace the second fruit with "banana".
+       */
       fruits.push("Pineapple");
       console.log(`After adding Pineapple to the end: `, fruits);
       fruits.shift(0);
@@ -45,9 +45,9 @@ o	Replace the second fruit with "banana".
       console.log(`After replacing second fruit with banana `, fruits);
 
       /*       3.	Array Length and Iteration:
-o	Determine the number of fruits in the array.
-o	Iterate over the fruit array and print each fruit on a new line.
- */
+      o	Determine the number of fruits in the array.
+      o	Iterate over the fruit array and print each fruit on a new line.
+       */
       const fLen = fruits.length;
       console.log(`Number of fruits in an array: ${fLen}`);
       console.log("List of fruits in new line:");
@@ -56,10 +56,10 @@ o	Iterate over the fruit array and print each fruit on a new line.
       });
 
       /*       4.	Array Slicing and Splicing:
-o	Extract the first 3 fruits from the array and store them in a new array.
-o	Remove the last 2 fruits from the original array.
-o	Insert "grape" and "orange" at the beginning of the array.
- */
+      o	Extract the first 3 fruits from the array and store them in a new array.
+      o	Remove the last 2 fruits from the original array.
+      o	Insert "grape" and "orange" at the beginning of the array.
+       */
       const newFruits = [
         "Banana",
         "Apple",
@@ -83,9 +83,9 @@ o	Insert "grape" and "orange" at the beginning of the array.
       );
 
       /*       5.	Array Joining and Concatenation:
-o	Combine all the fruits into a single string separated by commas.
-o	Create a new array by combining the fruit array with a vegetable array: ["carrot", "broccoli", "potato"].
- */
+      o	Combine all the fruits into a single string separated by commas.
+      o	Create a new array by combining the fruit array with a vegetable array: ["carrot", "broccoli", "potato"].
+       */
       const fruitsString = newFruits.toString();
       console.log(
         `String of fruits using toString()separated by commas:`,
@@ -106,14 +106,14 @@ o	Create a new array by combining the fruit array with a vegetable array: ["carr
       );
 
       /*       6.	Array Sorting and Reversing:
-o	Sort the fruit array alphabetically.
-o	Reverse the order of the fruits in the array.
- */
+      o	Sort the fruit array alphabetically.
+      o	Reverse the order of the fruits in the array.
+       */
 
       /*  7.	Array Mapping and Filtering:
-o	Create a new array containing the length of each fruit name.
-o	Filter the fruit array to keep only fruits with more than 5 characters.
- */
+      o	Create a new array containing the length of each fruit name.
+      o	Filter the fruit array to keep only fruits with more than 5 characters.
+       */
 
       const newArray = newFruits.map((value, index) => {
         const fruitLen = value.length;
@@ -134,9 +134,9 @@ o	Filter the fruit array to keep only fruits with more than 5 characters.
       );
 
       /*       9.	Array Flattening and FlatMapping:
-o	Flatten a nested array: [[1, 2], [3, 4], [5, 6]].
-o	Map and flatten an array of objects to extract a specific property: [{name: "Alice", age: 25}, {name: "Bob", age: 30}].
- */
+      o	Flatten a nested array: [[1, 2], [3, 4], [5, 6]].
+      o	Map and flatten an array of objects to extract a specific property: [{name: "Alice", age: 25}, {name: "Bob", age: 30}].
+       */
       const nestedArray = [
         [1, 2],
         [3, 4],
@@ -171,10 +171,10 @@ o	Map and flatten an array of objects to extract a specific property: [{name: "A
       const max = Math.max(...numbers);
       const min = Math.min(...numbers);
       console.log(`Provided numbers: ${numbers}\n
-      Sum: ${sum}\n
-      Avg: ${avg}\n
-      Max: ${max}\n
-      Min: ${min}\n`);
+            Sum: ${sum}\n
+            Avg: ${avg}\n
+            Max: ${max}\n
+            Min: ${min}\n`);
 
       //   •	Filter an array of products to find products that match a certain price range.
 
@@ -188,6 +188,95 @@ o	Map and flatten an array of objects to extract a specific property: [{name: "A
       });
       console.log(filteredPrices);
 
+      // COPYWITHIN METHOD
+      //   1. Given an array `[10, 20, 30, 40, 50]`, use `copyWithin()` to replace the first two elements with the last two elements.
+
+      const myArr = [10, 20, 30, 40, 50];
+      console.log(myArr.copyWithin(0, 3, 5));
+      // 2.	Use copyWithin() on the array [10, 20, 30, 40, 50] to shift the last three elements ([30, 40, 50]) to the first three positions.
+      const arr2 = [10, 20, 30, 40, 50];
+      console.log(arr2.copyWithin(0, 2, 5));
+
+      // 3.	Given an array [5, 10, 15, 20, 25, 30], use copyWithin() to copy the middle two elements ([15, 20]) to the start of the array.
+      // Original array
+      const arr3 = [5, 10, 15, 20, 25, 30];
+
+      // Function to find middle indices
+      function findMid(array) {
+        let midIndex1, midIndex2;
+        if (array.length % 2 === 0) {
+          midIndex1 = array.length / 2 - 1;
+          midIndex2 = midIndex1 + 1;
+        } else {
+          midIndex1 = Math.floor(array.length / 2);
+          midIndex2 = midIndex1;
+        }
+        return [midIndex1, midIndex2];
+      }
+
+      // Find middle indices
+      const [midIndex1, midIndex2] = findMid(arr3);
+
+      // Use copyWithin() with the calculated indices
+      // Note: midIndex2 + 1 is used because copyWithin() excludes the end index
+      arr3.copyWithin(0, midIndex1, midIndex2 + 1);
+
+      // Output the modified array
+      console.log(arr3);
+
+      // 5.	Overwrite all elements in [100, 200, 300, 400, 500] with the first element (100) using copyWithin().
+      const arr4 = [100, 200, 300, 400, 500];
+      overwrite(arr4);
+      function overwrite(array) {
+        for (let i = 1; i < array.length; i++) {
+          array.copyWithin(i, 0, 1);
+        }
+        console.log(array);
+      }
+      // 7.	Duplicate the first three elements ([7, 14, 21]) in the array [7, 14, 21, 28, 35] using copyWithin().
+      const arr5 = [7, 14, 21, 28, 35];
+      console.log(arr5.copyWithin(2 + 1, 0));
+
+      // 8.	Use copyWithin() to remove the middle element ([3]) from the array [1, 2, 3, 4, 5].
+      const arr6 = [1, 2, 3, 4, 5];
+      const [index1, index2] = findMid(arr5);
+      arr6.copyWithin(index1, index1 + 1);
+      arr6.pop();
+      console.log(arr6);
+
+      // 9.	Given an array [1, 2, 3, 4, 5], use copyWithin() to swap the first and last elements.
+      const arr7 = [1, 2, 3, 4, 5];
+      function swap(array) {
+        const first = array[0];
+        array.copyWithin(0, array.length - 1);
+        array.pop();
+        array.push(first);
+        console.log(array);
+      }
+      swap(arr7);
+
+      // 10.	Using copyWithin(), duplicate the last two elements ([4, 5]) in the array [1, 2, 3, 4, 5] and place them in the middle of the array. Hint: try splice.
+      const arr8 = [1, 2, 3, 4, 5];
+      //Indices of middle elements:
+      const [i1, i2] = findMiddle(arr8);
+      //Copying last two elements to the middle:
+      arr8.copyWithin(i1, arr8.length - 2);
+      console.log(arr8);
+      function findMiddle(array) {
+        //For storing index of middle elements
+        let i1;
+        let i2;
+        //For even length array:
+        if (array.length % 2 === 0) {
+          i1 = array.length / 2 - 1;
+          i2 = i1 + 1;
+        } else {
+          // For odd length array:
+          i1 = Math.floor(array.length / 2) - 1;
+          i2 = i1;
+        }
+        return [i1, i2];
+      }
     </script>
   </body>
 </html>
