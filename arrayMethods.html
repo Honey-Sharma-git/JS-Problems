@@ -277,6 +277,76 @@
         }
         return [i1, i2];
       }
+      // Write a function that removes the 3rd and 4th elements from an array using splice. Return the modified array.
+      const arr9 = [1, 2, 3, 4, 5];
+      console.log(remove(arr9));
+      function remove(array) {
+        array.splice(2, 2);
+        return array;
+      }
+      // Use splice to insert the elements "red" and "blue" at the 2nd index of an array without removing any existing elements.
+      const arr10 = ["purple", "yellow", "orange", "green", "pink"];
+      arr10.splice(2, 0, "red", "blue");
+      console.log(arr10);
+
+      // Write a function that replaces the last two elements of an array with "end1" and "end2" using splice.
+      const arr11 = [1, 2, 3, 4, 5, 6, 7];
+      function replace(array) {
+        array.splice(array.length - 2, 2, "end1", "end2");
+        return array;
+      }
+      console.log(replace(arr11));
+      // What happens when you call array.splice(2, 0) on an empty array? Write and test the code.
+      const empty = [];
+      empty.splice(2, 0);
+      console.log(empty);
+
+      // Use splice to remove and return the first 3 elements of an array. Print both the modified array and the returned elements.
+      const arr12 = [1, 2, 3, 4, 5];
+      console.log(
+        `Returned array: ${arr12.splice(0, 3)}\nModified array: ${arr12}`
+      );
+
+      // Use a negative index in splice to remove the last three elements from an array. What does the resulting array look like?
+      const arr13 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      arr13.splice(-3, 3);
+      console.log(arr13);
+
+      // Write a function that takes an array, an index, a number n, and a value v, and replaces n elements starting at the given index with the value v using splice.
+      function replace(array, index, n, v) {
+        array.splice(index, n, v);
+        return array;
+      }
+      const arr14 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      console.log(replace(arr14, 3, 3, "Honey"));
+
+      // Use splice to insert all elements of a second array into the middle of the first array.
+
+      arr15 = [1, 2, 3, 4, 5];
+      const [ind1, ind2] = findMiddle(arr15);
+      arr16 = ["a", "b", "c"];
+      for (let i = arr16.length - 1; i >= 0; i--) {
+        arr15.splice(ind1, 0, arr16[i]);
+      }
+      console.log(arr15);
+      // What happens if you use splice with a start index greater than the array's length? Test it and describe the behavior.
+      const arr17 = [1, 2, 3];
+      console.log(arr17.splice(4, 1, "hello"));
+      console.log(arr17);
+
+      // Write a function that modifies an array using splice, and then restores it to its original state. Show how you keep track of the removed elements and reinsert them in the correct positions.
+      arr18 = [1, 2, 3, 4, 5];
+      modify(arr18, 2, 2, "a");
+      function modify(array, index, n, v) {
+        console.log(`Original array: ${array}`);
+        const removedElement = array.splice(index, n, v);
+        console.log(
+          `Removed Element: ${removedElement}\nModified Array: ${array}`
+        );
+        //Undo array:
+        array.splice(index, 1, removedElement);
+        console.log(`Undid array: ${array}`);
+      }
     </script>
   </body>
 </html>
