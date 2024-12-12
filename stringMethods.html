@@ -280,6 +280,102 @@
       //Notes: blank space unicode: 32
       // Notes: a-z have unicode from 97-122
       // Notes: A-Z have unicode from 65-90
+
+      // Write a function that removes leading and trailing spaces from a string.
+      let str1 =
+        "    This string has four leading spaces and 3 trailing spaces.   ";
+      console.log(str1);
+      console.log(removeSpaces(str1));
+
+      function removeSpaces(string) {
+        return string.trim();
+      }
+
+      // Trim each line in a multi-line string so there are no extra spaces before or after each line.
+      let str2 = `   This
+         is
+         a
+             multiline string.    `;
+      const newStr = str2
+        .split("\n")
+        .map((value) => {
+          return value.trim();
+        })
+        .join("\n");
+      console.log(newStr);
+
+      // Write a function that checks if a string has no leading or trailing spaces. If it does, return the trimmed string; otherwise, return "Already trimmed".
+      let str4 = " This is not a trimmed string.";
+      console.log(checkAndTrim(str4));
+      function checkAndTrim(string) {
+        if (string.at(0) === " " || string.at(-1) === " ") {
+          return string.trim();
+        } else {
+          return "Already trimmed";
+        }
+      }
+      // Replace all instances of the word "cat" with "dog" in a given string.
+      let str5 = " I love cat. My cat is black in color. Cat as four legs.";
+      console.log(str5.replaceAll("cat", "dog"));
+      // Write a function that replaces a specific word in a sentence with asterisks (*), matching the length of the word.
+      let str6 = " I love cat. My cat is black in color. Cat as four legs.";
+      console.log(censor(str6, "cat"));
+      function censor(string, word) {
+        let replacement = "*".repeat(word.length);
+        return string.replaceAll(word, replacement);
+      }
+      // Write a function that checks if a substring exists within a given string.
+      let str7 = "This is a string which is written to find the substring.";
+      function checkSubstring(string, substring) {
+        if (string.includes(substring)) {
+          return `"${substring}" exists.`;
+        } else {
+          return `"${substring}" doesn't exist.`;
+        }
+      }
+      console.log(checkSubstring(str7, "string"));
+      // Write a function that filters an array of strings, returning only those that contain a specific word.
+      let myArray = [
+        "This is a string.",
+        "This is also a string.",
+        "This is a numeric string 112233",
+        "This is  numeric.",
+      ];
+      console.log(filter(myArray, "a"));
+      function filter(array, word) {
+        const filteredArray = array.filter((value) => {
+          return value.includes(word);
+        });
+        return filteredArray;
+      }
+
+      // Write a function that removes leading and trailing spaces, and spaces after before new lines replaces all instances of "badword" with "****", and checks if the cleaned string contains the word "important". Return both the cleaned string and whether "important" is present.
+      let str8 = `          This is a string to censor badword wherever badword is written. 
+      
+              The badword will be replaced by ******  and the if the word important is present it will be notified.         `;
+      console.log(str8);
+      sanitize(str8, "badword");
+
+      function sanitize(string, word) {
+        //Splitting and Trimming each line:
+        const array = string.split("\n").map((value) => {
+          return value.trim();
+        });;
+        //Joining each element into a string:
+        const trimmedString = array.join(" ");
+        //Replace badword with *****:
+        const censoredString = trimmedString.replaceAll(
+          word,
+          "*".repeat(word.length)
+        );
+        console.log(censoredString);
+        const find = "important";
+        if (censoredString.includes(find)) {
+          console.log(`${find} exists.`);
+        } else {
+          console.log(`${find} doesn't exist.`);
+        }
+      }
     </script>
   </body>
 </html>
