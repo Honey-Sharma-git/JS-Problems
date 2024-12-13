@@ -456,6 +456,114 @@
         }
       });
       console.log(index);
+
+      // Write a function that checks if the number 42 is present in the array [12, 34, 42, 56].
+      function numCheck(array, num) {
+        if (array.includes(num) === true) {
+          console.log(`${num} is present.`);
+        } else {
+          console.log(`${num} is NOT present.`);
+        }
+      }
+      myArray = [12, 34, 42, 56];
+      numCheck(myArray, 42);
+      // Given the array ["apple", "banana", "cherry"], check if the string "Apple" exists in the array.
+
+      myArray = ["apple", "banana", "cherry"];
+      console.log(myArray.includes("Apple"));
+
+      // Write a function to verify if both 3 and 7 exist in the array [1, 3, 5, 7, 9].
+      myArray = [1, 3, 5, 7, 9];
+      function checkNums(array, num1, num2) {
+        if (array.includes(num1) && array.includes(num2)) {
+          console.log(`Both ${num1} and ${num2} are present.`);
+          return;
+        } else if (array.includes(num1)) {
+          console.log(`Only ${num1} is present.`);
+          return;
+        } else if (array.includes(num2)) {
+          console.log(`Only ${num2} is present.`);
+          return;
+        } else {
+          console.log(`Both ${num1} and ${num2} are NOT present.`);
+          return;
+        }
+      }
+      checkNums(myArray, 13, 17);
+
+      // Determine if [1, 2] exists in the array [[1, 2], [3, 4], [5, 6]].
+      myArray = [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+      ];
+      console.log(myArray.includes([1, 2]));
+
+      // Given the array [5, 10, 15, 20] and the list of valid elements [10, 20], write a function to return a new array containing only the valid elements.
+      myArray = [5, 10, 15, 20];
+      let validElements = [10, 20];
+      function filterValid(array, validList) {
+        const filteredList = array.filter((value) => {
+          return validList.includes(value);
+        });
+        return filteredList;
+      }
+      console.log(filterValid(myArray, validElements));
+
+      // Check if the special value NaN is included in the array [1, 2, NaN, 4].
+      myArray = [1, 2, NaN, 4];
+      console.log(myArray.includes(NaN));
+
+      // Write a function to verify if "Banana" (case-insensitive) exists in the array ["apple", "BANANA", "Cherry"].
+      myArray = ["apple", "BANANA", "Cherry"];
+      console.log(
+        myArray
+          .map((value) => {
+            return value.toLowerCase();
+          })
+          .includes("Banana".toLowerCase())
+      );
+      // Create a function that takes an array and a value as input and checks if the value exists in the array.
+      myArray = [1, 2, 3, 4, 5];
+      console.log(check(myArray, 23));
+      function check(array, input) {
+        return array.includes(input);
+      }
+      // Write a function that returns true if any value from the array [2, 4, 6] exists in [1, 2, 3, 4, 5].
+      const passed = [21, 14, 2];
+      const appeared = [1, 2, 3, 4, 5];
+      console.log(isPassed(passed, appeared));
+      function isPassed(passed, appeared) {
+        let result = false;
+        passed.forEach((value) => {
+          if (appeared.includes(value)) {
+            result = true;
+          }
+        });
+        return result;
+      }
+
+      // Write a function to remove all instances of 3 and 5 from the array [1, 2, 3, 4, 5, 6] using Array.includes().
+      myArray = [1, 2, 3, 4, 5, 6];
+      remove(myArray, 3);
+      remove(myArray, 5);
+      remove(myArray, 17);
+
+      function remove(array, element) {
+        let ind;
+        if (array.includes(element)) {
+          array.forEach((value, index) => {
+            if (value === element) {
+              ind = index;
+            }
+          });
+          array.splice(ind, 1);
+        } else {
+          console.log(`${element} doesn't exist in ${array}`);
+          return;
+        }
+        console.log(array);
+      }
     </script>
   </body>
 </html>
