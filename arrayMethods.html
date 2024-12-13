@@ -564,6 +564,184 @@
         }
         console.log(array);
       }
+
+      // Write a function that takes an array of numbers and returns the first negative number.
+      myArray = [1, 2, 3, -2, 4, -5, -6];
+      console.log(firstNeg(myArray));
+      function firstNeg(array) {
+        const first = array.find((value) => {
+          return value < 0;
+        });
+        return first;
+      }
+      // Given an array of student objects with properties name and score, return the first student whose score is above 90.
+      const studentsScores = [
+        { name: "Honey1", score: 88 },
+        { name: "Honey2", score: 90 },
+        { name: "Honey3", score: 78 },
+        { name: "Honey4", score: 98 },
+        { name: "Honey5", score: 28 },
+      ];
+      const topper = studentsScores.find((value) => {
+        return value.score > 90;
+      });
+      console.log(topper.name);
+      // Write a function that takes an array of strings and returns the first string that has more than 5 characters.
+      myArray = ["Banana", "Apple", "Kiwi", "Grapes", "Mango"];
+      const moreThan5Chars = myArray.find((value) => {
+        return value.length > 5;
+      });
+      console.log(moreThan5Chars);
+
+      // Write a function to return the first prime number in an array of integers.
+      isPrime(6);
+      function isPrime(num) {
+        if (num < 2) {
+          return false;
+        }
+        if (num === 2) {
+          return true;
+        }
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false;
+            break;
+          }
+        }
+        return true;
+      }
+      myArray = [1, 12, 63, 4, 5, 6, 7, 8, 9, 10];
+      firstPrime(myArray);
+      function firstPrime(array) {
+        const firstPrime = array.find((value) => {
+          return isPrime(value);
+        });
+        console.log(firstPrime);
+      }
+
+      // Given an array of task objects with properties id and completed, find the first task that is not completed (completed: false).
+      const tasks = [
+        { id: "wash clothes", completed: true },
+        { id: "iron clothes", completed: true },
+        { id: "clean room", completed: false },
+        { id: "read books", completed: true },
+        { id: "Plan vacation", completed: false },
+      ];
+      console.log(
+        tasks.find((value) => {
+          return !value.completed;
+        })
+      );
+      // Given an array of objects, find the first object that has a property id with a value of "iron clothes".
+      console.log(
+        tasks.find((value) => {
+          return value.id === "iron clothes";
+        })
+      );
+      // Write a function to find the first word in an array that is a palindrome (reads the same backward and forward).
+      myArray = ["hello", "malayalam"];
+      console.log(firstPalindrome(myArray));
+
+      //Find first palindrome:
+      function firstPalindrome(array) {
+        return array.find((value) => {
+          return isPalindrome(value);
+        });
+      }
+      //Check palindrome:
+      function isPalindrome(word) {
+        if (reverseStr(word) === word) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      //Reverse a string:
+      function reverseStr(word) {
+        const tempArray = [];
+        //Storing chars from the end:
+        for (let i = word.length - 1; i >= 0; i--) {
+          tempArray.push(word.at(i));
+        }
+        //Forming array to text string:
+        return tempArray.join("");
+      }
+
+      // Write a function that takes an array of numbers and returns the first number divisible by both 3 and 5.
+
+      //Check if number is divisible by 3 and 5
+      function div3and5(num) {
+        //Check if input is a number:
+        if (typeof num !== "number") {
+          return false;
+        } else if (num % 3 === 0 && num % 5 === 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      //Generate an array of random numbers
+      function generateNum(length) {
+        const myArray = [];
+        for (let i = 0; i < length; i++) {
+          //Generating numbers upto 2 digits:
+          const randomNumber = Math.random() * 90;
+          myArray.push(Math.floor(randomNumber));
+        }
+        //Returning array of numbers
+        return myArray;
+      }
+
+      //Finding first divisible number by 3 and 5:
+      function firstDiv(array) {
+        let firstNum;
+        firstNum = array.find((value) => {
+          return div3and5(value);
+        });
+        if (firstNum !== undefined) {
+          console.log(firstNum);
+        } else {
+          console.log("Not found");
+        }
+      }
+
+      firstDiv(generateNum(100));
+
+      // Given an array of product objects with properties name and inStock, return the first product where inStock is false.
+      const productList = [
+        { name: "bucket", inStock: true },
+        { name: "Mug", inStock: false },
+        { name: "book", inStock: false },
+        { name: "brush", inStock: true },
+        { name: "toothpaste", inStock: false },
+      ];
+      console.log(
+        productList.find((value) => {
+          return !value.inStock;
+        })
+      );
+      // Given an array of arrays, return the first sub-array where the sum of its elements is greater than 10.
+      myArray = [
+        [1, 2],
+        [1, 12],
+        [-3, 12],
+        [-7, 12],
+        [1, 5],
+      ];
+      console.log(
+        myArray.find((value) => {
+          return findSum(value) > 10;
+        })
+      );
+      //Find sum of an array:
+      function findSum(array) {
+        let sum = 0;
+        array.forEach((num) => {
+          sum += num;
+        });
+        return sum;
+      }
     </script>
   </body>
 </html>
