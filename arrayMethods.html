@@ -742,6 +742,114 @@
         });
         return sum;
       }
+
+      // 1.	Find the Index of the First Element Greater Than 10 in a Numeric Array
+      myArray = generateNum(30);
+      console.log(
+        myArray.findIndex((value) => {
+          return value > 70;
+        }),
+        myArray
+      );
+      // 2.	Find the Index of the First Negative Number in an Array
+      myArray = [1, 2, -4, 5];
+      const firstIndex = myArray.findIndex((value) => {
+        return value < 0;
+      });
+      console.log(firstIndex);
+      // 3.	Find the Index of the First Object in an Array with an id Property Equal to 5
+
+      myArray = [
+        { name: "honey", id: 3 },
+        { name: "money", id: 5 },
+        { name: "honey2", id: 5 },
+        { name: "Money", id: 3 },
+      ];
+      console.log(
+        myArray.findIndex((value) => {
+          return value.id === 5;
+        })
+      );
+      // 4.	Find the Index of the First Element Divisible by 3 in an Array of Numbers
+      //Number divisible by 3
+      function isDivBy3(num) {
+        return num % 3 === 0;
+      }
+      myArray = generateNum(22);
+      console.log(
+        myArray.findIndex((value) => {
+          return isDivBy3(value);
+        }),
+        myArray
+      );
+
+      // 5.	Find the Index of the First String in an Array That Starts with the Letter 'J'
+      myArray = ["george", "mark", "junta", "jaadhu"];
+      console.log(
+        myArray.findIndex((value) => {
+          return value.startsWith("j");
+        })
+      );
+      //7.	Find the Index of the First Element in an Array That Is Even and Greater Than 10
+      myArray = generateNum(10);
+      console.log(
+        myArray.findIndex((value) => {
+          return value % 2 === 0 && value > 10;
+        }),
+        myArray
+      );
+      // 8.	Find the Index of the First Object with a Nested Property (user.name) Equal to 'Alice'
+      myArray = [
+        {
+          name: "honey",
+          address: { hno: 2154, street: "Gangori Bazar" },
+          city: "Jaipur",
+        },
+        {
+          name: "Moneyram",
+          address: { hno: 24, street: "Gaori Bazar" },
+          city: "Raipur",
+        },
+      ];
+      console.log(
+        myArray.findIndex((value) => {
+          return value.address.street.startsWith("Gao");
+        })
+      );
+      // 9.	Find the Index of the First Non-Boolean Element in a Mixed Array of Data Types
+      myArray = [
+        1,
+        "1",
+        NaN,
+        null,
+        0,
+        true,
+        false,
+        undefined,
+        { name: "honey", age: 24 },
+        [1, 2],
+      ];
+      console.log(
+        myArray.findIndex((value) => {
+          return typeof value === "boolean";
+        })
+      );
+      // 10.	Find the Index of the First Object in an Array with a Key-Value Pair of status: 'active'
+      myArray = [
+        { name: "Honey", status: "inactive" },
+        { name: "Vamshi", status: "active" },
+        { name: "Abhinav", status: "inactive" },
+        { name: "Rakesh", status: "active" },
+      ];
+
+      console.log(
+        myArray.findIndex((value) => {
+          return value.status === "active";
+        }),
+        myArray.find((value) => {
+          return value.status === "active";
+        })
+      );
     </script>
   </body>
 </html>
