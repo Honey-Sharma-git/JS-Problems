@@ -347,6 +347,115 @@
         array.splice(index, 1, removedElement);
         console.log(`Undid array: ${array}`);
       }
+
+      // Extract the middle 3 elements from an array.
+      let myArray = [1, 2, 3, 4, 5, 6, 7];
+      const middleIndex = Math.floor(myArray.length / 2);
+      console.log(myArray.slice(middleIndex - 1, middleIndex + 2));
+      // Extract the last 4 elements from an array without mutating it.
+      myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const newArr1 = myArray.slice(myArray.length - 4, myArray.length);
+      console.log(myArray);
+      console.log(newArr1);
+      // Return the first half of an array, including the middle element if the length is odd.
+      myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      console.log(firstHalf(myArray));
+      function firstHalf(array) {
+        if (array.length % 2 === 0) {
+          return array.slice(0, array.length / 2);
+        } else {
+          return array.slice(0, array.length / 2 + 1);
+        }
+      }
+      // Create a copy of an array using the slice() method.
+      myArray = ["a", "b", "c", 1, 2, 3];
+      const copyArray = myArray.slice(0, myArray.length);
+      console.log(copyArray);
+      // Use slice() to create a new array without the first element.
+      myArray = ["a", "b", "c", 1, 2, 3];
+      console.log(myArray.slice(1, myArray.length));
+
+      // Write a function to extract elements between two indices (exclusive) using slice().
+      myArray = ["a", "b", "c", 1, 2, 3];
+      console.log(extract(myArray, 2, 5));
+      function extract(array, i1, i2) {
+        return array.slice(i1 + 1, i2);
+      }
+      // Extract a range of elements using negative indices.
+      myArray = ["a", "b", "c", 1, 2, 3];
+      console.log(myArray.slice(0, -1));
+
+      // Find the first occurrence of the number 5 in an array using indexOf.
+      myArray = [1, 2, 5, 3, 5];
+      console.log(myArray.indexOf(5, 0));
+      // Find the last occurrence of the string "apple" in an array using lastIndexOf.
+      myArray = ["app", "apple", "ap", "apple"];
+      console.log(myArray.lastIndexOf("apple", 3));
+      // Use indexOf to find the position of the string "orange" starting from index 3 in an array.
+      myArray = [
+        "apple",
+        "orange",
+        "apple",
+        "grapes",
+        "orangee",
+        "apple",
+        "grapes",
+        "orange",
+      ];
+      console.log(myArray.indexOf("orange", 3)); //not found
+      console.log(myArray.indexOf("orange", 7)); //not found
+      // Use lastIndexOf to find the position of the number 20 starting from index 5 in an array.
+      myArray = [1, 3, 3, 4, 6, 20, 30, 420, 20];
+      console.log(myArray.lastIndexOf(20, 5));
+      console.log(myArray.lastIndexOf(20, 4));
+
+      myArray = [
+        "apple",
+        "orange",
+        "apple",
+        "banana",
+        "grapes",
+        "orangee",
+        "apple",
+        "grapes",
+        "banana",
+        "orange",
+      ];
+      console.log(firstAndLastIndexOf(myArray, "banana"));
+      function firstAndLastIndexOf(array, word) {
+        return [
+          array.indexOf(word, 0),
+          array.lastIndexOf(word, array.length - 1),
+        ];
+      }
+
+      // Determine whether a specific item occurs more than once in an array using indexOf and lastIndexOf.
+
+      function duplicateChecker(array, word) {
+        if (
+          array.indexOf(word) !== -1 &&
+          array.lastIndexOf(word) !== array.indexOf(word)
+        ) {
+          return "Duplicate exists.";
+        } else {
+          return "Duplicate doesn't exist.";
+        }
+      }
+      myArray = ["a", "b", "d", "d", "a", "f"];
+      console.log(duplicateChecker(myArray, "m"));
+
+      // Use indexOf to find the index of an object in an array of objects.
+      myArray = [
+        { name: "Honey", age: 26 },
+        { name: "Money", age: 23 },
+        { name: "Vansh", age: 16 },
+      ];
+      const index = myArray.findIndex((value, index) => {
+        if (value.name === "Honey" && value.age === 26) {
+          return true;
+        }
+      });
+      console.log(index);
     </script>
   </body>
 </html>
