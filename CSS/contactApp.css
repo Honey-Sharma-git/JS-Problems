@@ -1,0 +1,15 @@
+.body {
+  min-height: 100vh;
+}
+.main {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+}
+.main__form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  row-gap: 10px;
+  border: 2px solid black;
+}

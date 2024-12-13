@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/contactApp.css" />
+    <title>Contact App</title>
+  </head>
+  <body class="body">
+    <main class="main">
+      <form action="" class="main__form" id="form">
+        <label for="fName" class="form__label">First Name</label>
+        <input
+          type="text"
+          name="fName"
+          id="fName"
+          class="form__input"
+          placeholder="Type here"
+          autofocus
+        />
+        <label for="lName" class="form__label">Last Name</label>
+        <input
+          type="text"
+          name="lName"
+          id="lName"
+          class="form__input"
+          placeholder="Type here"
+        />
+        <label for="phone" class="form__label">Phone number</label>
+        <input
+          type="number"
+          name="phone"
+          id="phone"
+          placeholder="Type here"
+          class="form__input"
+        />
+        <input type="submit" value="Save" id="savebutton" />
+      </form>
+      <h1 class="main__title">Contact list</h1>
+      <p class="main__para" id="contactPara"></p>
+    </main>
+    <script src="JS/contactApp.js"></script>
+  </body>
+</html>
