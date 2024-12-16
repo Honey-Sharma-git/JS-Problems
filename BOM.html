@@ -98,7 +98,44 @@
       });
       closeElement.addEventListener("click", () => {
         modalElement.style.display = "none";
+        window.open("https://www.google.com", "_top");
       });
+
+      console.log(window.screen.availHeight, window.screen.height);
+      // Write a function to calculate the percentage of the screen's height and width occupied by the available area.
+      console.log(calcPercent());
+      function calcPercent() {
+        return Math.floor(
+          (window.screen.availHeight / window.screen.height) * 100
+        );
+      }
+      //Pop up displaying color depth
+      let colorD = window.prompt(
+        "What do you think your device's color depth is?"
+      );
+
+      if (colorD === null || colorD === "") {
+        window.confirm("You want to proceed without inputting the colorDepth?");
+      } else {
+        const response = window.confirm(
+          `Are you sure the color depth is ${colorD}?`
+        );
+        if (response) {
+          if (Number(colorD) === window.screen.colorDepth) {
+            window.alert(
+              `You are right!! Your device's color depth is ${window.screen.colorDepth}`
+            );
+          } else {
+            window.alert(
+              `You guessed it wrong.\nThe color depth of your device is: ${window.screen.colorDepth}`
+            );
+          }
+        } else {
+          colorD = window.prompt(
+            "What do you think your device's color depth is?"
+          );
+        }
+      }
     </script>
   </body>
 </html>
