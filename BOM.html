@@ -5,19 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       body {
-        background-color: black;
+        font-size: 3rem;
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        color: blueviolet;
+        position: relative;
+      }
+      .modal {
+        background-color: rgba(0, 120, 0, 0.5);
+        backdrop-filter: blur(10px);
+        display: none;
+        position: absolute;
+        inset: 50%;
+        z-index: 11;
+        transform: translate(-50%, -50%);
+      }
+      .close {
+        height: 50px;
+        width: 50px;
+        background-color: green;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: white;
+        cursor: pointer;
       }
     </style>
     <title>BOM HTML</title>
   </head>
   <body>
+    <p></p>
+    <div class="modal">
+      <div class="close">X</div>
+    </div>
     <script>
-      console.log(window.innerHeight);
-      console.log(window.screen.height);
-      console.log(window.screen.availHeight);
-      console.log(window.innerWidth);
-      console.log(window.screen.width);
-      console.log(window.screen.availWidth);
+      // Create a web page that changes the background color when the viewport height or width falls below a certain value (e.g., 500px).
+      function changeColor() {
+        //Getting width of the device:
+        const deviceWidth = window.innerWidth;
+        //Selecting element:
+        const bodyElement = document.body;
+        if (deviceWidth < 600) {
+          bodyElement.style.backgroundColor = "white";
+        } else {
+          bodyElement.style.backgroundColor = "black";
+        }
+      }
+      //Adding event listeners:
+      window.addEventListener("resize", changeColor);
+
+      // Write a function that logs whether the current viewport is in portrait or landscape mode.
+      //Calling function to display initial orientation:
+      logOrientationStatus();
+      //Adding event Listeners:
+      window.addEventListener("resize", () => {
+        logOrientationStatus();
+      });
+      function logOrientationStatus() {
+        if (window.innerHeight > window.innerWidth) {
+          console.log("Portrait");
+          document.getElementsByTagName("p")[0].innerHTML = "Portrait";
+        } else {
+          console.log("Landscape");
+          document.getElementsByTagName("p")[0].innerHTML = "Landscape";
+        }
+      }
+      // Create a JavaScript function that displays an alert if the user's screen resolution is smaller than 1024x768.
+      // checkResolution();
+      function checkResolution() {
+        //Get height and width:
+        const deviceHeight = window.screen.height;
+        const deviceWidth = window.screen.width;
+        if (deviceHeight < 768 || deviceWidth < 1024) {
+          window.alert(
+            `Your screen resolution is ${deviceWidth}x${deviceHeight} which is less than 1024x768`
+          );
+        }
+      }
+
+      // Write a script to adjust the size of a modal window to occupy 90% of the screen's width and height.
+
+      //Selecting modalElement and closeElement:
+      const modalElement = document.getElementsByClassName("modal")[0];
+      const closeElement = document.getElementsByClassName("close")[0];
+
+      //Adding event listeners:
+      window.addEventListener("load", () => {
+        modalElement.style.display = "block";
+        modalElement.style.height = window.innerHeight * 0.9 + "px";
+        modalElement.style.width = window.innerWidth * 0.9 + "px";
+      });
+      closeElement.addEventListener("click", () => {
+        modalElement.style.display = "none";
+      });
     </script>
   </body>
 </html>
