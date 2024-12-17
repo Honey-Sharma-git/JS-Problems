@@ -43,6 +43,11 @@
       <div class="close">X</div>
     </div>
     <button class="js-button">Alert</button>
+    <button class="js-button">Delete file</button>
+    <button class="js-button">Google</button>
+    <button class="js-button">Close</button>
+    <button class="js-button">Addition</button>
+    <button class="js-button">Login</button>
     <script>
       // Create a web page that changes the background color when the viewport height or width falls below a certain value (e.g., 500px).
       function changeColor() {
@@ -108,38 +113,38 @@
       console.log(window.screen.availHeight, window.screen.height);
       // Write a function to calculate the percentage of the screen's height and width occupied by the available area.
       /* console.log(calcPercent());
-            function calcPercent() {
-              return Math.floor(
-                (window.screen.availHeight / window.screen.height) * 100
-              );
-            }
-            //Pop up displaying color depth
-            let colorD = window.prompt(
-              "What do you think your device's color depth is?"
-            );
+                  function calcPercent() {
+                    return Math.floor(
+                      (window.screen.availHeight / window.screen.height) * 100
+                    );
+                  }
+                  //Pop up displaying color depth
+                  let colorD = window.prompt(
+                    "What do you think your device's color depth is?"
+                  );
 
-            if (colorD === null || colorD === "") {
-              window.confirm("You want to proceed without inputting the colorDepth?");
-            } else {
-              const response = window.confirm(
-                `Are you sure the color depth is ${colorD}?`
-              );
-              if (response) {
-                if (Number(colorD) === window.screen.colorDepth) {
-                  window.alert(
-                    `You are right!! Your device's color depth is ${window.screen.colorDepth}`
-                  );
-                } else {
-                  window.alert(
-                    `You guessed it wrong.\nThe color depth of your device is: ${window.screen.colorDepth}`
-                  );
-                }
-              } else {
-                colorD = window.prompt(
-                  "What do you think your device's color depth is?"
-                );
-              }
-            } */
+                  if (colorD === null || colorD === "") {
+                    window.confirm("You want to proceed without inputting the colorDepth?");
+                  } else {
+                    const response = window.confirm(
+                      `Are you sure the color depth is ${colorD}?`
+                    );
+                    if (response) {
+                      if (Number(colorD) === window.screen.colorDepth) {
+                        window.alert(
+                          `You are right!! Your device's color depth is ${window.screen.colorDepth}`
+                        );
+                      } else {
+                        window.alert(
+                          `You guessed it wrong.\nThe color depth of your device is: ${window.screen.colorDepth}`
+                        );
+                      }
+                    } else {
+                      colorD = window.prompt(
+                        "What do you think your device's color depth is?"
+                      );
+                    }
+                  } */
       // Write code that redirects the user to https://www.google.com when a button is clicked.
       //Select button element:
       const buttonElement = document.getElementsByClassName("js-button")[0];
@@ -207,17 +212,137 @@
         });
       // Write a script that redirects the user to https://www.google.com after 3 seconds (hint: use setTimeout).
       /*   setTimeout(() => {
-        window.location.assign("https://www.facebook.com/");
-      }, 5000); */
+              window.location.assign("https://www.facebook.com/");
+            }, 5000); */
 
       // Write a script to log the pathname of the current URL to the console.
       console.log(window.location.pathname);
       // Write code that dynamically displays the current page’s path in a <div> element with the ID current-path.
       /* document.body.innerHTML = `<div id = "current-path"></div>`;
-      document.getElementById("current-path").innerHTML =
-        window.location.pathname; */
+            document.getElementById("current-path").innerHTML =
+              window.location.pathname; */
+      // Write a script that displays an alert saying "Welcome to My Website!" when the page loads.
+      window.alert("Welcome to my website.");
+      // Create an HTML button. When the button is clicked, display an alert saying "You clicked the button!".
+      const alertButton = document.getElementsByClassName("js-button")[2];
+      alertButton.addEventListener("click", () => {
+        window.alert("You have clicked the button.");
+      });
+      // Declare a variable userName with the value "John Doe". Use window.alert to display the message:
+      // "Hello, John Doe! Welcome back." (Replace "John Doe" with the value of the variable).
 
-    
+      const userName = "Honey Sharma";
+      window.alert(`Hello, ${userName}! Welcome back.`);
+
+      /*       Write a script to display an alert with multiple lines, such as:
+      Welcome to our website!
+      This site uses cookies to improve user experience.
+      Press OK to continue.
+       */
+      window.alert(
+        "Welcome to our website!\nThis site uses cooking to improve user experience.\nPress OK to continue."
+      );
+
+      /*       4.	Write a script that checks if a number stored in a variable age is less than 18. If true, display an alert saying:
+      "You must be 18 or older to access this site."
+       */
+      const age = 17;
+      if (age < 18) {
+        window.alert("You must be 18 or above to access this site.");
+      }
+
+      /*       Write a script that displays a confirmation box asking:
+      "Are you sure you want to proceed?"
+      Log "User confirmed" if the user clicks OK, and "User canceled" if they click Cancel.
+       */
+
+      const response = window.confirm("Are you sure you want to proceed?");
+      if (response) {
+        console.log("User confirmed");
+      } else {
+        console.log("User cancelled");
+      }
+
+      /*       Create an HTML button labeled "Delete File". When clicked, display a confirmation box:
+      "Do you really want to delete this file?"
+      If OK is clicked, display an alert saying "File deleted." Otherwise, display "Deletion canceled."
+       */
+      const deleteButton = document.getElementsByClassName("js-button")[3];
+      deleteButton.addEventListener("click", () => {
+        const deletionResponse = window.confirm(
+          "Are you sure you want to delete this file?"
+        );
+        if (deletionResponse) {
+          window.alert("File deleted");
+        } else {
+          window.alert("Deletion cancelled.");
+        }
+      });
+      /*       Display a confirmation box asking:
+      "Do you want to visit Google?"
+      If the user clicks OK, redirect them to https://www.google.com using window.location.href. If they click Cancel, display an alert saying "Stay on this page."
+
+       */
+      const googleButton = document.getElementsByClassName("js-button")[4];
+      googleButton.addEventListener("click", () => {
+        const redirectionResponse = window.confirm(
+          "Do you want to visit www.google.com"
+        );
+        if (redirectionResponse) {
+          window.location.href = "https://www.google.com";
+        } else {
+          window.alert("Stay on this page");
+        }
+      });
+
+      /*       Create a confirmation dialog asking:
+      "Are you sure you want to close this tab?"
+      If the user clicks OK, log "Tab closed (simulated)". If Cancel is clicked, log "User chose to stay."
+       */
+      const closeButton = document.getElementsByClassName("js-button")[5];
+      closeButton.addEventListener("click", () => {
+        const closeResponse = window.confirm("Do you want to close the tab?");
+        if (closeResponse) {
+          window.close();
+        }
+      });
+      /*       Write a script that asks the user for their name using window.prompt. Then, display an alert saying:
+"Hello, [user’s name]!"
+ */
+      const visitorName = window.prompt(
+        "What is your name?",
+        "Enter your name here"
+      );
+      if (
+        visitorName === "" ||
+        visitorName === null ||
+        visitorName === "Enter your name here"
+      ) {
+      } else {
+        window.alert(`Hello Mr.${visitorName}`);
+      }
+      //       Prompt the user to enter two numbers. Convert the inputs to integers and calculate the sum. Display the result in an alert box:
+      // "The sum of [num1] and [num2] is [sum]."
+      const addButton = document.getElementsByClassName("js-button")[6];
+      addButton.addEventListener("click", () => {
+        const numbers = window.prompt("Enter two numbers separated by commas.");
+        const myArray = numbers.split(",");
+        const num1 = Number(myArray[0]);
+        const num2 = Number(myArray[1]);
+        window.alert(`The sum of ${num1} and ${num2} is ${num1 + num2}`);
+      });
+      //       Prompt the user to enter a password. If the password matches "12345", display an alert:
+      // "Password correct. Welcome!"
+      // Otherwise, display: "Incorrect password. Access denied."
+      const loginButton = document.getElementsByClassName("js-button")[7];
+      loginButton.addEventListener("click", () => {
+        const password = window.prompt("Enter password:");
+        if (password === '12345') {
+          alert("Access granted");
+        } else {
+          alert("Access denied");
+        }
+      });
     </script>
   </body>
 </html>
