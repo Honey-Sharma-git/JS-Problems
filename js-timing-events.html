@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Timing Events</title>
+  </head>
+  <body>
+    <script>
+      //   {
+      //     // SET TIMEOUT FUNCTION
+      //     // Write a program that logs "Hello, World!" to the console after 2 seconds using setTimeout().
+      //     let timeoutId = setTimeout(() => {
+      //       console.log("Hello, World!");
+      //     }, 2000);
+
+      //     /*       Print the numbers 1, 2, and 3 to the console with the following delays:
+      //         •	Print 1 after 1 second.
+      //         •	Print 2 after 2 seconds.
+      //         •	Print 3 after 3 seconds.
+      //          */
+
+      //     setTimeout(() => {
+      //       console.log("1");
+      //     }, 1000);
+      //     setTimeout(() => {
+      //       console.log("2");
+      //     }, 2000);
+      //     setTimeout(() => {
+      //       console.log("3");
+      //     }, 3000);
+
+      //     /*    Write a function greet(name) that takes a name as input and logs:
+      //         "Hello, [name]!" after a 3-second delay.
+      //         Use setTimeout() with the additional arguments feature. */
+      //     setTimeout(greet, 3000, "Honey");
+      //     function greet(name) {
+      //       console.log(`Hello, ${name}`);
+      //     }
+      //     /*       Create a timeout that logs "This message won't appear" after 5 seconds.
+      //   Cancel the timeout before it executes using clearTimeout().
+      //    */
+      //     timeoutId = setTimeout(() => {
+      //       console.log("This message won't appear after 5 seconds.");
+      //     }, 5000);
+      //     clearTimeout(timeoutId);
+
+      //     /*       Use a for loop to print the numbers 1 through 5, each with a 1-second delay.
+      //   (Each number should appear at a 3-second interval.)
+      //    */
+
+      //     for (let i = 1; i <= 5; i++) {
+      //       setTimeout(() => {
+      //         console.log(i);
+      //       }, i * 3000);
+      //     }
+
+      //     /* Write a function calculateSum(a, b) that logs the sum of two numbers. Use setTimeout() to call this function with two numbers after a 2-second delay. */
+      //     setTimeout(calculateSum, 2000, 11, 2);
+      //     function calculateSum(a, b) {
+      //       console.log(a + b);
+      //     }
+      //     /* Create a function countdown(n) that logs numbers from n to 1, one per second, using setTimeout(). When it reaches 1, print "Go!". */
+      //     countdown(15);
+      //     function countdown(n) {
+      //       for (let i = n; i >= 1; i--) {
+      //         setTimeout(() => {
+      //           console.log(i);
+      //           if (i === 1) {
+      //             console.log("Go");
+      //           }
+      //         }, (n - i + 1) * 1000);
+      //       }
+      //     }
+
+      //     /* Log the following messages to the console:
+      //   •	"Task 1" after 1 second
+      //   •	"Task 2" after 3 seconds
+      //   •	"Task 3" after 2 seconds
+      //   Ensure the delays are independent. */
+      //     setTimeout(() => {
+      //       console.log("Task-1");
+      //     }, 1000);
+      //     setTimeout(() => {
+      //       console.log("Task-2");
+      //     }, 3000);
+      //     setTimeout(() => {
+      //       console.log("Task-3");
+      //     }, 2000);
+
+      //     /* Write a function fetchData(callback) that simulates fetching data by delaying 2 seconds using setTimeout(). After the delay, call the provided callback function to log "Data fetched successfully". */
+      //     function fetchData(callback) {
+      //       console.log("Fetching data...");
+      //       setTimeout(() => {
+      //         callback();
+      //       }, 20000);
+      //     }
+      //     function onSuccess() {
+      //       console.log("Data has been successfully fetched.");
+      //     }
+      //     fetchData(onSuccess);
+      //   }
+
+      /* Write a program that logs "Hello, World!" to the console every 2 seconds. Stop the interval after 10 seconds. */
+      const intervalId = setInterval(() => {
+        console.log("Vansh Sharma");
+      }, 2000);
+      setTimeout(() => {
+        clearInterval(intervalId);
+      }, 10000);
+      /* Write a function countUpTo(n) that uses setInterval() to print numbers from 1 to n, one number every second. Stop the interval when the count reaches n. */
+      function countUpTo(n) {
+        
+      }
+    </script>
+  </body>
+</html>
