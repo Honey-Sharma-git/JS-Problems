@@ -36,9 +36,13 @@
   </head>
   <body>
     <p></p>
+    <p id="host-info"></p>
+    <button class="js-button">Facebook</button>
+    <button class="js-button">Facebook assign()</button>
     <div class="modal">
       <div class="close">X</div>
     </div>
+    <button class="js-button">Alert</button>
     <script>
       // Create a web page that changes the background color when the viewport height or width falls below a certain value (e.g., 500px).
       function changeColor() {
@@ -98,44 +102,122 @@
       });
       closeElement.addEventListener("click", () => {
         modalElement.style.display = "none";
-        window.open("https://www.google.com", "_top");
+        window.open("https://www.google.com", "_blank");
       });
 
       console.log(window.screen.availHeight, window.screen.height);
       // Write a function to calculate the percentage of the screen's height and width occupied by the available area.
-      console.log(calcPercent());
-      function calcPercent() {
-        return Math.floor(
-          (window.screen.availHeight / window.screen.height) * 100
-        );
-      }
-      //Pop up displaying color depth
-      let colorD = window.prompt(
-        "What do you think your device's color depth is?"
-      );
+      /* console.log(calcPercent());
+            function calcPercent() {
+              return Math.floor(
+                (window.screen.availHeight / window.screen.height) * 100
+              );
+            }
+            //Pop up displaying color depth
+            let colorD = window.prompt(
+              "What do you think your device's color depth is?"
+            );
 
-      if (colorD === null || colorD === "") {
-        window.confirm("You want to proceed without inputting the colorDepth?");
-      } else {
-        const response = window.confirm(
-          `Are you sure the color depth is ${colorD}?`
-        );
-        if (response) {
-          if (Number(colorD) === window.screen.colorDepth) {
-            window.alert(
-              `You are right!! Your device's color depth is ${window.screen.colorDepth}`
-            );
-          } else {
-            window.alert(
-              `You guessed it wrong.\nThe color depth of your device is: ${window.screen.colorDepth}`
-            );
-          }
+            if (colorD === null || colorD === "") {
+              window.confirm("You want to proceed without inputting the colorDepth?");
+            } else {
+              const response = window.confirm(
+                `Are you sure the color depth is ${colorD}?`
+              );
+              if (response) {
+                if (Number(colorD) === window.screen.colorDepth) {
+                  window.alert(
+                    `You are right!! Your device's color depth is ${window.screen.colorDepth}`
+                  );
+                } else {
+                  window.alert(
+                    `You guessed it wrong.\nThe color depth of your device is: ${window.screen.colorDepth}`
+                  );
+                }
+              } else {
+                colorD = window.prompt(
+                  "What do you think your device's color depth is?"
+                );
+              }
+            } */
+      // Write code that redirects the user to https://www.google.com when a button is clicked.
+      //Select button element:
+      const buttonElement = document.getElementsByClassName("js-button")[0];
+      //Add event listener:
+      buttonElement.addEventListener("click", () => {
+        window.location.href = "https://www.facebook.com";
+        console.log(window.location.href);
+      });
+      // Write a script that logs the full URL of the current webpage using window.location.href.
+      console.log(window.location.href);
+      // Using window.location.href, extract the domain name (like example.com) from the full URL string and log it to the console.
+      const fullURL = window.location.href;
+      const domain = fullURL.substr(7);
+      console.log(domain);
+
+      // Write a script that logs the domain name of the current page to the console using window.location.hostname.
+      console.log(window.location.hostname);
+
+      // Write a condition to check if the hostname is localhost and log "Local environment" if true, otherwise log "Production environment".
+      function checkEnvironment() {
+        if (
+          window.location.hostname === "localhost" ||
+          window.location.hostname === "127.0.0.1"
+        ) {
+          console.log("Local environment");
+          return "local";
         } else {
-          colorD = window.prompt(
-            "What do you think your device's color depth is?"
-          );
+          console.log("Production environment");
+          return "production";
         }
       }
+      checkEnvironment();
+      // Write code that inserts the hostname into an HTML paragraph tag with the ID host-info dynamically.
+      //Selecting the element:
+      const paraElement = document.getElementById("host-info");
+      //Displaying hostname in the para:
+      paraElement.innerText = window.location.hostname;
+
+      // Write a script to log the protocol (http: or https:) to the console.
+      console.log(window.location.protocol);
+
+      // Write a condition to check if the protocol is https: and log "Secure Connection" if true, otherwise log "Unsecure Connection".
+      // Dynamically display a message on a webpage:
+      // •	"You are using a secure protocol." if the protocol is HTTPS.
+      // •	"You are not using a secure protocol." otherwise.
+
+      function checkConnection() {
+        //Get protocol:
+        const protocol = window.location.protocol;
+        if (protocol === "https:") {
+          console.log("Secure connection");
+          paraElement.innerText = `You're using secure protocol.`;
+        } else {
+          console.log("Unsecure connection");
+          paraElement.innerText = `You're not using secure protocol.`;
+        }
+      }
+      checkConnection();
+
+      // Write code that uses window.location.assign() to navigate the user to https://www.example.com.
+      document
+        .getElementsByClassName("js-button")[1]
+        .addEventListener("click", () => {
+          window.location.assign("https://www.facebook.com");
+        });
+      // Write a script that redirects the user to https://www.google.com after 3 seconds (hint: use setTimeout).
+      /*   setTimeout(() => {
+        window.location.assign("https://www.facebook.com/");
+      }, 5000); */
+
+      // Write a script to log the pathname of the current URL to the console.
+      console.log(window.location.pathname);
+      // Write code that dynamically displays the current page’s path in a <div> element with the ID current-path.
+      /* document.body.innerHTML = `<div id = "current-path"></div>`;
+      document.getElementById("current-path").innerHTML =
+        window.location.pathname; */
+
+    
     </script>
   </body>
 </html>
