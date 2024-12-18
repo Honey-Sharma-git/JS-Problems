@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window.navigator</title>
+  </head>
+  <body>
+    <p class="js-para"></p>
+    <p class="js-para"></p>
+    <p class="js-para"></p>
+    <p class="js-para"></p>
+    <p class="js-para"></p>
+    <p class="js-para"></p>
+    <p class="js-para"></p>
+    <p class="js-para"></p>
+    <p class="js-para"></p>
+    <p class="js-para"></p>
+    <script>
+      document.getElementsByClassName(
+        "js-para"
+      )[0].innerText = `Cookies Enabled: ${window.navigator.cookieEnabled}`;
+      document.getElementsByClassName(
+        "js-para"
+      )[1].innerText = `App Name: ${window.navigator.appName}`;
+      document.getElementsByClassName(
+        "js-para"
+      )[2].innerText = `App code name: ${window.navigator.appCodeName}`;
+      document.getElementsByClassName(
+        "js-para"
+      )[3].innerText = `Product: ${window.navigator.product}`;
+      document.getElementsByClassName(
+        "js-para"
+      )[4].innerText = `App version: ${window.navigator.appVersion}`;
+      document.getElementsByClassName(
+        "js-para"
+      )[5].innerText = `User Agent: ${window.navigator.userAgent}`;
+      document.getElementsByClassName(
+        "js-para"
+      )[6].innerText = `Platform: ${window.navigator.platform}`;
+      document.getElementsByClassName(
+        "js-para"
+      )[7].innerText = `Language: ${window.navigator.language}`;
+      document.getElementsByClassName(
+        "js-para"
+      )[8].innerText = `Online: ${window.navigator.online}`;
+      document.getElementsByClassName(
+        "js-para"
+      )[9].innerText = `JavaEnabled ${window.navigator.javaEnabled()}`;
+    </script>
+  </body>
+</html>
