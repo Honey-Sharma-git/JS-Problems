@@ -6,6 +6,9 @@
     <title>JS Timing Events</title>
   </head>
   <body>
+    <button class="js-button">Click me</button>
+    <input type="text" id="js-input" />
+    <p class="js-para"></p>
     <script>
       //   {
       //     // SET TIMEOUT FUNCTION
@@ -101,17 +104,86 @@
       //     fetchData(onSuccess);
       //   }
 
-      /* Write a program that logs "Hello, World!" to the console every 2 seconds. Stop the interval after 10 seconds. */
-      const intervalId = setInterval(() => {
-        console.log("Vansh Sharma");
-      }, 2000);
-      setTimeout(() => {
-        clearInterval(intervalId);
-      }, 10000);
-      /* Write a function countUpTo(n) that uses setInterval() to print numbers from 1 to n, one number every second. Stop the interval when the count reaches n. */
-      function countUpTo(n) {
-        
+      // 2.	Display three messages ("First", "Second", "Third") with a delay of 2 seconds between each using setTimeout().
+      /*   setTimeout(() => {
+              console.log("First");
+            }, 2000);
+            setTimeout(() => {
+              console.log("Second");
+            }, 4000);
+            setTimeout(() => {
+              console.log("Third");
+            }, 6000); */
+
+      // Create a function that accepts a string and a delay in milliseconds and logs the string after the given delay.
+      /* function display(string, delay) {
+              setTimeout(() => {
+                console.log(string);
+              }, delay);
+            }
+            display("Hello", 4000); */
+
+      // Create a function that takes a number n and counts down from n to 0, logging each number with a 1-second delay.
+      /* countDown(10);
+            function countDown(n) {
+              for (let i = n; i >= 1; i--) {
+                setTimeout(() => {
+                  console.log(i);
+                }, (n - i + 1) * 1000);
+              }
+            } */
+
+      // Add an event listener to a button. When clicked, display "Button clicked!" in the console after 1.5 seconds.
+      //Selecting the button:
+      /* const buttonElement = document.getElementsByClassName("js-button")[0];
+            buttonElement.addEventListener("click", () => {
+              setTimeout(() => {
+                console.log("Button clicked");
+              }, 1500);
+            });
+       */
+      // Create a webpage with a paragraph of text that alternates between "ON" and "OFF" every 2 seconds using setTimeout().
+      /* function toggleDisplay() {
+        const paraElement = document.getElementsByTagName("p")[0];
+
+        if (paraElement.innerText === "ON") {
+          paraElement.innerText = "OFF";
+        } else {
+          paraElement.innerText = "ON";
+        }
       }
+      setInterval(() => {
+        toggleDisplay();
+      }, 2000); */
+
+      // Log whatever the user types into an input field after a delay of 2 seconds.
+      /*  const inputField = document.getElementById("js-input");
+      const paraElement = document.getElementsByTagName("p")[0];
+
+      inputField.addEventListener("input", () => {
+        setTimeout(() => {
+          paraElement.innerHTML = inputField.value;
+        }, 2000);
+      }); */
+
+      // Display "Loading." followed by "Loading.." and "Loading..." in sequence with a 1-second delay for each.
+      /* 
+      function loading() {
+        const paraElement = document.getElementsByTagName("p")[0];
+        const messages = ["Loading", "Loading.", "Loading..", "Loading..."];
+        messages.forEach((value, index) => {
+          setTimeout(() => {
+            paraElement.innerText = value;
+          }, index * 1000);
+        });
+      }
+      loading();
+      setInterval(loading, 4000) */
+
+      // Traffic Light Simulation:
+      // Simulate a traffic light sequence (Green -> Yellow -> Red) where each light is displayed for 2 seconds using setTimeout().
+
+      
     </script>
   </body>
 </html>
