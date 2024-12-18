@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Lights</title>
+    <style>
+      .main {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 50px;
+      }
+      .form {
+        display: grid;
+        place-content: center;
+      }
+      .container {
+        border: 2px solid black;
+        height: 90vh;
+        width: 100px;
+        border-radius: 50px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 50px;
+        background-color: rgb(255, 187, 2);
+      }
+      .red,
+      .amber,
+      .green {
+        border: 2px solid white;
+        border-top-width: 10px;
+        border-top-color: black;
+        height: 70px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Traffic Light Simulation: -->
+    <!-- Simulate a traffic light sequence (Green -> Yellow -> Red) where each light is displayed for 2 seconds using setTimeout(). -->
+    <main class="main">
+      <div class="container">
+        <div class="red"></div>
+        <div class="amber"></div>
+        <div class="green"></div>
+      </div>
+      <div class="form">
+        <label for="red">Red light duration:</label>
+        <input type="number" name="red" id="red" />
+        <label for="amber">Amber light duration:</label>
+        <input type="number" name="amber" id="amber" />
+        <label for="green">Green light duration:</label>
+        <input type="number" name="green" id="green" />
+        <input type="button" value="Apply" id="apply" />
+      </div>
+    </main>
+    <script>
+      //Default durations for lights:
+      let redDuration = 5000;
+      let amberDuration = 1000;
+      let greenDuration = 5000;
+      //Selecting button element:
+      const buttonElement = document.getElementById("apply");
+      //Interval id:
+      let intervalId;
+      //Adding event listener:
+      buttonElement.addEventListener("click", () => {
+        getDuration();
+        trafficLights();
+        clearInterval(intervalId);
+        intervalId = setInterval(() => {
+          trafficLights();
+        }, redDuration + amberDuration + greenDuration);
+      });
+      function getDuration() {
+        //Selecting elements:
+        const redInput = document.getElementById("red");
+        const amberInput = document.getElementById("amber");
+        const greenInput = document.getElementById("green");
+        //Assigning values:
+        redDuration = Number(redInput.value);
+        amberDuration = Number(amberInput.value);
+        greenDuration = Number(greenInput.value);
+      }
+
+      function trafficLights() {
+        //Selecting different lights:
+        const lights = {
+          redLight: document.querySelector(".red"),
+          amberLight: document.querySelector(".amber"),
+          greenLight: document.querySelector(".green"),
+        };
+
+        //Reset all lights:
+        function resetLights() {
+          lights.redLight.style.backgroundColor = "black";
+          lights.amberLight.style.backgroundColor = "black";
+          lights.greenLight.style.backgroundColor = "black";
+        }
+
+        // Light turning Phases:
+
+        const phases = [
+          { light: "redLight", color: "red", duration: redDuration },
+          { light: "amberLight", color: "yellow", duration: amberDuration },
+          { light: "greenLight", color: "green", duration: greenDuration },
+        ];
+        let totalDelay = 0;
+        phases.forEach((phase) => {
+          setTimeout(() => {
+            resetLights();
+            lights[phase.light].style.backgroundColor = phase.color;
+          }, totalDelay);
+          totalDelay += phase.duration;
+        });
+      }
+
+      //Initial traffic lights:
+      trafficLights();
+      intervalId = setInterval(() => {
+        trafficLights();
+      }, redDuration + amberDuration + greenDuration);
+    </script>
+  </body>
+</html>
