@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movement</title>
     <style>
+      *::after,
+      *::before,
+      * {
+        /* outline: 2px solid red; */
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
       .body {
         display: grid;
         place-content: center;
@@ -27,13 +38,33 @@
         background-color: black;
         transition: transform 0.8s;
       }
+      .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+      }
+      .left-right-controls {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 50px;
+      }
     </style>
   </head>
   <body class="body">
     <main class="main">
       <div class="box js-box"></div>
     </main>
-    <aside class="aside"><button class="js-button">Reset</button></aside>
+    <aside class="aside">
+      <button class="js-button">Reset</button>
+      <div class="controls">
+        <p><button class="">/\</button></p>
+        <p class="left-right-controls">
+          <button class="">&lt;</button> <button class="">&gt;</button>
+        </p>
+        <p><button class="">\/</button></p>
+      </div>
+    </aside>
     <script>
       //For Reset button:
       //Select the button:
@@ -88,6 +119,7 @@
   </body>
 </html>
 <!-- Todo: -->
+<!-- Add buttons to control the movement -->
 <!-- -Display the coordinates inside the box -->
 <!-- -Set reset button and a key combination to reposition the box -->
 <!-- -Add instruction for the movement -->
