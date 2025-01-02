@@ -3,78 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spread Operator</title>
+    <title>Revision</title>
   </head>
-  <body>
+  <body style="background-color: black">
     <script>
-      // Merge Two Arrays
+      //     1.	Merge Two Arrays
       // Combine two arrays into one using the spread operator.
-      const arr1 = [1, 2, 3, 4];
-      const arr2 = ["a", "b", "c"];
-      //   arr1.push(...arr2);
-      //   console.log(arr1);
-      const mergedArr = [...arr1, ...arr2];
+      let arr1 = [1, 2, 3, 4, 5];
+      let arr2 = ["a", "b", "c", "d"];
+      let mergedArr = [...arr1, ...arr2];
       console.log(mergedArr);
-      //Clone an Array
+      //       2.	Clone an Array
       // Create a function that returns a shallow copy of an array using the spread operator.
-      const arr3 = [1, 2, "a"];
-      console.log(copyArray(arr3));
-      function copyArray(array) {
-        let arr = [...array];
-        return arr;
+      arr1 = [1, 2, 3, 4, 5];
+      function cloneArr(array) {
+        return [...array];
       }
-
-      //Merge Two Objects
+      console.log(cloneArr(arr1));
+      //        3.	Merge Two Objects
       // Use the spread operator to merge two objects into a new object.
-      const obj1 = { id: 1, name: "Honey" };
-      const obj2 = { rank: 4, result: "pass", id: 4 };
-      const mergedObj = { ...obj1, ...obj2 };
-      console.log(mergedObj);
+      let obj1 = { id: 1, name: "Honey" };
+      let obj2 = { rank: 2, friend: "John", class: "first" };
+      let obj3 = { ...obj1, ...obj2 };
+      console.log(obj3);
 
-      //Add Elements to an Array
+      //       4.	Add Elements to an Array
       // Add elements to the beginning and end of an array using the spread operator.
-      const arr4 = [1, 2, 3, 4, 5];
-      const modifiedArr = [1, ...arr4, 2];
+      arr1 = [1, 2, "a", "b"];
+      let beginning = "begin";
+      let end = "end";
+      let modifiedArr = [beginning, ...arr1, end];
       console.log(modifiedArr);
-      //Convert String to Characters
+
+      //       5.	Convert String to Characters
       // Convert a string into an array of characters using the spread operator.
-      const str1 = "Honey Sharma";
-      console.log([...str1]);
+      let str1 = "This is a string";
+      arr1 = [...str1];
+      console.log(arr1);
 
       //       6.	Remove Duplicates from an Array
       // Write a function to remove duplicate values from an array using the spread operator.
-      const arr5 = ["a", "b", "a", 1, 2, 3];
-      function removeDup(array) {
-        return [...new Set(array)];
-      }
-      console.log(removeDup(arr5));
-
-      //       8.	Destructure and Reassign Object Properties
-      // Destructure an object, modify one property, and create a new object using the spread operator.
-
-      const obj3 = { id: 5, name: "Honey", rank: "first", result: "pass" };
-      const { id: identity, ...rest } = obj3;
-      const modifiedObj = { ...rest, identity };
-      console.log(modifiedObj);
+      arr1 = [1, 1, 2, 3, 4, 4, 2];
+      arr2 = [...new Set(arr1)];
+      console.log(arr2);
 
       //       7.	Split and Recombine a String
       // Split a string into an array of characters and recombine it with a delimiter using the spread operator.
-      const myString = "Honey Sharma";
-      console.log([...myString].join("-"));
-      //         9.	Combine Multiple Arrays
-      //   Combine three or more arrays into a single array using the spread operator.
-      const arr6 = [1, 2, 3];
-      const arr7 = [9, 8, 7];
-      const arr8 = ["a", "b"];
-      const combined = [...arr6, ...arr7, ...arr8];
-      console.log(combined);
+      str1 = "This is a string";
+      let delimeter = "-";
+      arr1 = [...str1];
+      arr2 = arr1.join(delimeter);
+      console.log(arr1);
+      console.log(arr2);
+
+      //       8.	Destructure and Reassign Object Properties
+      // Destructure an object, modify one property, and create a new object using the spread operator.
+      obj1 = { id: 1, name: "Honey", rank: "first" };
+      const { id, name, rank } = obj1;
+      obj2 = { ...obj1, id: 55 };
+      console.log(obj2);
+
+      //       9.	Combine Multiple Arrays
+      // Combine three or more arrays into a single array using the spread operator.
+      arr1 = ["a", "b", 1, 2];
+      arr2 = [9, 8, "z", "x"];
+      let arr3 = ["Hello", "Honey"];
+      let arr4 = [...arr1, ...arr2, ...arr3];
+      console.log(arr4);
+      arr4 = [...arr2, ...arr1, ...arr3];
+      console.log(arr4);
+      arr4 = [...arr2, ...arr3, ...arr1];
+      console.log(arr4);
 
       //       10.	Merge and Override Object Properties
       // Merge two objects where properties from the second object override properties in the first object using the spread operator.
-      const obj11 = { id: 1, name: "Honey" };
-      const obj22 = { rank: 2, name: "Changed" };
-      const combinedObj = { ...obj11, ...obj22 };
-      console.log(combinedObj);
+      obj1 = { id: 1, name: "Honey" };
+      obj2 = { id: 55 };
+      obj3 = { ...obj1, ...obj2 };
+      console.log(obj3);
     </script>
   </body>
 </html>
