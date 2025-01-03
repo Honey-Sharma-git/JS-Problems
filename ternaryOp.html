@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ternary Operator</title>
+  </head>
+  <body style="background-color: black">
+    <script>
+      // 1.	Write a program that checks if a number is even or odd using the ternary operator.
+      function evenOdd(num) {
+        return num % 2 === 0 ? "even" : "odd";
+      }
+      console.log(evenOdd(3));
+
+      //   2.	Check if a given string is empty or not using the ternary operator.
+      function checkString(string) {
+        return string === "" ? "empty string" : "non-empty string";
+      }
+      console.log(checkString(""));
+      console.log(checkString("hello"));
+      console.log(checkString(" "));
+
+      //   3.	Determine if a number is positive, negative, or zero using a nested ternary operator.
+      function posNeg(num) {
+        return num > 0
+          ? "Positive"
+          : num < 0
+          ? "Negative"
+          : num === 0
+          ? "Zero"
+          : "Other";
+      }
+      console.log(posNeg(2));
+      console.log(posNeg(-2));
+      console.log(posNeg(0));
+      console.log(posNeg(""));
+
+      //   4.	Write a program that checks if the length of a string is greater than 5 or not.
+      function checkLength(string) {
+        return string.length > 5
+          ? "Length is greater than 5"
+          : "Length is less than 5";
+      }
+      console.log(checkLength("honey"));
+      console.log(checkLength("honey Sharma"));
+
+      //   5.	Use the ternary operator to set a variable to "Yes" if a boolean variable is true, and "No" otherwise.
+      function setVariable(variable, boolVar) {
+        return boolVar ? (variable = "Yes") : (variable = "No");
+      }
+      let local = "bro";
+      console.log(setVariable(local, false));
+
+      //   6.	Assign a discount of 10% if the total purchase amount is greater than $100, or 5% otherwise.
+      const product1 = 1;
+      const product2 = 99;
+      function payableAmt(p1, p2) {
+        return p1 + p2 > 100 ? ((p1 + p2) * 90) / 100 : ((p1 + p2) * 95) / 100;
+      }
+      console.log(payableAmt(product1, product2));
+
+      //   7.	Determine if a user is eligible for voting based on their age (18 or older) using the ternary operator.
+      function eligibility(age) {
+        return age >= 18 ? "Eligible" : "Not eligible";
+      }
+      console.log(eligibility(19));
+      console.log(eligibility(18));
+      console.log(eligibility(17));
+
+      //   8.	Write a program to return the larger of two numbers using the ternary operator.
+      function larger(num1, num2) {
+        return num1 > num2 ? num1 : num2;
+      }
+      console.log(larger(54, 53));
+
+      //   9.	Check if a year is a leap year or not using the ternary operator.
+
+      // 10.	Use the ternary operator to display "Admin" if a user role is "admin", "Editor" if it's "editor", and "Viewer" for any other role.
+
+      //   let role = "Admin";
+      let role = "Editor";
+      //   let role = "new";
+      function display(role) {
+        return role === "Admin"
+          ? "Admin"
+          : role === "Editor"
+          ? "Editor"
+          : "Viewer";
+      }
+      console.log(display(role));
+
+      //   11.	Write a program that assigns a grade ("A", "B", "C", "F") based on a numeric score using nested ternary operators.
+      function gradeAssign(score) {
+        return score > 100
+          ? "Check your score"
+          : score <= 100 && score > 80
+          ? "A"
+          : score <= 80 && score > 60
+          ? "B"
+          : score <= 60 && score > 40
+          ? "C"
+          : score <= 40 && score > 0
+          ? "FAIL"
+          : "Invalid input";
+      }
+      console.log(gradeAssign(66));
+      console.log(gradeAssign(191));
+      console.log(gradeAssign(99));
+      console.log(gradeAssign(100));
+      console.log(gradeAssign(80));
+      console.log(gradeAssign(79));
+      console.log(gradeAssign(-40));
+      console.log(gradeAssign(0));
+      console.log(gradeAssign(23));
+
+      //   12.	Use a ternary operator to calculate the price of a product after applying a 20% discount if the customer is a premium member, otherwise, apply a 5% discount.
+
+      function discount(membershipType, price) {
+        return membershipType === "Premium member" ? price * 0.8 : price * 0.95;
+      }
+      console.log(discount("Premium member", 100));
+      console.log(discount("normal member", 100));
+
+      //   13.	Determine whether a given year is in the 21st century or not using the ternary operator.
+
+      // 14.	Assign a variable isWeekend as true or false based on the current day ("Saturday" or "Sunday") using the ternary operator.
+      function weekendChecker() {
+        return new Date().getDay() > 5 ? true : false;
+      }
+
+      const isWeekend = weekendChecker();
+      console.log(isWeekend);
+
+      //   15.	Write a program to check if a given array's length is even or odd using the ternary operator.
+
+      let myArray = [1, 23, 4, 5, 5, 6, 6, 67, 8];
+      //   myArray = [1, 2, 3, 4];
+
+      function oddEvenArray(array) {
+        return array.length % 2 === 0 ? "Even" : "Odd";
+      }
+      console.log(oddEvenArray(myArray));
+    </script>
+  </body>
+</html>
