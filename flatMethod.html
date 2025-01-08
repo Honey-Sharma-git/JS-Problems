@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array.flat() Method</title>
+  </head>
+  <body>
+    <script>
+      // 1.	Flatten a one-level deep nested array:
+      let arr = [1, 2, [3, 4], 5, 6];
+      let modifiedArr = arr.flat();
+      console.log(modifiedArr);
+
+      //   2.	Flatten a two-level deep nested array:
+      arr = [1, [2, [3, 4], 5], 6];
+      modifiedArr = arr.flat(2);
+      console.log(modifiedArr);
+
+      //   3.	Use flat() with a custom depth to flatten only one level:
+      arr = [1, [2, [3, [4]]]];
+      modifiedArr = arr.flat(1);
+      console.log(modifiedArr);
+
+      //   4.	Flatten a deeply nested array with unknown depth:
+      arr = [1, [2, [3, [4, [5]]]]];
+      modifiedArr = arr.flat(Infinity);
+      console.log(modifiedArr);
+
+      //   5.	Apply flat() to an array containing empty slots:
+      arr = [1, , 3, [4, 5]];
+      modifiedArr = arr.flat();
+      console.log(modifiedArr);
+
+      // 6.	Flatten an array with strings and numbers:
+      arr = ["a", ["b", ["c", 1, 2]], "d"];
+      modifiedArr = arr.flat(2);
+      console.log(modifiedArr);
+
+      // 7.	Use flat() with negative depth (e.g., flat(-1)) and explain the output.
+      modifiedArr = arr.flat(-10);
+      console.log(modifiedArr);
+
+      // 8.	Flatten and sort an array:
+      arr = [[3, 1], [4], [2]];
+      modifiedArr = arr.flat(Infinity).sort();
+      console.log(modifiedArr);
+
+      // 9.	Combine flat() with map() to manipulate and flatten arrays:
+      arr = [1, [2, 3], [4, [5]]];
+      modifiedArr = arr.flat(Infinity).map((element) => {
+        return element * 2;
+      });
+      console.log(modifiedArr);
+
+      // 10.	Flatten and filter numbers greater than 2:
+      arr = [1, [2, [3, 4], 5]];
+      modifiedArr = arr.flat(Infinity).filter((element) => {
+        return element > 2;
+      });
+      console.log(modifiedArr);
+
+      // 11.	Flatten a list of arrays with null or undefined values removed:
+      arr = [
+        [1, null],
+        [2, undefined, [3, null]],
+      ];
+      modifiedArr = arr.flat(Infinity).filter((element) => {
+        return element;
+      });
+      console.log(modifiedArr);
+
+      // 12.	Convert a multidimensional array to a single-level string array:
+      arr = [
+        [1, 2],
+        ["3", [4, "5"]],
+      ];
+      modifiedArr = arr.flat(Infinity).map((element) => {
+        return element.toString();
+      });
+      console.log(modifiedArr);
+
+      // 13.	Flatten an array of objects' properties:
+      arr = [{ a: 1 }, [{ b: 2 }, { c: 3 }], { d: 4 }];
+      modifiedArr = arr.flat(Infinity);
+      console.log(modifiedArr);
+      // 14.	Combine multiple arrays into one and flatten:
+      arr = [1, [2, 3], [4], [[5, 6], [7]]];
+      modifiedArr = arr.join();
+      console.log(modifiedArr);
+
+      // 15.	Use flat() in a pipeline of operations:
+      arr = [
+        ["a", "b"],
+        ["c", ["d", "e"]],
+      ];
+      modifiedArr = arr.flat(Infinity).map((element) => {
+        return element.toUpperCase();
+      });
+      console.log(modifiedArr);
+    </script>
+  </body>
+</html>
