@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For loops practice</title>
+  </head>
+  <body style="background-color: rgb(56, 54, 54)">
+    <script>
+      // Write a for loop to print numbers from 1 to 20.
+      for (let i = 1; i <= 20; i++) {
+        console.log(i);
+      }
+
+      // Write a for loop to print numbers from 20 to 1 in reverse order.
+
+      for (let i = 20; i >= 1; i--) {
+        console.log(i);
+      }
+      //   Use a for loop to print all even numbers between 1 and 50.
+      for (let i = 1; i <= 50; i++) {
+        if (i % 2 === 0) {
+          console.log(i);
+        }
+      }
+      //   Write a for loop to print all odd numbers between 1 and 50.
+      function printOdd(start, end) {
+        for (let i = start; i <= end; i++) {
+          if (i % 2 !== 0) {
+            console.log(i);
+          }
+        }
+      }
+      printOdd(1, 50);
+
+      //   Write a for loop to calculate and print the sum of numbers from 1 to 100.
+      function sumNumbers(start, end) {
+        let sum = 0;
+        for (let i = start; i <= end; i++) {
+          sum = sum + i;
+        }
+        console.log(sum);
+      }
+      sumNumbers(1, 100);
+
+      //   Given an array [5, 10, 15, 20, 25], write a for loop to print each element.
+      let arr = [10, 20, 30, 40, 50];
+      for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+      }
+      //   Write a for loop to calculate the sum of elements in an array [1, 2, 3, 4, 5].
+      arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+      }
+      console.log(sum);
+
+      //   Write a for loop to find the maximum and minimum number in an array [3, 7, 2, 8, 10, 4].
+      function minMax(arr) {
+        //Assuming first element to be min or max
+        let max = arr[0];
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+          //Change max value
+          if (max < arr[i]) {
+            max = arr[i];
+          }
+          //Change min value
+          if (min > arr[i]) {
+            min = arr[i];
+          }
+        }
+        //Print max and min values
+        console.log(`min: ${min} max: ${max}`);
+      }
+      myArr = [3, 7, 2, 8, 10, -4];
+      minMax(myArr);
+
+      //   Use a for loop to print elements of an array [10, 20, 30, 40, 50] in reverse order.
+      arr = [10, 20, 30, 40, 50];
+      for (let i = arr.length; i >= 0; i--) {
+        console.log(arr[i]);
+      }
+      //   Given an array [2, 3, 2, 5, 6, 2, 7], use a for loop to count the occurrences of the number 2.
+      arr = [2, 3, 2, 5, 2, 6, 2, 7];
+      let count = 0;
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] === 2 ? count++ : count;
+      }
+      console.log(count);
+
+      //   Write a for loop to reverse a string, e.g., "javascript" → "tpircsavaj".
+      let str = "javascript";
+      let container = "";
+      for (let i = str.length - 1; i >= 0; i--) {
+        container = container + str.at(i);
+      }
+      console.log(container);
+
+      //   Write a for loop to count the number of vowels in a string, e.g., "hello world".
+      str = "hello world";
+      function countVowels(string) {
+        const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+        let count = 0;
+        for (let i = 0; i < string.length; i++) {
+          vowels.includes(string.at(i)) ? count++ : count;
+        }
+        console.log(count);
+      }
+      countVowels(str);
+
+      //   Use a for loop to count the occurrences of a specific character in a string, e.g., count l in "hello world".
+
+      function countCharacter(string, char) {
+        count = 0;
+        for (let i = 0; i < string.length; i++) {
+          string.at(i) === char ? count++ : count;
+        }
+        console.log(count);
+      }
+      str = "Hello world";
+      countCharacter(str, "H");
+
+      //   Write a for loop to print the multiplication table of a given number (e.g., 5).
+      function generateTable(num) {
+        for (let i = 0; i <= 10; i++) {
+          console.log(num * i);
+        }
+      }
+      generateTable(5);
+      //   Use nested for loops to print the following pattern:
+    </script>
+  </body>
+</html>
