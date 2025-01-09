@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slice Method</title>
+  </head>
+  <body>
+    <script>
+      // 1.	Extract the word "Java" from the string "JavaScript".
+      let str = "JavaScript";
+      let extractedStr = str.slice(0, 4);
+      console.log(extractedStr);
+      // 2.	Remove the first and last character from the string "Frontend".
+      str = "Frontend";
+      extractedStr = str.slice(1, str.length - 1);
+      console.log(extractedStr);
+      //   3.	Extract the last 5 characters from the string "Development".
+      str = "Development";
+      extractedStr = str.slice(-5, str.length);
+      console.log(extractedStr);
+      //   4.	Use slice() to return all characters from index 3 to the end in the string "Programming".
+      str = "Programming";
+      extractedStr = str.slice(3);
+      console.log(extractedStr);
+      //   5.	Extract the substring "World" from the string "Hello, World!" using negative indices.
+      str = "Hello, World";
+      extractedStr = str.slice(-5);
+      console.log(extractedStr);
+
+      // 6.	Extract all characters except the first 3 from the string "Backend".
+      str = "Backend";
+      extractedStr = str.slice(3);
+      console.log(extractedStr);
+      // 7.	Extract the middle three characters from the string "CodingChallenge".
+
+      str = "CodingChallenge";
+      const mid = Math.ceil(str.length / 2) - 1;
+      console.log(mid);
+      extractedStr = str.slice(mid, mid + 3);
+      console.log(extractedStr);
+      // 8.	Use slice() to reverse the string "abcdef".
+      str = "12345";
+      let arr = [];
+      for (let i = 1; i <= str.length; i++) {
+        // arr.push(str.slice(str.length - i, str.length - i - 1));
+        let ext = str.slice(str.length - i, str.length - i - 1);
+        console.log(ext);
+      }
+      // console.log(arr);
+      // console.log(str.slice(str.length - 1, str.length - 0));
+      // console.log(str.slice(str.length - 2, str.length - 1));
+      // console.log(str.slice(str.length - 3, str.length - 2));
+      // console.log(str.slice(str.length - 4, str.length - 3));
+      // console.log(str.slice(str.length - 5, str.length - 4));
+
+      // 9.	Write a function that removes the last n characters from a given string using slice().
+      str = "123456789";
+      function removeChar(string, n) {
+        return string.slice(0, string.length - n);
+      }
+      console.log(removeChar(str, 3));
+
+      // 10.	Extract the file extension from the string "document.pdf".
+      str = "document.pdf";
+      extractedStr = str.slice(str.lastIndexOf("."));
+      console.log(extractedStr);
+
+      // 11.	Use slice() to extract the year "2023" from the string "12/31/2023".
+      str = "12/31/2024";
+      extractedStr = str.slice(str.lastIndexOf("/") + 1);
+      console.log(extractedStr);
+
+      // 12.	Extract the substring "blue" from the string "The sky is blue and clear".
+
+      str = "The sky is blue and clear";
+      extractedStr = str.slice(
+        str.indexOf("blue"),
+        str.indexOf("blue") + "blue".length
+      );
+      console.log(extractedStr);
+      // 13.	Create a function that accepts a string and returns the first half of the string using slice().
+
+      str = "12345678901";
+      // str = "123456789";
+      console.log(str.slice(0, str.length / 2));
+      // 14.	Use slice() to duplicate a string without modifying the original.
+
+      str = "string";
+      extractedStr = str.slice();
+      console.log(extractedStr);
+      // 15.	Extract the substring "Script" from "JavaScript" without using hardcoded indices.
+    </script>
+  </body>
+</html>
