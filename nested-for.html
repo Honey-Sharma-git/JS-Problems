@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested for loop</title>
+  </head>
+  <body>
+    <script>
+      // 1.	Write a program to generate a multiplication table (1 to 10) using nested loops.
+      const multiplicationTables = [];
+
+      for (let i = 1; i <= 10; i++) {
+        const table = [];
+        for (let j = 1; j <= 10; j++) {
+          table.push(i * j);
+        }
+        multiplicationTables.push({
+          num: i,
+          table,
+        });
+      }
+      console.log(multiplicationTables);
+
+      //   2.	Print a 5x5 grid of stars (*) using nested loops.
+
+      function grid(rows, columns) {
+        let row = "";
+        for (let j = 1; j <= columns; j++) {
+          for (let i = 1; i <= rows; i++) {
+            row += "* ";
+          }
+          row += "\n";
+        }
+        console.log(row);
+      }
+      grid(10, 10);
+      //   3.	Create a right hand triangle where the rows display numbers in increasing order:
+      function triangle(num) {
+        let triangle = "";
+        for (let i = 1; i <= num; i++) {
+          let line = "";
+          for (let j = 1; j <= i; j++) {
+            line += `${j} `;
+          }
+          triangle += `${line} \n`;
+        }
+        console.log(triangle);
+      }
+      triangle(10);
+      //Print first character of you name
+      let all = "";
+      for (let i = 1; i <= 3; i++) {
+        let line = "";
+        for (let j = 1; j <= 3; j++) {
+          i % 2 !== 0
+            ? j % 2 === 0
+              ? (line += " ")
+              : (line += "*")
+            : (line += "*");
+        }
+        all += `${line} \n`;
+      }
+      console.log(all);
+
+      //   4.	Print a reverse triangle of stars (*):
+      for (let j = 6; j >= 1; j--) {
+        let html = "";
+        for (let i = j; i >= 1; i--) {
+          html += "*";
+        }
+        console.log(html);
+      }
+
+      //   5.	Find the sum of all pairs (i, j) where i ranges from 1 to 5 and j ranges from 1 to 5.
+      let sum = 0;
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5; j++) {
+          sum += i + j;
+        }
+      }
+      console.log(sum);
+      //   6.	Print all unique pairs (i, j) where 1 ≤ i, j ≤ 5 and i ≠ j.
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5; j++) {
+          1 <= i && 5 >= j && i !== j ? console.log(`(${i},${j})`) : null;
+        }
+      }
+      //   7.	Given two 3x3 matrices, write a program to calculate their sum using nested loops.
+      const mat1 = [
+        [1, 2, 3],
+        [1, 2, 3],
+        [1, 2, 3],
+      ];
+      const mat2 = [
+        [1, 2, 3],
+        [1, 2, 3],
+        [1, 2, 12],
+      ];
+
+      const addition = [];
+      for (let i = 0; i < mat1.length; i++) {
+        let element = [];
+        for (let j = 0; j < mat1.length; j++) {
+          element.push(mat1[i][j] + mat2[i][j]);
+        }
+        addition.push(element);
+      }
+      console.log(addition);
+      function invertedTriangle(base) {
+        let total = "";
+        for (let i = 3; i >= 1; i--) {
+          let star = "";
+          for (let j = 5; j >= 1; j--) {
+            star += "*";
+          }
+          total += `${star}\n`;
+        }
+        console.log(total);
+      }
+      invertedTriangle(5);
+    </script>
+  </body>
+</html>
