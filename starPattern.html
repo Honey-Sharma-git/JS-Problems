@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star pattern</title>
+  </head>
+  <body style="background-color: rgb(126, 126, 109)">
+    <script>
+      let total = "";
+      let html = "";
+      total = "";
+      for (let i = 1; i <= 10; i++) {
+        for (let j = 1; j <= i; j++) {
+          html = " ".repeat(10 - i).concat("*".repeat(i));
+        }
+        total += `${html}\n`;
+      }
+      console.log(total);
+      total = "";
+      for (let i = 1; i <= 10; i++) {
+        let html = "";
+        let space = "";
+        for (let k = 1; k <= 10 - i; k++) {
+          space += " ";
+        }
+        for (let j = 1; j <= i; j++) {
+          html += "*";
+        }
+        total += `${space} ${html}\n`;
+      }
+      console.log(total);
+    </script>
+  </body>
+</html>
