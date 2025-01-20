@@ -30,6 +30,73 @@
         total += `${space} ${html}\n`;
       }
       console.log(total);
+      // 4.	Print right half pyramid with custom size
+      function rightHalfPyramid(size) {
+        let rhp = "";
+        for (let i = 1; i <= size; i++) {
+          let row = "";
+          for (let j = 1; j <= i; j++) {
+            row += "*";
+          }
+          rhp += `${row}\n`;
+        }
+        console.log(rhp);
+      }
+      rightHalfPyramid(5);
+      rightHalfPyramid(10);
+      // 5.	Print left half pyramid with custom size
+      function leftHalfPyramid(size) {
+        let sp = "";
+        let st = "";
+        let pt = "";
+        for (let i = 1; i <= size; i++) {
+          for (let k = 1; k <= size - i; k++) {
+            sp += " ";
+          }
+          for (let j = 1; j <= i; j++) {
+            st += "*";
+          }
+          pt += `${sp}${st}\n`;
+          sp = "";
+          st = "";
+        }
+        console.log(pt);
+      }
+      leftHalfPyramid(10);
+      // 6.	Print inverted right half pyramid with custom size
+      let irhp = "";
+      let line = "";
+      function iRightHalfPyramid(size) {
+        for (let i = 1; i <= size; i++) {
+          for (let j = 1; j <= size + 1 - i; j++) {
+            line += "*";
+          }
+          irhp += `${line}\n`;
+          line = "";
+        }
+        console.log(irhp);
+      }
+      iRightHalfPyramid(15);
+      // 7.	Print inverted left half pyramid with custom size
+      function iLeftHalfPyramid(size) {
+        let space = "";
+        let star = "";
+        let ILHP = "";
+        for (let i = 1; i <= size; i++) {
+          for (let j = 1; j <= i - 1; j++) {
+            space += " ";
+          }
+          for (let k = 1; k <= size + 1 - i; k++) {
+            star += "*";
+          }
+          ILHP += `${space}${star}\n`;
+          star = "";
+          space = "";
+        }
+        console.log(ILHP);
+      }
+      iLeftHalfPyramid(5);
+      iLeftHalfPyramid(10);
     </script>
   </body>
 </html>
