@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <script>
+      localStorage.clear();
+      //   o	Save your name in localStorage with the key name and retrieve it to display in the console.
+      localStorage.setItem("name", "Honey Sharma");
+      let result = localStorage.getItem("name");
+      console.log(result);
+      //   o	Write code to check if a key userEmail exists in localStorage. If it doesn’t, add a default value.
+      function checkKey(key) {
+        return localStorage.getItem(key)
+          ? localStorage.getItem(key)
+          : localStorage.setItem(key, "email@example.com");
+      }
+      console.log(checkKey("userEmail"));
+      console.log(checkKey("userEmail"));
+      //   o	Save a value with the key sessionData and then remove it from localStorage.
+      localStorage.setItem("sessionData", "session data value");
+      localStorage.removeItem("sessionData");
+      //   o	Add three different keys (name, age, city) to localStorage and then clear all of them in one operation.
+      localStorage.setItem("name", "Ram");
+      localStorage.setItem("age", 33);
+      localStorage.setItem("city", "Jaipur");
+
+      const toBeRemoved = ["name", "age", "city"];
+      toBeRemoved.forEach((element) => {
+        localStorage.removeItem(element);
+      });
+      //   o	Write a function to count how many items are currently stored in localStorage.
+      localStorage.setItem("age", 28);
+      localStorage.setItem("city", "Jaipur");
+      console.log(localStorage.length);
+
+      // o	Save an object {name: 'John', age: 30} under the key userProfile. Retrieve and parse it back into an object.
+      const myObj = { name: "John", age: 30 };
+      jsonMyObj = JSON.stringify(myObj);
+      localStorage.setItem("userProfile", jsonMyObj);
+      const parsedObj = JSON.parse(localStorage.getItem("userProfile"));
+      console.log(parsedObj);
+
+      //   o	Save a value with the key status and value active. Update its value to inactive.
+      localStorage.setItem("status", "active");
+      localStorage.setItem("status", "inactive");
+      //   o	Write code to loop through all keys in localStorage and log their names and values.
+      const keys = Object.keys(localStorage);
+      keys.forEach((element) => {
+        console.log(`{key: ${element}, ${localStorage.getItem(element)}}`);
+      });
+
+      //   o	Store a string with the key data. Calculate and log the length of both the key and value.
+      localStorage.setItem("key2", "value for key2");
+      console.log(localStorage.getItem("key2").length);
+      //   o	Try to store a number, a boolean, and an array in localStorage. Handle the conversions required to retrieve them correctly.
+
+      localStorage.clear();
+      localStorage.setItem("string", JSON.stringify("STRING"));
+      localStorage.setItem("boolean", JSON.stringify(true));
+      localStorage.setItem("number", JSON.stringify(1111));
+      localStorage.setItem("array", JSON.stringify([1, 2, 3, "a", "b"]));
+      localStorage.setItem(
+        "object",
+        JSON.stringify({ name: "Honey", age: 27 })
+      );
+
+      //To make an array of all the keys:
+      const storageKeys = Object.keys(localStorage);
+      storageKeys.forEach((element) => {
+        let value = localStorage.getItem(element);
+        console.log(JSON.parse(value));
+      });
+      //   o	Implement a mechanism to add a timestamp to localStorage items and remove them after a specific time (e.g., 5 minutes).
+      setTimeout(() => {
+        localStorage.clear();
+      }, 30000);
+    </script>
+  </body>
+</html>
