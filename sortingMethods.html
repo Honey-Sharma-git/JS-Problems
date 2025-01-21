@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Methods</title>
+  </head>
+  <body style="background-color: rgb(52, 45, 36)">
+    <script>
+      // 1.	Write a JavaScript code snippet to sort the array ["Banana", "Orange", "Apple", "Mango"] in alphabetical order.
+      let arr = ["Banana", "Orange", "Apple", "Mango"];
+      arr.sort();
+      //   console.log(arr);
+      // 2.	Reverse the array ["Banana", "Orange", "Apple", "Mango"] after sorting it alphabetically.
+      arr = ["Banana", "Orange", "Apple", "Mango"];
+      arr.sort().reverse();
+      //   console.log(arr);
+      // 3.	Given the array [40, 100, 1, 5, 25, 10], sort it in ascending order using a custom compare function.
+      arr = [40, 100, 1, 5, 25, 10];
+      arr.sort((a, b) => {
+        return a - b;
+      });
+      //   console.log(arr);
+      // 4.	Sort the array [40, 100, 1, 5, 25, 10] in descending order using a custom compare function.
+      arr = [40, 100, 1, 5, 25, 10];
+      arr.sort((a, b) => {
+        return b - a;
+      });
+      //   console.log(arr);
+      // 5.	Sort the array [40, 100, 1, 5, 25, 10] in random order.
+      arr = [40, 100, 1, 5, 25, 10];
+      arr.sort((a, b) => {
+        return 0.5 - Math.random();
+      });
+      //   console.log(arr);
+
+      arr.sort((a, b) => {
+        for (let i = 0; i < arr.length; i++) {
+          let x = arr[i];
+          let y = arr[i + 1];
+          if (x > y) {
+            return -1;
+          }
+          if (x < y) {
+            return 1;
+          }
+          return 0;
+        }
+      });
+      //   console.log(arr);
+      // 6.	Write a function to sort the array of strings ["elephant", "cat", "dog", "giraffe"] by the length of each string.
+      arr = ["elephant", "cat", "dog", "giraffe"];
+      arr.sort((a, b) => {
+        return a.length - b.length;
+      });
+      //   console.log(arr);
+      // 7.	Use the reverse() method to reverse the order of an array without first sorting it.
+      arr = ["elephant", "cat", "dog", "giraffe"];
+      arr.reverse();
+      //   console.log(arr);
+      // 8.	Given an array of numbers [10, 15, 20, 5, 25], sort it in descending order using the sort() method and then reverse it.
+      arr = [10, 15, 20, 5, 25];
+      arr
+        .sort((a, b) => {
+          return a - b;
+        })
+        .reverse();
+      //   console.log(arr);
+      // 9.	Sort the array of dates ["2025-01-20", "2023-03-15", "2024-08-05"] in ascending order.
+      arr = ["2025-01-20", "2023-03-15", "2024-08-05"];
+      arr.sort((a, b) => {
+        return new Date(a) - new Date(b);
+      });
+      //   console.log(arr);
+      // 10.	Use the sort() method to sort the array [true, false, true, false].
+      arr = [true, false, true, false];
+      arr.sort();
+      //   console.log(arr);
+      // 11.	Write code to sort an array of mixed numbers and strings ["10", 2, "1", 3] in numerical ascending order.
+      arr = ["10", 2, "1", 3];
+      arr.sort((a, b) => {
+        return Number(a) - Number(b);
+      });
+      //   console.log(arr);
+      // 12.	Sort an array of objects by a string property. Use the following array as input:
+      // { name: "John", age: 30 }, { name: "Alice", age: 25 }, { name: "Bob", age: 35 }. Sort by the name property alphabetically.
+      let persons = [
+        { name: "John", age: 30 },
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 35 },
+      ];
+      persons.sort((a, b) => {
+        let x = a.name.toLowerCase();
+        let y = b.name.toLocaleLowerCase();
+        if (x > y) {
+          return 1;
+        }
+        if (x < y) {
+          return -1;
+        }
+        return 0;
+      });
+      //   console.log(persons);
+
+      // 13.	Sort the same array of objects by the age property in descending order.
+      persons = [
+        { name: "John", age: 30 },
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 35 },
+      ];
+      persons.sort((a, b) => {
+        return a.age - b.age;
+      });
+      //   console.log(persons);
+      // 14.	Write a code snippet to make sorting case-insensitive for the array ["apple", "Orange", "banana", "Mango"].
+      arr = ["apple", "Orange", "banana", "Mango"];
+      arr.sort((a, b) => {
+        let x = a.toLowerCase();
+        let y = b.toLowerCase();
+        if (x > y) {
+          return 1;
+        }
+        if (x < y) {
+          return -1;
+        }
+        return 0;
+      });
+      //   console.log(arr);
+      // 15.	Sort the array ["1", "5", "3", "10"] numerically, not lexicographically.
+      //   Method-1
+      let arr1 = ["1", "5", "3", "10"];
+      arr1.sort((a, b) => {
+        return a - b;
+      });
+      //   console.log(arr1);
+      //Method-2
+      let arr2 = ["1", "5", "3", "10"];
+      arr2.sort((a, b) => {
+        return Number(a) - Number(b);
+      });
+      //   console.log(arr2);
+
+      //   1.	Write code to sort an array of file names ["file1.txt", "file10.txt", "file2.txt"] numerically based on the number in the file name.
+      arr = ["file1.txt", "file10.txt", "file2.txt"];
+
+      // 2.	Sort an array of objects by a nested property. Use this input:
+      // { title: "Book A", info: { year: 2021 } }, { title: "Book B", info: { year: 2019 } }, { title: "Book C", info: { year: 2020 } }. Sort the books by their info.year property in ascending order.
+      arr = [
+        { title: "Book A", info: { year: 2021 } },
+        { title: "Book B", info: { year: 2019 } },
+        { title: "Book C", info: { year: 2020 } },
+      ];
+      arr.sort((a, b) => {
+        return a.info.year - b.info.year;
+      });
+      //   console.log(arr);
+      // 3.	Reverse the array ["a", "b", "c", "d", "e"] and then sort it alphabetically.
+      arr = ["a", "b", "c", "d", "e"];
+      arr.reverse();
+      //   console.log(arr);
+      arr.sort();
+      //   console.log(arr);
+      // 4.	Sort the array of booleans [false, true, false, true, true] such that all false values come first.
+      arr = [false, true, false, true, true];
+      arr.sort();
+      //   console.log(arr);
+
+      // 5.	Write code to sort an array of numbers [Infinity, NaN, 1, 0, -1] and handle NaN values.
+      arr = [Infinity, NaN, 1, 0, -1];
+      arr.sort((a, b) => {
+        return a - b;
+      });
+      //   console.log(arr);
+      // 6.	Given the array ["Banana", "Orange", "Apple", "Mango"], use sort() and map() to output the length of each word in sorted order.
+      arr = ["Banana", "Orange", "Apple", "Mango"];
+      let arrLength = arr.sort().map((element) => {
+        return element.length;
+      });
+      //   console.log(arrLength);
+      // 7.	Sort the array [0.5, 1.2, 0.1, 3.5, 2.1] in descending order.
+      arr = [0.5, 1.2, 0.1, 3.5, 2.1];
+      arr.sort((a, b) => {
+        return b - a;
+      });
+      //   console.log(arr);
+      // 8.	Given this array of strings, sort it by the last character: ["apple", "banana", "cherry", "date"].
+      arr = ["appla", "banana", "cherry", "date"];
+      arr.sort((a, b) => {
+        let x = a.at(a.length - 1);
+        let y = b.at(b.length - 1);
+        if (x > y) {
+          return 1;
+        }
+        if (x < y) {
+          return -1;
+        }
+        return 0;
+      });
+      //   console.log(arr);
+      // 9.	Write a function to shuffle an array (randomize its order) using the sort() method.
+      arr = [1, 2, 3, 4, 5, 6];
+      function shuffleOrder(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          let k = array[i];
+          array[i] = array[j];
+          array[j] = k;
+        }
+        // console.log(array);
+      }
+      shuffleOrder(arr);
+      // 10.	Use the sort() method to sort an array of strings ["A", "b", "C", "a", "B", "c"] ignoring case sensitivity.
+      //Method-1
+      arr = ["34", "11", "78", "21", "1", "90"];
+      arr.sort((a, b) => {
+        return a - b;
+      });
+      //   console.log(arr);
+      //Method-2
+      arr = ["34", "11", "78", "21", "1", "90"];
+      arr.sort((a, b) => {
+        return Number(a) - Number(b);
+      });
+     
+
+      arr = [
+        4, 1, 2, 0, 4, 1, 2, 0, 4, 1, 2, 0, 4, 1, 2, 0, 4, 1, 2, 0, 4, 1, 2, 0,
+        4, 1, 2, 0, 4, 1, 2, 0,
+      ];
+      //Method-1
+      arr.sort((a, b) => {
+        return a - b;
+      });
+      //   console.log(arr);
+      //Method-2 Sorting using custom made function
+      function ascendingSort(arr) {
+        for (let j = 0; j < arr.length; j++) {
+          for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+              let temp = arr[i];
+              arr[i] = arr[i + 1];
+              arr[i + 1] = temp;
+            }
+          }
+        }
+        // console.log(arr);
+      }
+      ascendingSort(arr);
+      let myArr = [1, 2, 5, 8, 9, 11];
+      ascendingSort(myArr);
+    </script>
+  </body>
+</html>
