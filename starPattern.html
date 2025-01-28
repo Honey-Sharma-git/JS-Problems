@@ -36,14 +36,14 @@
         for (let i = 1; i <= size; i++) {
           let row = "";
           for (let j = 1; j <= i; j++) {
-            row += "*";
+            row += "R ";
           }
           rhp += `${row}\n`;
         }
         console.log(rhp);
       }
-      rightHalfPyramid(5);
-      rightHalfPyramid(10);
+      rightHalfPyramid(15);
+      // rightHalfPyramid(10);
       // 5.	Print left half pyramid with custom size
       function leftHalfPyramid(size) {
         let sp = "";
@@ -97,6 +97,28 @@
       }
       iLeftHalfPyramid(5);
       iLeftHalfPyramid(10);
+
+      function pyramind(height) {
+        let pattern = "";
+        let z = 0;
+        for (let i = 1; i <= height; i += 1) {
+          let line = "";
+          let space = "";
+          let star = "";
+          for (let j = 1; j <= height - i; j++) {
+            space += " ";
+          }
+
+          for (let k = 1; k <= i + z; k += 1) {
+            star += "*";
+          }
+          line += `${space}${star}${space}`;
+          pattern += `${line}\n`;
+          z++;
+        }
+        console.log(pattern);
+      }
+      pyramind(20);
     </script>
   </body>
 </html>
