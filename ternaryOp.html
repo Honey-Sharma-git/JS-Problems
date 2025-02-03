@@ -141,6 +141,176 @@
         return array.length % 2 === 0 ? "Even" : "Odd";
       }
       console.log(oddEvenArray(myArray));
+
+      // 1. **Find the Median of Three Numbers**
+      //  - Given three numbers, use the ternary operator to determine the median (middle value).
+      //
+      const median = (a, b, c) => {
+        return a < b ? (b < c ? b : a < c ? a : c) : b < c ? c : a < c ? a : c;
+      };
+      console.log(median(17, 8, 18));
+      // 2. **Check if a Number is a Prime Number**
+      //  - Use the ternary operator to return `"Prime"` if a number is prime, otherwise return `"Not Prime"`. (Hint: You may need to use a helper function.)
+      let num = 19;
+      let result = "Prime";
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        num % i === 0 ? (result = "Not prime") : result;
+      }
+      console.log(result);
+
+      // 3. **Dynamic Pluralization**
+      //  - Given a number and a word (e.g., `3, "apple"`), use the ternary operator to return the correct pluralized form (e.g., `"3 apples"` or `"1 apple"`).
+      //
+      const makePlural = (num, word) => {
+        return num > 1 ? `${num} ${word}s` : `${num} ${word}`;
+      };
+      console.log(makePlural(1, "hello"));
+      // 4. **Determine the Triangle Type**
+      //  - Given three sides of a triangle, classify it as `"Equilateral"`, `"Isosceles"`, or `"Scalene"` using a ternary operator.
+      const typeOfTriangle = (a, b, c) => {
+        return a + b > c && b + c > a && c + a > b
+          ? a === b && b === c
+            ? "Equilateral triangle"
+            : a === b || b === c || a === c
+            ? "Isosceles triangle"
+            : "Scalene triangle"
+          : "invalid dimensions of a triangle";
+      };
+      console.log(typeOfTriangle(1111111, 11, 41));
+      // 5. **Calculate BMI Category**
+      //  - Given a person's weight (kg) and height (m), calculate the BMI and classify it as `"Underweight"`, `"Normal weight"`, `"Overweight"`, or `"Obese"` using nested ternary operators.
+      //
+      const height = 1.6;
+      const weight = 70;
+      function BMI(height, weight) {
+        const bmi = weight / (height * height);
+        return bmi < 18.5
+          ? "underweight"
+          : bmi <= 24.9 && bmi >= 18.5
+          ? "Healthy weight"
+          : bmi >= 25 && bmi <= 29.9
+          ? "Overweight"
+          : bmi > 30
+          ? "Obese"
+          : "Invalid input";
+      }
+      console.log(BMI(height, weight));
+      console.log(70 / (1.6 * 1.6));
+      // 6. **FizzBuzz with Ternary Operator**
+      //  - Implement the classic "FizzBuzz" problem using only the ternary operator. Return `"Fizz"` if a number is divisible by 3, `"Buzz"` if divisible by 5, `"FizzBuzz"` if both, otherwise return the number.
+      const number = 20;
+      result =
+        number % 3 === 0 && number % 5 === 0
+          ? "FizzBuzz"
+          : number % 3 === 0
+          ? "Fizz"
+          : number % 5 === 0
+          ? "Buzz"
+          : number;
+      console.log(result);
+      // 7. **Determine Time of Day**
+      //  - Given the current hour (0–23), return `"Morning"`, `"Afternoon"`, `"Evening"`, or `"Night"` using a ternary operator.
+      let hour = new Date().getHours();
+      console.log(hour);
+      hour = 23;
+      let greeting =
+        hour < 5
+          ? "Good night"
+          : hour >= 5 && hour < 12
+          ? "Good morning"
+          : hour >= 12 && hour < 17
+          ? "Good afternoon"
+          : hour >= 17 && hour <= 20
+          ? "Good evening"
+          : hour >= 21 && hour <= 23
+          ? "Good night"
+          : "NA";
+      console.log(greeting);
+      // 8. **Find the Largest of Four Numbers**
+      //  - Given four numbers, use a nested ternary operator to determine the largest.
+      function max(a, b, c, d) {
+        if (a > b) {
+          if (a > c) {
+            if (a > d) {
+              return a;
+            }
+          }
+        } else if (b > c) {
+          if (b > d) {
+            return b;
+          }
+        }
+      }
+
+      // 9. **Check Palindrome (One-Liner)**
+      //  - Given a string, use the ternary operator to return `"Palindrome"` if the string is the same forward and backward, otherwise return `"Not a Palindrome"`.
+      let str = "0110110";
+      let reversedStr = "";
+      for (let i = str.length - 1; i >= 0; i--) {
+        reversedStr += str.at(i);
+      }
+      console.log(reversedStr);
+      result = str === reversedStr ? "Palindrome" : "Not a palindrome";
+      console.log(result);
+      //  - Given an array of numbers, sort it in ascending or descending order based on a boolean flag (`true` for ascending, `false` for descending) using the ternary operator inside the sort function.
+      arr = [1, 2, 3, 4, 5];
+      let flag = false;
+      flag
+        ? arr.sort((a, b) => {
+            return a - b;
+          })
+        : arr.sort((a, b) => {
+            return b - a;
+          });
+      console.log(arr);
+      // 11. **Check If a Date Falls on a Weekend**
+      //  - Given a date string, use the ternary operator to check if it falls on a Saturday or Sunday.
+      function weekendChecker(dateString) {
+        const day = new Date(dateString).getDay();
+        return day === 0 ? "Sunday" : day === 6 ? "Saturday" : "Weekday";
+      }
+      console.log(weekendChecker("2025-02-01"));
+      //
+      // 12. **Return the Shortest of Two Strings**
+      //  - Given two strings, return the shorter one using a ternary operator. If they are equal in length, return `"Equal length"`.
+      const compareTwoStrings = (str1, str2) => {
+        console.log(
+          str1.length === str2.length
+            ? "Equal Strings"
+            : str1.length > str2.length
+            ? str2
+            : str1
+        );
+      };
+      compareTwoStrings("hello112212", "strings");
+
+      // 13. **Check Password Strength**
+      //  - Given a password string, classify its strength as `"Weak"`, `"Medium"`, or `"Strong"` using a ternary operator based on its length and character variety.
+
+      let password = "123456789123456";
+      let feedback =
+        password.length > 15
+          ? "Strong"
+          : password.length > 8 && password.length <= 15
+          ? "Medium"
+          : "Weak";
+      console.log(feedback);
+
+      // 14. **Convert Temperature Units**
+      //  - Given a temperature and a unit (`"C"` for Celsius or `"F"` for Fahrenheit), use the ternary operator to convert it to the opposite unit.
+      //
+      // 15. **Nested Ternary Operator for Traffic Light System**
+      //  - Given a traffic light color (`"red"`, `"yellow"`, `"green"`), return `"Stop"`, `"Slow Down"`, or `"Go"` using a ternary operator.
+      const lightColor = "Yellows";
+      let light =
+        lightColor === "Red"
+          ? "Stop"
+          : lightColor === "Yellow"
+          ? "Slow Down"
+          : lightColor === "Green"
+          ? "Go"
+          : "Invalid";
+      console.log(light);
     </script>
   </body>
 </html>
