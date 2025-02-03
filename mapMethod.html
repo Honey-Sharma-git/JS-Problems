@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Map Method</title>
   </head>
-  <body>
+  <body style="background-color: beige">
     <script>
       //Double each element of an array:
       const numbers = [1, 2, 3, 4];
@@ -250,6 +250,107 @@
         }
       });
       console.log(arr2);
+
+      // 1.	Convert an array of numbers into an array of objects containing the number, its square, and its square root.
+      // Input: [4, 9, 16]
+      // Output: [{ num: 4, square: 16, sqrt: 2 }, { num: 9, square: 81, sqrt: 3 }, { num: 16, square: 256, sqrt: 4 }]
+      let arr = [4, 9, 16];
+      let mappedArr = arr.map((element) => {
+        return {
+          Num: element,
+          Square: element * element,
+          SquareRoot: Math.sqrt(element),
+        };
+      });
+
+      // 2.	Transform an array of objects with names and birth years into an array of ages (assuming the current year is 2025).
+      // Input: [{ name: 'Alice', birthYear: 2000 }, { name: 'Bob', birthYear: 1995 }]
+      // Output: [25, 30]
+      arr = [
+        { name: "Rahul", year: 1998 },
+        { name: "Rashmika", year: 1994 },
+        { name: "Shyam", year: 1995 },
+      ];
+      mappedArr = arr.map((element) => {
+        return `${element.name} ${2025 - element.year}`;
+      });
+      // 3.	Modify an array of email addresses to extract only the usernames (before the @ symbol).
+      // Input: ['john.doe@gmail.com', 'alice@yahoo.com']
+      // Output: ['john.doe', 'alice']
+
+      arr = ["example@gmail.com", "username@gmail.com", "myName@gmail.com"];
+      mappedArr = arr.map((element) => {
+        return element.slice(0, element.indexOf("@"));
+      });
+      // 4.	Transform an array of objects representing employees into an array of full names (first and last combined).
+      // Input: [{ firstName: 'John', lastName: 'Doe' }, { firstName: 'Jane', lastName: 'Smith' }]
+      // Output: ['John Doe', 'Jane Smith']
+      arr = [
+        {
+          firstName: "Honey",
+          lastName: "Sharma",
+        },
+        { firstName: "Rahul", lastName: "Gupta" },
+        {
+          firstName: "Sonal",
+          lastName: "Pareek",
+        },
+      ];
+      mappedArr = arr.map((element) => {
+        return element.firstName + " " + element.lastName;
+      });
+      // 5.	Convert an array of date strings into an array of formatted date objects (e.g., YYYY-MM-DD format).
+      // Input: ['02/03/2025', '12/25/2024']
+      // Output: ['2025-02-03', '2024-12-25']
+      arr = ["01/11/1998", "02/03/2025"];
+      mappedArr = arr.map((element) => {
+        let date = new Date(element);
+        let day = String(date.getDate()).padStart(2, "0");
+        let month = String(date.getMonth() + 1).padStart(2, "0");
+        let year = date.getFullYear();
+        return `${year}-${month}-${day}`;
+      });
+      // 6.	Transform an array of sentences into an array where each sentence is converted into an array of words.
+      // Input: ['Hello world', 'JavaScript is fun']
+      // Output: [['Hello', 'world'], ['JavaScript', 'is', 'fun']]
+      arr = ["Hello, my Name is Honey Sharma", "I am a software developer."];
+      mappedArr = arr.map((element) => {
+        return [element.split(" ")];
+      });
+      // 7.	Given an array of product prices, apply a 10% discount to each price and round to 2 decimal places.
+      // Input: [100, 150.75, 200]
+      // Output: [90.00, 135.68, 180.00]
+
+      arr = [100, 150.75, 200];
+      mappedArr = arr.map((element) => {
+        return (element * 0.9).toFixed(2);
+      });
+      // 8.	Convert an array of file paths into an array of file names (excluding the extension).
+      // Input: ['/user/docs/file1.txt', '/images/photo.jpg']
+      // Output: ['file1', 'photo']
+      arr = ["/user/docs/file1.txt", "/images/photo.jpg"];
+      mappedArr = arr.map((element) => {
+        return element.slice(
+          element.lastIndexOf("/") + 1,
+          element.indexOf(".")
+        );
+      });
+      // 9.	Use .map() to generate an array of unique IDs by appending a random 4-digit number to each name.
+      // Input: ['Alice', 'Bob']
+      // Output Example: ['Alice-3241', 'Bob-6728'] (Randomized numbers)
+      arr = ["Honey", "Rahul", "Somalia"];
+      mappedArr = arr.map((element) => {
+        let fourDigitRandomNum = Math.floor(Math.random() * 9000 + 1000);
+        return `${element}-${fourDigitRandomNum}`;
+      });
+      // 10.	Given an array of numbers, generate an array of binary representations.
+      // Input: [5, 10, 15]
+      // Output: ['101', '1010', '1111']
+      arr = [169, 5, 10, 15];
+      mappedArr = arr.map((element) => {
+        return element.toString(2);
+      });
+      console.log(mappedArr);
     </script>
   </body>
 </html>
