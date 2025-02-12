@@ -119,6 +119,78 @@
         console.log(pattern);
       }
       pyramind(20);
+
+      function pyramid(size) {
+        let space = "";
+        let star = "";
+        let pattern = "";
+        for (let k = 1; k <= size; k++) {
+          star = "";
+          space = "";
+          for (let i = 1; i <= k; i++) {
+            star += "* ";
+          }
+          for (let j = size - k; j >= 1; j--) {
+            space += " ";
+          }
+          pattern += `${space}${star}\n`;
+        }
+        console.log(pattern);
+      }
+      pyramid(5);
+      function invertedPyramid(size) {
+        let space = "";
+        let star = "";
+        let pattern = "";
+        for (let i = size; i >= 1; i--) {
+          space = "";
+          star = "";
+          for (let j = i; j >= 1; j--) {
+            star += "* ";
+          }
+          for (let k = 1; k <= size - i; k++) {
+            space += " ";
+          }
+          pattern += `${space}${star}\n`;
+        }
+        console.log(pattern);
+      }
+      invertedPyramid(5);
+      function diamond(size) {
+        let upperPattern = "";
+        let lowerPattern = "";
+        let fullPattern = "";
+        let star = "";
+        let space = "";
+        for (let i = 1; i <= size; i++) {
+          star = "";
+          space = "";
+          for (let k = 1; k <= i; k++) {
+            star += "* ";
+          }
+          for (let j = size - i; j >= 1; j--) {
+            space += " ";
+          }
+          upperPattern += `${space}${star}\n`;
+        }
+
+        for (let a = size - 1; a >= 1; a--) {
+          star = "";
+          space = "";
+          for (let b = a; b >= 1; b--) {
+            star += "* ";
+          }
+          for (let c = 1; c < size - a + 1; c++) {
+            space += " ";
+          }
+          lowerPattern += `${space}${star}\n`;
+        }
+
+        fullPattern = upperPattern + lowerPattern;
+        console.log(fullPattern);
+      }
+      diamond(10);
+
     </script>
   </body>
 </html>
