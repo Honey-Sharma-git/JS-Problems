@@ -162,6 +162,7 @@
         let fullPattern = "";
         let star = "";
         let space = "";
+        //To create upper pyramid:
         for (let i = 1; i <= size; i++) {
           star = "";
           space = "";
@@ -173,7 +174,7 @@
           }
           upperPattern += `${space}${star}\n`;
         }
-
+        //To create lower pyramid:
         for (let a = size - 1; a >= 1; a--) {
           star = "";
           space = "";
@@ -190,7 +191,35 @@
         console.log(fullPattern);
       }
       diamond(10);
+      function hollowPyramid(height) {
+        let outerSpace = "";
+        let innerSpace = "";
+        let counter = 0;
+        let pattern = "";
+        let design = "*";
+        for (let a = 1; a <= height; a++) {
+          outerSpace = "";
+          innerSpace = "";
 
+          for (let b = 1; b <= height - a; b++) {
+            outerSpace += " ";
+          }
+
+          for (let c = 1; c < counter; c++) {
+            innerSpace += " ";
+          }
+          counter += 2;
+          if (a === 1) {
+            pattern += `${outerSpace}${design}${innerSpace}\n`;
+          } else if (a === height) {
+            pattern += `${outerSpace}${design.repeat(counter - 2)}${design}\n`;
+          } else {
+            pattern += `${outerSpace}${design}${innerSpace}${design}\n`;
+          }
+        }
+        console.log(pattern);
+      }
+      hollowPyramid(20);
     </script>
   </body>
 </html>
