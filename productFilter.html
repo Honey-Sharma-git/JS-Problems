@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      // 15.	Filter Numbers Within a Given Range:
+      // •	Given an array of numbers and a range (min, max), return only numbers within the range [min, max].
+      let arr = [
+        { productName: "Basketball Nevia", price: 1 },
+        { productName: "Basketball Addidas", price: 5 },
+        { productName: "Shoes", price: 2 },
+        { productName: "Basketball Local", price: 3 },
+        { productName: "Shoes New", price: 5 },
+      ];
+      function filterProduct(arr, productName, minPrice, maxPrice) {
+        return arr
+          .filter((product) => {
+            return product.productName.toLowerCase().includes(productName);
+          })
+          .filter((product) => {
+            return product.price >= minPrice && product.price <= maxPrice;
+          });
+      }
+      let productObj = filterProduct(arr, "shoes", 1, 10);
+
+      let display = "";
+      display = productObj.map((element) => {
+        return `<ul>
+          <li>${element.productName}</li>
+          <li>${element.price}</li>
+          </ul>`;
+      });
+      document.getElementById("container").innerHTML = display;
+      // console.log(filteredArr);
+    </script>
+  </body>
+</html>
