@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>while and do-while loop</title>
+  </head>
+  <body style="background-color: black">
+    <script>
+      "use strict";
+      // Basic Level
+      // 1.	Print First 10 Natural Numbers
+      // o	Use a while loop to print numbers from 1 to 10.
+      let i = 1;
+      while (i <= 10) {
+        // console.log(i);
+        i++;
+      }
+      // 2.	Even Numbers between 1 to 20
+      // o	Use a while loop and continue to print only even numbers from 1 to 20.
+      i = 1;
+      while (i <= 20) {
+        if (i % 2 !== 0) {
+          i++;
+          continue;
+        }
+        // console.log(i);
+        i++;
+      }
+      // 3.	Sum of Digits of a Number
+      // o	Given a number n, use a while loop to calculate the sum of its digits.
+      i = 0;
+      let num = 12345;
+      let numStr = num.toString();
+      let len = numStr.length;
+      let sum = 0;
+      while (i < len) {
+        sum += Number(numStr.at(i));
+        i++;
+      }
+      //
+
+      // 4.	Reverse a Number
+      // o	Given a number n, reverse its digits using a while loop.
+
+      num = 123456789;
+      numStr = num.toString();
+      i = numStr.length - 1;
+      let emptyStr = "";
+
+      while (i >= 0) {
+        emptyStr += numStr[i];
+        i--;
+      }
+      num = Number(emptyStr);
+      //   console.log(num);
+      // 5.	Find the First Multiple of 7 Greater than 50
+      // o	Use a while loop with break to find the first multiple of 7 greater than 50.
+      //
+      //
+      i = 1;
+      while (true) {
+        let multiple = 7 * i;
+        if (multiple > 50) {
+          //   console.log(multiple);
+          break;
+        }
+        i++;
+      }
+      // Intermediate Level
+      // 6.	Find the Smallest Divisor of a Number (Greater than 1)
+      // o	Use a while loop to find the smallest divisor of n (other than 1).
+      function smallestDivisor(number) {
+        let i = 2;
+        while (i <= number) {
+          if (number % i === 0) {
+            // console.log(i);
+            break;
+          }
+          i++;
+        }
+      }
+      smallestDivisor(33);
+      // 7.	Print First 5 Numbers Divisible by Both 3 and 5
+      let count = 0;
+      num = 1;
+      while (count < 5) {
+        if (num % 3 === 0 && num % 5 === 0) {
+          //   console.log(num);
+          count++;
+        }
+        num++;
+      }
+      // o	Use a while loop and break after printing 5 numbers.
+
+      // 8.	Check if a Number is Prime
+      // o	Use a while loop to check if a given number is prime.
+      function checkPrime(num) {
+        if (num < 2) {
+          return false;
+        }
+        if (num === 2) {
+          return true;
+        }
+        let result = true;
+        let i = 2;
+        const sqrt = Math.sqrt(num);
+        while (i <= sqrt) {
+          if (num % i === 0) {
+            result = false;
+            break;
+          }
+          i++;
+        }
+        return result;
+      }
+      //   console.log(checkPrime(4));
+      // 9.	Sum of First n Odd Numbers
+      // o	Use a while loop to sum the first n odd numbers.
+      function sumOf(n, type) {
+        let sum = 0;
+        let count = 1;
+        let i = 1;
+        while (count <= n) {
+          if (i % 2 !== 0) {
+            sum += i;
+            // console.log(i);
+            count++;
+          }
+          i++;
+        }
+        // console.log(sum);
+      }
+      sumOf(5);
+      // 10.	Find the First Occurrence of a Specific Digit in a Number
+      // o	Given a number n and a digit d, use a while loop with break to find the first occurrence of d in n.
+      //
+      let n = 1234512345;
+      let nStr = n.toString();
+      let d = 3;
+      len = nStr.length;
+      i = 0;
+      while (i < len) {
+        if (nStr[i] === d.toString()) {
+          //   console.log(i);
+          break;
+        }
+        i++;
+      }
+      // Advanced Level
+      // 11.	Find the First Non-Divisible Number in a Sequence
+      // o	Given a number n, find the first number greater than n that is not divisible by any number between 2 and 9.
+      num = 9;
+      myCodeBlock: {
+        while (true) {
+          let isDiv = false;
+          for (let i = 2; i <= 9; i++) {
+            if (num % i === 0) {
+              isDiv = true;
+              break;
+            }
+          }
+          if (isDiv) {
+            num++;
+          } else {
+            console.log(num);
+            break;
+          }
+        }
+      }
+      //
+      // 12.	Simulate a Simple Guessing Game
+      // o	Generate a random number and use a do...while loop to let the user guess it until they get it right.
+      // 13.	Generate a Random Number Until It Matches a Given Target
+
+      let target = 7232;
+      //Generating 4 digits random number:
+
+      //   console.log(randomNum);
+
+      /* while (true) {
+        let randomNum = Math.floor(1000 + Math.random() * 9000);
+        if (randomNum === target) {
+          console.log(randomNum);
+          break;
+        }
+      } */
+      //   console.log(randomNum);
+      // o	Use a do...while loop to generate random numbers until one of them matches a given target number.
+      // 14.	Password Input Validation
+      // o	Use a do...while loop to ask the user for a password until they enter a correct one.
+      /* let password;
+      do {
+        password = window.prompt("Enter password");
+
+        if (null === password) {
+          window.alert("Sad to see you go");
+        } else if ("honey" !== password) {
+          window.alert("Incorrect password");
+        }
+      } while (!("honey" === password || null === password));
+ */
+      // 15.	Find the Largest Factor of a Number Less than Itself
+      // o	Given a number n, find its largest factor (excluding n itself) using a while loop.
+      let number = 100;
+      if (number % 2 === 0) {
+        console.log(number / 2);
+      } else {
+        let i = Math.floor(number / 2);
+        while (i >= 1) {
+          if (number % i === 0) {
+            console.log(i);
+            break;
+          }
+          i--;
+        }
+      }
+    </script>
+  </body>
+</html>
