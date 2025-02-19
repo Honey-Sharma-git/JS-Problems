@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For of loop</title>
+  </head>
+  <body style="background-color: black">
+    <script>
+      "use strict";
+      // ### 1. Print Array Elements
+      // Write a function that prints each element of an array using a `for...of` loop.  Example:
+      // Input: `[1, 2, 3, 4]`
+      // Output: `1, 2, 3, 4`
+      //
+      let arr = [1, 2, 3, 4];
+      for (let element of arr) {
+        // console.log(element);
+      }
+      // ### 2. Sum Array Elements
+      // Write a function that calculates the sum of all elements in an array using a `for...of` loop.
+      // Input: `[10, 20, 30]`
+      // Output: `60`
+      arr = [10, 20, 30];
+      let sum = 0;
+      for (let element of arr) {
+        sum += element;
+      }
+      console.log(sum);
+      //
+      // ### 3. Find Maximum Value
+      // Write a function that finds the maximum value in an array using a `for...of` loop.
+      // Input: `[5, 8, 2, 10]`
+      // Output: `10`
+      //
+      arr = [5, 8, 2, 10];
+      let max = -Infinity;
+      for (let element of arr) {
+        if (max < element) {
+          max = element;
+        }
+      }
+      console.log(max);
+      // ### 4. Count Even Numbers
+      // Write a function that counts how many even numbers are in an array using a `for...of` loop.
+      // Example:
+      // Input: `[1, 2, 3, 4, 5, 6]`
+      // Output: `3`
+      arr = [1, 2, 3, 4, 5, 6];
+      let count = 0;
+      for (let element of arr) {
+        if (element % 2 === 0) {
+          count++;
+        }
+      }
+      console.log(count);
+      //
+      // ### 5. Filter Strings Longer Than N
+      // Write a function that filters out strings longer than a given length `n` from an array using a `for...of` loop.
+      // Input: `['apple', 'bat', 'carrot', 'dog'], 3`
+      // Output: `['apple', 'carrot']`
+
+      //Method-1
+      arr = ["apple", "bat", "carrot", "dog"];
+      function filter(arr, len) {
+        return arr.filter((element) => {
+          return element.length > len;
+        });
+      }
+      console.log(filter(arr, 3));
+      //Method-2:
+      arr = ["apple", "bat", "carrot", "dog"];
+      function filter(arr, len) {
+        let tempArr = [];
+        for (let element of arr) {
+          if (element.length > len) {
+            tempArr.push(element);
+          }
+        }
+        return tempArr;
+      }
+      console.log(filter(arr, 3));
+      // ### 6. Concatenate Array of Strings
+      // Write a function that concatenates all strings in an array into a single string using a `for...of` loop.
+      // Input: `['Hello', 'World', '!']`
+      // Output: `HelloWorld!`
+      //\
+      arr = ["Hello", "World", "!"];
+      function concat(arr) {
+        let string = "";
+        for (let element of arr) {
+          string += element;
+        }
+        return string;
+      }
+      console.log(concat(arr));
+      // ### 7. Check if Array Contains a Value
+      // Write a function that checks if an array contains a specific value using a `for...of` loop.
+      // Input: `[1, 2, 3, 4], 3`
+      // Output: `true`
+      //
+      arr = [1, 2, 3, 4];
+      function checkElement(arr, element) {
+        for (let value of arr) {
+          if (element === value) {
+            return arr.indexOf(value);
+          }
+          return false;
+        }
+      }
+      console.log(checkElement(arr, 53));
+      // ### 8. Multiply Array Elements by 2
+      // Write a function that multiplies each element of an array by 2 using a `for...of` loop.
+      // Input: `[1, 2, 3, 4]`
+      // Output: `[2, 4, 6, 8]`
+      //
+      arr = [1, 2, 3, 4];
+      let tempArr = [];
+      for (let element of arr) {
+        tempArr.push(element * 2);
+      }
+      console.log(tempArr);
+      // ### 9. Reverse an Array
+      // Write a function that reverses an array using a `for...of` loop.
+      // Input: `[1, 2, 3, 4]`
+      // Output: `[4, 3, 2, 1]`
+      //
+      //Method-1
+      arr = [1, 2, 3, 4, 5];
+      tempArr = [];
+      for (let element of arr) {
+        tempArr.unshift(element);
+      }
+      console.log(tempArr);
+      //Method-2
+      arr = [1, 2, 3, 4, 5];
+      tempArr = [];
+      let index = arr.length - 1;
+      for (let element of arr) {
+        tempArr[index--] = element;
+      }
+      console.log(tempArr);
+
+      // ### 10. Count Occurrences of a Value
+      // Write a function that counts how many times a specific value appears in an array using a `for...of` loop.
+      // Input: `[1, 2, 2, 3, 2], 2`
+      // Output: `3`
+      //
+      arr = [1, 2, 2, 3, 2];
+      count = 0;
+      for (let element of arr) {
+        if (2 === element) {
+          count++;
+        }
+      }
+      console.log(count);
+      // ### 11. Flatten a 2D Array
+      // Write a function that flattens a 2D array into a 1D array using a `for...of` loop.
+      // Input: `[[1, 2], [3, 4], [5]]`
+      // Output: `[1, 2, 3, 4, 5]`
+      //
+      arr = [[1, 2], [3, 4], [5]];
+      tempArr = [];
+      for (let element of arr) {
+        tempArr.push(...element);
+      }
+      console.log(tempArr);
+      // ### 12. Find the Longest String
+      // Write a function that finds the longest string in an array using a `for...of` loop.
+      // Input: `['apple', 'banana', 'kiwi']`
+      // Output: `banana`
+      //
+      arr = ["apple", "banana", "kiwi"];
+      function longestString(arr) {
+        let len = 0;
+        let longest;
+        for (let element of arr) {
+          if (element.length > len) {
+            len = element.length;
+            longest = element;
+          }
+        }
+        return longest;
+      }
+      console.log(longestString(arr));
+      // ### 13. Remove Duplicates from an Array
+      // Write a function that removes duplicate values from an array using a `for...of` loop.
+      // Input: `[1, 2, 2, 3, 4, 4]`
+      // Output: `[1, 2, 3, 4]`
+      arr = [2, 1, 2, 2, 3, 4, 3, 4];
+      arr = [2, 1, 2, 2, 3, 4, 3, 4];
+      function removeDup(arr) {
+        let index = 0;
+        let tempArr = [];
+        for (let element of arr) {
+          if (arr.indexOf(element) === index) {
+            tempArr.push(element);
+          }
+          index++;
+        }
+        return tempArr;
+      }
+      console.log(removeDup(arr));
+      // ### 14. Iterate Over a String
+      // Write a function that prints each character of a string using a `for...of` loop.
+      // Input: `'hello'`
+      // Output: `h, e, l, l, o`
+      //
+      arr = "hello";
+      for (let char of arr) {
+        console.log(char);
+      }
+      // ### 15. Combine `for...of` with Objects
+      // Write a function that iterates over an array of objects and extracts a specific property from each object using a `for...of` loop.
+      // Input: `[{ name: 'Alice', age: 25 }, { name: 'Bob', age: 30 }], 'name'`
+      // Output: `['Alice', 'Bob']`
+      arr = [
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 30 },
+      ];
+      function extract(arr, prop) {
+        let tempArr = [];
+        for (let element of arr) {
+          tempArr.push(element[prop]);
+        }
+        return tempArr;
+      }
+      console.log(extract(arr, "name"));
+      //
+    </script>
+  </body>
+</html>
