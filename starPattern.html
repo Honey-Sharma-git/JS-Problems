@@ -191,35 +191,38 @@
         console.log(fullPattern);
       }
       diamond(10);
-      function hollowPyramid(height) {
+      function hollowPyramid(size) {
         let outerSpace = "";
         let innerSpace = "";
-        let counter = 0;
-        let pattern = "";
-        let design = "*";
-        for (let a = 1; a <= height; a++) {
-          outerSpace = "";
-          innerSpace = "";
-
-          for (let b = 1; b <= height - a; b++) {
+        let counter = -3;
+        let topPattern = "";
+        let base = "";
+        let finalPatter = "";
+        generatingTopLoop: for (let i = 1; i <= size - 1; i++) {
+          outerSpaceLoop: for (let j = 1; j <= size - i; j++) {
             outerSpace += " ";
           }
-
-          for (let c = 1; c < counter; c++) {
+          innerSpaceLoop: for (let k = 1; k <= 2 + counter; k++) {
             innerSpace += " ";
           }
-          counter += 2;
-          if (a === 1) {
-            pattern += `${outerSpace}${design}${innerSpace}\n`;
-          } else if (a === height) {
-            pattern += `${outerSpace}${design.repeat(counter - 2)}${design}\n`;
+          //Generating top pattern:
+          if (i === 1) {
+            topPattern += `${outerSpace}*${innerSpace}\n`;
           } else {
-            pattern += `${outerSpace}${design}${innerSpace}${design}\n`;
+            topPattern += `${outerSpace}*${innerSpace}*\n`;
           }
+
+          //Reset
+          outerSpace = "";
+          innerSpace = "";
+          counter += 2;
         }
-        console.log(pattern);
+        for (let a = 1; a <= size; a++) {
+          base += "* ";
+        }
+        console.log(`${topPattern}${base}`);
       }
-      hollowPyramid(20);
+      hollowPyramid(15);
     </script>
   </body>
 </html>
