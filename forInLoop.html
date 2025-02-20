@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For in loop</title>
+  </head>
+  <body style="background-color: black">
+    <script>
+      "use strict";
+
+      // ### 1. Print Object Keys
+      // Write a function that takes an object and prints all its keys using a `for...in` loop.
+      //
+      // Input: `{ name: 'Alice', age: 30, job: 'Developer' }`
+      // Output: `name, age, job`
+      let obj = { name: "Alice", age: 30, job: "Developer" };
+      for (let key in obj) {
+        // console.log(key);
+      }
+      //  ### 2. Print Object Values
+      // Write a function that takes an object and prints all its values using a `for...in` loop.
+      //
+      // Input: `{ name: 'Bob', age: 25 }`
+      // Output: `Bob, 25`
+      obj = { name: "Alice", age: 30, job: "Developer" };
+      for (let key in obj) {
+        console.log(obj[key]);
+      }
+      // ### 3. Print Key-Value Pairs
+      // Write a function that prints each key-value pair in the format `"Key: X, Value: Y"`.
+      //
+      // Input: `{ brand: 'Toyota', model: 'Camry' }`
+      // Output: `Key: brand, Value: Toyota`, `Key: model, Value: Camry`
+      obj = { brand: "Toyota", model: "Camry" };
+      for (let key in obj) {
+        console.log(`Key: ${key} and Value: ${obj[key]}`);
+      }
+      //  ### 4. Sum Numeric Values
+      // Write a function that sums all numeric values in an object.
+      //
+      // Input: `{ math: 90, science: 85, history: 'N/A' }`
+      // Output: `175`
+      obj = { math: 90, science: 85, history: "N/A" };
+      let sum = 0;
+      for (let key in obj) {
+        if (typeof obj[key] === "number") {
+          sum += obj[key];
+        }
+      }
+      console.log(sum);
+      //  ### 5. Check if Key Exists
+      // Write a function `hasKey(obj, key)` that returns `true` if the object contains the specified key.
+      function hasKey(obj, key) {
+        return key in obj;
+      }
+      console.log(hasKey(obj, "maths"));
+      //
+      // Input: `{ id: 1, name: 'Sam' }, 'name'`
+      // Output: `true`
+
+      // ### 6. Count Object Properties
+      // Write a function that returns the number of properties in an object.
+      //
+      // Input: `{ title: '1984', author: 'Orwell', pages: 328 }`
+      obj = { title: "1984", author: "Orwell", pages: 328 };
+      let count = 0;
+      for (let key in obj) {
+        count++;
+      }
+      console.log(count);
+      // Output: `3`  ### 7. Concatenate String Values
+      // Write a function that concatenates all string values in an object into a single string.
+      //
+      // Input: `{ name: 'John', age: 30, city: 'Paris' }`
+      // Output: `John Paris`
+      obj = { name: "John", age: 30, city: "Paris" };
+      function concatenate(obj) {
+        let concat = "";
+        for (let key in obj) {
+          if (typeof obj[key] === "string") {
+            concat += obj[key];
+          }
+        }
+        return concat;
+      }
+      console.log(concatenate(obj));
+      //   ### 8. Create Array of Keys
+      // Write a function that returns an array of an object’s keys using `for...in`.
+      //
+      // Input: `{ name: 'Apple', color: 'red', price: 1.5 }`
+      // Output: `['name', 'color', 'price']`
+      obj = { name: "Apple", color: "red", price: 1.5 };
+      function keys(obj) {
+        let arr = [];
+        for (let key in obj) {
+          arr.push(key);
+        }
+        return arr;
+      }
+      console.log(keys(obj));
+      //   ### 9. Create Array of Values
+      // Write a function that returns an array of an object’s values using `for...in`.
+      //
+      // Input: `{ name: 'Banana', color: 'yellow' }`
+      // Output: `['Banana', 'yellow']`
+      obj = { name: "Banana", color: "yellow" };
+      function values(obj) {
+        const arr = [];
+        for (let key in obj) {
+          arr.push(obj[key]);
+        }
+        return arr;
+      }
+      console.log(values(obj));
+      //  ### 10. Copy Properties to New Object
+      // Write a function that copies all properties from one object to a new object.
+      obj = { a: 1, b: 2 };
+      function copyProperties(obj) {
+        let newObj = {};
+        for (let key in obj) {
+          newObj[key] = obj[key];
+        }
+        return newObj;
+      }
+      console.log(copyProperties(obj));
+      // Input: `{ a: 1, b: 2 }`
+      // Output: `{ a: 1, b: 2 }`
+      //
+      //  ### 11. Invert Key-Value Pairs
+      // Write a function that swaps keys and values in an object (assume values are unique).
+      //
+      // Input: `{ dog: 'Canine', cat: 'Feline' }`
+      // Output: `{ Canine: 'dog', Feline: 'cat' }
+      obj = { dog: "Canine", cat: "Feline", bat: "Feline" };
+      function invertKeyValues(obj) {
+        let newObj = {};
+        for (let key in obj) {
+          newObj[obj[key]] = key;
+        }
+        return newObj;
+      }
+      console.log(invertKeyValues(obj));
+      // `  ### 12. Filter Object by Value Type
+      // Write a function that returns a new object containing only properties of a specified type (e.g., numbers).
+      //
+      // Input: `{ a: 1, b: 'hello', c: 3.14 }, 'number'`
+      // Output: `{ a: 1, c: 3.14 }`
+      //
+      obj = { a: 1, b: "hello", c: 3.14 };
+      function filter(obj, type) {
+        let newObj = {};
+        for (let key in obj) {
+          if (typeof obj[key] === "number") {
+            newObj[key] = obj[key];
+          }
+        }
+        console.log(newObj);
+      }
+      filter(obj, "number");
+      //   ### 13. Modify Values in Object
+      // Write a function that doubles all numeric values in an object.
+      //
+      // Input: `{ x: 5, y: 10, z: 'text' }`
+      // Output: `{ x: 10, y: 20, z: 'text' }`
+      //
+      obj = { x: 5, y: 10, z: "text" };
+      for (let i in obj) {
+        if (typeof obj[i] === "number") {
+          obj[i] = obj[i] * 2;
+        }
+      }
+      console.log(obj);
+      //   ### 14. Sum Nested Object Values
+      // Write a function that sums all numeric values in a nested object.
+      //
+      // Input: `{ a: 1, b: { c: 2, d: { e: 3 } } }`
+      // Output: `6`
+      obj = { a: 1, b: { c: 2, d: { e: 3 } } };
+      sum = 0;
+      for (let key in obj) {
+        sum += obj[key];
+      }
+      console.log(sum);
+      //
+      // ### 15. Combine `for...in` with Array Methods
+      // Use `for...in` to collect an object’s values into an array, then use `filter` and `map` to return only even numbers squared.
+      //
+
+      // Input: `{ a: 1, b: 2, c: 3, d: 4 }`
+      // Output: `[4, 16]`
+      obj = { a: 1, b: 2, c: 3, d: 4 };
+      const arr = [];
+      for (let key in obj) {
+        arr.push(obj[key]);
+      }
+      let modifiedArr = arr
+        .map((element) => {
+          return element ** 2;
+        })
+        .filter((element) => {
+          return element % 2 === 0;
+        });
+      console.log(modifiedArr);
+    </script>
+  </body>
+</html>
