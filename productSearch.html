@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Search</title>
+  </head>
+  <body style="background-color: rgb(188, 188, 150)">
+    <form method="post" onsubmit="handleSubmit(event)">
+      <input type="text" name="inputField" id="inputField" />
+      <input type="submit" value="Search" />
+    </form>
+    <ul id="container"></ul>
+    <script>
+      "use strict";
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        const inputValue = document.getElementById("inputField").value;
+        console.log(inputValue);
+        filterProduct(inputValue);
+        event.currentTarget.reset();
+      }
+
+      //Arry of products:
+      const mobilePhones = [
+        { mobile: "Apple iPhone 15 Pro Max", price: 159900 },
+        { mobile: "Samsung Galaxy S24 Ultra", price: 129999 },
+        { mobile: "OnePlus 12 Pro", price: 79999 },
+        { mobile: "Google Pixel 8 Pro", price: 106999 },
+        { mobile: "Xiaomi 14 Ultra", price: 69999 },
+        { mobile: "Vivo X100 Pro", price: 89999 },
+        { mobile: "Oppo Find X6 Pro", price: 74999 },
+        { mobile: "Realme GT 5 Pro", price: 62999 },
+        { mobile: "Asus ROG Phone 8", price: 79999 },
+        { mobile: "Nothing Phone 2", price: 45999 },
+        { mobile: "Apple iPhone 14 Pro", price: 129999 },
+        { mobile: "Samsung Galaxy Z Fold5", price: 154999 },
+        { mobile: "OnePlus 11R", price: 44999 },
+        { mobile: "Google Pixel 7a", price: 43999 },
+        { mobile: "Xiaomi Redmi Note 12 Pro", price: 25999 },
+        { mobile: "Vivo V29 Pro", price: 39999 },
+        { mobile: "Oppo Reno 10 Pro", price: 38999 },
+        { mobile: "Realme Narzo 60 Pro", price: 23999 },
+        { mobile: "Asus Zenfone 10", price: 74999 },
+        { mobile: "Motorola Edge 40", price: 29999 },
+        { mobile: "Sony Xperia 1 V", price: 115000 },
+        { mobile: "iQOO 11 Pro", price: 59999 },
+        { mobile: "Poco F5 Pro", price: 38999 },
+        { mobile: "Honor Magic 5 Pro", price: 104999 },
+        { mobile: "Nokia X30 5G", price: 48999 },
+        { mobile: "Huawei Mate 50 Pro", price: 129999 },
+        { mobile: "Samsung Galaxy A54", price: 38999 },
+        { mobile: "Xiaomi Poco X5 Pro", price: 24999 },
+        { mobile: "Vivo T2 Pro", price: 28999 },
+        { mobile: "Oppo A78 5G", price: 17999 },
+        { mobile: "Realme C55", price: 13999 },
+        { mobile: "Apple iPhone SE 2022", price: 49999 },
+        { mobile: "Samsung Galaxy M14 5G", price: 16999 },
+        { mobile: "OnePlus Nord CE 3 Lite", price: 19999 },
+        { mobile: "Google Pixel 6a", price: 29999 },
+        { mobile: "Xiaomi 13 Pro", price: 79999 },
+        { mobile: "Vivo Y100", price: 24999 },
+        { mobile: "Oppo F23 5G", price: 24999 },
+        { mobile: "Asus ROG Phone 7 Ultimate", price: 99999 },
+        { mobile: "Motorola G73 5G", price: 18999 },
+        { mobile: "Sony Xperia 5 IV", price: 89999 },
+        { mobile: "iQOO Neo 7", price: 34999 },
+        { mobile: "Poco X4 Pro", price: 21999 },
+        { mobile: "Honor X9a", price: 27999 },
+        { mobile: "Nokia G60 5G", price: 29999 },
+        { mobile: "Huawei P60 Pro", price: 119999 },
+        { mobile: "Samsung Galaxy F14", price: 15999 },
+        { mobile: "Xiaomi Redmi 12C", price: 8999 },
+        { mobile: "Vivo V27", price: 32999 },
+        { mobile: "Oppo K10", price: 17999 },
+        { mobile: "Realme 11 Pro", price: 28999 },
+        { mobile: "Apple iPhone 13", price: 69999 },
+        { mobile: "Samsung Galaxy S23", price: 74999 },
+        { mobile: "OnePlus 10T", price: 49999 },
+        { mobile: "Google Pixel 7", price: 59999 },
+        { mobile: "Xiaomi Mi 11X Pro", price: 37999 },
+        { mobile: "Vivo X90 Pro", price: 84999 },
+        { mobile: "Oppo Find N2 Flip", price: 99999 },
+        { mobile: "Realme GT Neo 3", price: 36999 },
+        { mobile: "Asus Zenfone 9", price: 64999 },
+        { mobile: "Motorola Edge 30 Ultra", price: 59999 },
+      ];
+
+      function filterProduct(inputValue) {
+        const filteredProduct = mobilePhones.filter((product) => {
+          return product.mobile.toLowerCase().includes(inputValue);
+        });
+
+        let html = "";
+        filteredProduct.forEach((product) => {
+          html += `<li><strong>Mobile:</strong> ${product.mobile} <strong>Price:</strong>${product.price}</li>`;
+        });
+        document.getElementById("container").innerHTML = html;
+      }
+    </script>
+  </body>
+</html>
